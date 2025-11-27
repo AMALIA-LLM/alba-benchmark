@@ -1,0 +1,227 @@
+id,Prompt,Answer A (5),Rating,Answer B (4-3),Rating.1,Answer C (2-1),Rating.2,category
+12,Dá-me um exemplo de três neologismos usados em língua portuguesa associados à política.,"Os neologismos são palavras novas ou palavras já existentes numa língua que ganham novas aceções. A pouco e pouco, estes vocábulos incorporam-se na língua. No contexto político, são, por exemplo, criadas para designar o conjunto de ideias e práticas políticas e também o período governativo do político a que se referem. Assim, aqui ficam três neologismos cuja dinâmica lexical é política: salazarismo, bolsonarismo, cavaquismo. ",5,"Os neologismos são palavras novas ou palavras já existentes numa língua que ganham novas aceções. A pouco e pouco, estes vocábulos incorporam-se na língua. No contexto político, são, por exemplo, criadas para designar o conjunto de ideias e práticas políticas e também o período governativo do político a que se referem. Assim, aqui ficam três neologismos cuja dinâmica lexical é política: ciberativismo, pós-verdade, fake news. ",4.0,"Os neologismos são palavras novas ou palavras já existentes numa língua que ganham novas aceções. A pouco e pouco, estes vocábulos incorporam-se na língua. No contexto político, são, por exemplo, criadas para designar o conjunto de ideias e práticas políticas e também o período governativo do político a que se referem. Assim, aqui ficam três neologismos cuja dinâmica lexical é política: estadão, bolsominoria, fake news. ",2,Lexicology
+13,Dá-me um exemplo de três arcaísmos existentes em língua portuguesa.,"Um arcaísmo é uma palavra ou construção considerada antiquada e que caiu em desuso. Aqui ficam exemplos de três arcaísmos: petiz, janota, alvíssaras.",5,"Um arcaísmo é uma palavra ou construção considerada antiquada e que caiu em desuso. Aqui ficam exemplos de três arcaísmos: Deslumbração, janota, alvíssaras.",4.0,Um arcaísmo é uma palavra ou construção considerada antiquada e que caiu em desuso. Aqui fica um exemplo de um arcaísmo: arcaíco.,2,Lexicology
+16,"Indica-me seis sinónimos da palavra ""crise"".","Claro! Apresento seis sinónimos da palavra ""crise"":
+1. Ataque
+2. Perturbação
+3. Carência
+4. Escassez
+5. Perigo
+6. Acometimento",5,"Claro! Apresento seis sinónimos da palavra ""crise"":
+1. Alteração
+2. Conflito
+3. Comoção
+4. Perturbação
+5. Transtorno
+6. Dádiva",4.0,"Claro! Apresento seis sinónimos da palavra ""crise"":
+1. Dádiva
+2. Felicidade
+3. Crise
+4. Paz
+5. Calma
+",1,Lexicology
+27,Indica-me dez palavras da família de palavras de terra.,"Aqui estão dez palavras da família de palavras de terra:
+1. terreno
+2. terrestre
+3. térreo
+4. terramoto
+5. aterrar
+6. território
+7. terreiro
+8. terráqueo
+9. extra-terrestre
+10. enterrar",5,"Aqui estão dez palavras da família de palavras de terra:
+1. terreno
+2. terrestre
+3. térreo
+4. terramoto
+5. aterrar
+6. território
+7. terreiro
+8. terráqueo
+9. extra-terrestre
+10. terá",4.0,"Aqui estão dez palavras da família de palavras de terra:
+1. cavar
+2. plantar
+3. árvore
+4. planta
+5. quintal
+6. pomar
+7. agricultura
+8. vida
+",1,Lexicology
+11,"Cria uma frase com, pelo menos, cinco palavras terminadas em ""ões"".","Claro! Aqui está uma frase com seis palavras terminadas em ""ões"": ""Os dragões vaguearam pelas erupções dos vulcões, em grandes exclamações, junto dos leões e dos abelhões.""",5,"Claro! Aqui está uma frase com seis palavras terminadas em ""ões"": ""Os dragões vaguearam pelas erupções dos vulcões junto dos leões e dos abelhões.""",4.0,"Claro! Aqui está uma frase com seis palavras terminadas em ""ões"": ""Dragões vagaram pelas erupções junto dos leões.""",2,Word Plays
+19,"Substitui as palavras de oito letras da seguinte frase por sinónimos: ""O Miguel depressa percebeu que o seu Bobby nunca mais voltaria a saltar. Depois daquele acidente, a vida do seu cãozinho seria completamente diferente.""","Aqui está a frase ""O Miguel depressa percebeu que o seu Bobby nunca mais voltaria a saltar. Depois daquele acidente, a vida do seu cãozinho seria completamente diferente."" com as palavras de oito letras (""depressa"", ""percebeu"", ""voltaria"", ""acidente"", cãozinho"") substituídas por sinónimos: ""O Miguel rapidamente compreendeu que o seu Bobby nunca mais iria saltar. Depois daquele desastre, a vida do seu cachorrinho seria completamente diferente.""",5,"Aqui está a frase ""O Miguel depressa percebeu que o seu Bobby nunca mais voltaria a saltar. Depois daquele acidente, a vida do seu cãozinho seria completamente diferente."" com as palavras de oito letras (""depressa"", ""percebeu"", ""voltaria"", ""acidente"") substituídas por sinónimos: ""O Miguel rapidamente compreendeu que o seu Bobby nunca mais iria saltar. Depois daquele desastre, a vida do seu cãozinho seria completamente diferente.""",4.0,"Aqui está a frase ""O Miguel depressa percebeu que o seu Bobby nunca mais voltaria a saltar. Depois daquele acidente, a vida do seu cãozinho seria completamente diferente."" com as palavras de oito letras (""depressa"", ""percebeu"", ""voltaria"", ""completamente"") substituídas por sinónimos: ""O Miguel rapidamente compreendeu que o seu Bobby nunca mais iria saltar. Depois daquele acidente, a vida do seu cãozinho seria totalmente diferente.""",2,Word Plays
+25,"A frase ""Em casa eu tenho uma grande variedade de frutas, que incluem maçãs, bananas, laranjas, mirtilos e morangos."" pode ser obtida a partir da seguinte sopa de letras? esauecaerdvnanrgatiahe,mdseolmitroimmrsajananr,,agolsas.nanabasuãeçdaommeulcnieuqsaturfede
+","Sim, é possível obter esta frase a partir desta sopa de letras.
+Na sopa de letras estão 86 letras e na frase também estão 86 letras. Para além disso, há uma correspondência perfeita no número de repetições de cada letra: 
+a - 15
+e - 10
+s - 7
+n - 7
+r - 6
+m - 6
+u - 5
+d - 4
+i - 4
+o - 4
+t - 3
+l - 3
+c - 2
+g - 2
+h - 1
+v - 1
+f - 1
+q - 1
+ç - 1
+ã - 1
+b - 1
+j - 1",5,"Sim, dá pra montar essa frase a partir dessa sopa de letras.
+Na sopa de letras há 85 letras e na frase também estão 85 letras. Para além disso, há uma correspondência perfeita na quantidade de vezes que cada letra se repete: 
+a - 15
+e - 10
+s - 7
+n - 7
+r - 6
+m - 6
+u - 5
+d - 4
+i - 4
+o - 4
+t - 3
+l - 3
+c - 2
+g - 2
+h - 1
+v - 1
+f - 1
+q - 1
+ç - 1
+ã - 1
+b - 1
+j - 1",3.0,"Sim, dá pra montar essa frase a partir dessa sopa de letras.
+Na sopa de letras há 8 letras e na frase também estão 9 letras. Para além disso, há uma correspondência perfeita na quantidade de vezes que cada letra se repete.",1,Word Plays
+27,"Cria um acróstico com a palavra ""gato"" sobre gatos.","Aqui está um acróstico com a palavra ""gato"" sobre gatos:
+
+Galante
+Astuto
+Teimoso
+Observador",5,"Aqui está um acróstico com a palavra ""gato"" sobre gatos:
+
+Galante
+Observador
+Teimoso
+Cordial",3.0,"Aqui está um acróstico com a palavra ""gato"" sobre gatos:
+
+Animal
+Teimoso
+Grato
+Observador",1,Word Plays
+12,"Indica-me se a frase ""Puseste a mesa para o lanche, Raul?"" é ou não constituída por vocativo. Se sim, indica-me qual é o vocativo.","O vocativo é uma função sintática opcional, ao contrário do sujeito e do predicado. É desempenhada pela expressão nominal que indica a pessoa a quem nos dirigimos. Esta função sintática ocorre com frequência em frases interrogativas, imperativas e exclamativas. Portanto, a frase ""Puseste a mesa para o lanche, Raul?"" é interrogativa e é constituída por vocativo, sendo o vocativo ""Raul"".",5,"O vocativo é uma função sintática opcional, ao contrário do sujeito e do predicado. É desempenhada pela expressão nominal que indica a pessoa a quem nos dirigimos. Portanto, a frase ""Puseste a mesa para o lanche, Raul?"" é interrogativa e é constituída por vocativo.",4.0,"O vocativo é uma função sintática opcional, diferente do sujeito e do predicado. É exercido por uma expressão nominal que indica a pessoa a quem nos dirigimos. Portanto, a frase ""Você pôs a mesa para o lanche, Raul?"" contém um vocativo.",2,Syntax
+16,"Identifica e substitui o complemento direto da frase seguinte pelo pronome pessoal correto: ""Francisco, o teu tio-avô Vasco traduziu este livro nos anos 1950.""","Claro! Comecemos por identificar o complemento direto da frase: ""este livro"". Substituindo o complemento direto pelo pronome pessoal (a 3.ª pessoa do masculino singular), a frase é a seguinte: ""Francisco, o teu tio-avô Vasco traduziu-o nos anos 1950.""",5,"Claro! Comecemos por identificar o complemento direto da frase: ""este livro"". Substituindo o complemento direto pelo pronome pessoal (a 3.ª pessoa do masculino singular), a frase é a seguinte: ""Francisco, o teu tio-avô Vasco traduziu-o.""",4.0,"Claro! Comecemos por identificar o complemento da frase: ""este livro"". Substituindo o complemento direto pelo pronome pessoal (a 2.ª pessoa do masculino plural), a frase é a seguinte: ""Francisco, o teu tio-avô Vasco traduziu-os.""",2,Syntax
+20,Cria uma frase com sujeito nulo expletivo.,"O sujeito nulo expletivo, também designado sujeito nulo inexistente, verifica-se, sobretudo, em verbos meteorológicos. Aqui fica uma frase com sujeito nulo de subtipo expletivo: ""Chove bastante.""",5,"O sujeito nulo subentendido, também designado sujeito nulo indeterminado, é usado, sobretudo, em verbos que falam do tempo. Aqui fica uma frase com sujeito nulo de subtipo expletivo: ""Chove bastante.""",3.0,"O sujeito nulo expletivo, também designado sujeito nulo inexistente, é usado, sobretudo, em verbos que falam do tempo. Aqui fica uma frase com sujeito nulo de subtipo expletivo: ""Está chovendo bastante.""",1,Syntax
+24,Dá-me um exemplo de uma oração coordenada disjuntiva.,"Aqui está um exemplo de uma oração coordenada disjuntiva, isto é, que expressa valor de alternativa através de uma conjunção ou locução disjuntiva: ""Ou acabamos o trabalho hoje ou continuamos na segunda-feira."" Neste exemplo, é usada a locução disjuntiva ""ou... ou"".",5,"Aqui vai um exemplo de uma oração coordenada disjuntiva, isto é, que expressa valor de alternativa através de uma conjunção ou locução disjuntiva: ""Ou acabamos o trabalho hoje ou continuamos na segunda-feira."" Neste exemplo, é usada a conjunção disjuntiva ""ou... ou"".",3.0,"Aqui vai um exemplo de uma oração coordenada disjuntiva: ""Acabamos o trabalho hoje ou continuamos na segunda-feira.""",1,Syntax
+15,"Cria um resumo do seguinte texto com um máximo de 20 palavras:
+""Amanhã o dia começará com céu limpo em quase todo o país, mas a partir da tarde esperam-se nuvens mais densas no litoral norte e possibilidade de aguaceiros dispersos. As temperaturas máximas deverão rondar os 27 °C no interior centro e sul, descendo para 22 °C junto à faixa costeira. O vento soprará moderado de noroeste, tornando-se mais intenso ao final do dia.""","Aqui está um resumo do texto fornecido com um máximo de 20 palavras:
+""Amanhã o seu estará limpo com possibilidade de aguaceiros à tarde. A temperatura máxima vai variar entre 22ºC a 27ºC.""",5,"Aqui está um resumo do texto fornecido com um máximo de 20 palavras:
+""Amanhã o seu estará limpo com possibilidade de aguaceiros à tarde. A temperatura máxima vai variar entre 22ºC a 27ºC. O vento soprará moderado de noroeste, tornando-se mais intenso ao final do dia.""",3.0,"Aqui está um resumo do texto fornecido com um máximo de 20 palavras:
+""Amanhã o seu estará limpo mas a partir da tarde esperam-se nuvens mais densas no litoral norte e possibilidade de aguaceiros dispersos. A temperatura máxima vai variar entre 22ºC a 27ºC. O vento soprará moderado de noroeste, tornando-se mais intenso ao final do dia.""",2,Discourse Analysis
+19,"Identifica os conectores discursivos no seguinte texto:
+""De qualquer modo, também é necessário fazer uma revisão total à gestão que está a ser feita a nível regional. Além disso, nós já temos as vistorias em atraso por isso podemos juntá-las às auditorias. Contudo, seria prudente fazer relatórios separados para as duas.""","Os conectores discursivos presentes no texto são conectores contrastivos ou contra-argumentativos, como ""de qualquer modo"" e ""contudo"", e o conector aditivo ou sumativo ""além disso"".",5,"Os conectores discursivos presentes no texto são conectores contrastivos ou contra-argumentativos, como ""de qualquer modo"" e ""contudo"".",3.0,"O conector discursivo presente no texto é o conector aditivo ou sumativo ""também"".",1,Discourse Analysis
+24,"Qual a figura de estilo presente no verso d'Os Lusíadas ""Que da ocidental praia Lusitana""?","O verso apresentado integra a primeira estância da obra Os Lusíadas, de Luís de Camões. A figura de estilo presente em ""Que da ocidental praia Lusitana"" é a sinédoque. A sinédoque ocorre quando se atribui o nome de uma realidade a outra, sendo tomada a parte pelo todo ou o todo pela parte. Neste caso, é tomada a parte pelo todo, ou seja, a ""ocidental praia Lusitana"" refere-se à nação portuguesa.",5,"O verso apresentado integra a primeira estância da obra Os Lusíadas, de Luís de Camões. A figura de estilo presente em ""Que da ocidental praia Lusitana"" é a sinédoque.",4.0,"O verso apresentado integra a primeira estância da obra Os Lusíadas, de Luís de Camões. A figura de estilo presente em ""Que da ocidental praia Lusitana"" é a metáfora.",1,Discourse Analysis
+29,"A frase ""Não tenho nada para cozinhar em casa, a minha despensa está completamente vazia... acho que vou ao supermercado hoje."" é paráfrase da frase ""Estou a pensar ir ao supermercado hoje porque não tenho nada na minha despensa que possa usar para cozinhar.""?","Sim, a frase ""Não tenho nada para cozinhar em casa, a minha despensa está completamente vazia... acho que vou ao supermercado hoje."" é paráfrase da frase ""Estou a pensar ir ao supermercado hoje porque não tenho nada na minha despensa que possa usar para cozinhar."" porque ambas transmitem a mesma informação. Em ambas é mecionada a necessidade de ir até a um supermercado por não haver comida em casa.",5,"Sim, a frase ""Não tenho nada para cozinhar em casa, a minha despensa está completamente vazia... acho que vou ao supermercado hoje."" é paráfrase da frase ""Estou a pensar ir ao supermercado hoje porque não tenho nada na minha despensa que possa usar para cozinhar."" porque ambas transmitem a mesma ideia.",4.0,"Não, a frase ""Não tenho nada para cozinhar em casa, a minha despensa está completamente vazia... acho que vou ao supermercado hoje."" não é paráfrase da frase ""Estou a pensar ir ao supermercado hoje porque não tenho nada na minha despensa que possa usar para cozinhar."".",1,Discourse Analysis
+11,"Indica-me a transcrição fonética da palavra ""sabático"".","Claro! A transcrição fonética é um método usado para transcrever os sons das línguas, sendo, para tal, usado o alfabeto fonético. Portanto, aqui está a transcrição fonética da palavra ""sabático"" é [sɐ.bˈa.ti.ku]. A pronúncia indicativa é a mesma para Lisboa padrão e Lisboa não padrão.",5,"Claro! A transcrição fonética é um método usado para transcrever os sons das línguas, sendo, para tal, usado o alfabeto fonético. Portanto, aqui está a transcrição fonética da palavra ""sabático"" é [sɐ.bˈa.ti].",3.0,"Claro! A transcrição fonética é um método usado para transcrever os sons das línguas, sendo, para tal, usado o alfabeto fonético. Portanto, aqui está a transcrição fonética da palavra ""sabático"" é [sɐ.bˈa.ti], de acordo com o padrão do português brasileiro.",1,Phonetics and Phonology
+16,Quais os modos de articulação das consoantes em língua portuguesa?,"Existem quatro modos de articulação das consoantes em língua portuguesa. Distinguem-se entre oclusivas, fricativas, laterais, vibrantes.",5,"Existem três modos de articulação das consoantes em língua portuguesa. Distinguem-se entre oclusivas, fricativas, e laterais.",3.0,Existem dois modos de articulação das consoantes em língua portuguesa. Distinguem-se entre ocultas e friccionadas.,1,Phonetics and Phonology
+23,"Cria um trava-línguas com a repetição do encontro consonantal ""tr"".","Aqui está um trava-línguas com a repetição do encontro consonantal ""tr"":
+""Trinca trutas tristes, traz trios, troca troncos, trama truques e traça trilhos.""",5,"Aqui está um trava-línguas com a repetição do encontro consonantal ""tr"":
+""Trazias trigo do triângulo triste.""",4.0,"Aqui está um trava-línguas com a repetição do encontro consonantal ""tr"":
+""Também teria torradas e trilhos.""",2,Phonetics and Phonology
+29,"Divide o seguinte verso em sílabas métricas e classifica-o de acordo com a sua escansão: ""As grandes árvores abanavam""","Divisão das sílabas métricas: As - gran - des - ár - vo - res - a - ba - na - vam
+O verso ""As grandes árvores abanavam"" é eneassílabo, ou seja, tem nove sílabas métricas.",5,"Divisão das sílabas métricas: As - gran - des - ár - vo - res - a - ba - na - vam
+O verso ""As grandes árvores abanavam"" é octossílabo, ou seja, tem oito sílabas métricas.",3.0,"O verso ""As grandes árvores abanavam"" é decassílabo, ou seja, tem cinco sílabas métricas.",1,Phonetics and Phonology
+12,"Qual é o significado da expressão ""meter os pés pelas mãos""?","A expressão ""meter os pés pelas mãos"" significa que uma pessoa cometeu uma gafe ou um erro porque tomou uma decisão precipitada ou porque se atrapalhou, possivelmente originando uma situação constrangedora.
+Exemplo: ""Hoje no trabalho pus os pés pelas mãos. Tinha-me esquecido que o marido da minha colega lhe tinha pedido o divórcio e resolvi perguntar-lhe se ele vinha com ela ao jantar de natal da empresa. Escusado será dizer que ela não reagiu nada bem.""",5,"A expressão ""meter os pés pelas mãos"" significa que a pessoa cometeu uma gafe ou um erro porque tomou uma decisão precipitada ou por se ter atrapalhado, o que pode acabar gerando uma situação constrangedora.
+Exemplo: ""Hoje no trabalho eu meti os pés pelas mãos. Tinha esquecido que o marido da minha colega tinha pedido o divórcio e resolvi lhe perguntar se ele vinha com ela ao jantar de natal da empresa. Nem preciso dizer que ela não reagiu nada bem.""",3.0,"A expressão ""meter os pés pelas mãos"" significa tentar controlar tudo ao mesmo tempo e falhar.",1,Culture-bound Semantics
+22,Completa esta piada seca: Qual o animal que anda com uma pata?,O pato.,5,O macho da pata.,4.0,Quase todos... menos as cobras!,2,Culture-bound Semantics
+23,"Responde a esta adivinha: Qual a coisa, qual é ela, que mesmo atravessando o rio não se molha.",A ponte.,5,A construção que permite atravessar um rio.,4.0,Uma construção entre duas margens.,2,Culture-bound Semantics
+24,"Responde a esta adivinha: Qual é a coisa, qual é ela, que fica no início da rua, no fim do mar e no meio de caras?","A letra ""r"".",5,É uma consoante muito usada em língua portuguesa.,3.0,É a estrada.,1,Culture-bound Semantics
+11,"Que outras formas posso usar para pedir ""café com cheirinho""?","Um ""café com cheirinho"" é um café misturado com uma pequena dose de aguardente de bagaço. São vários os sinónimos para esta expressão: café beirão, café com chiripiti, café cubano. Se estiveres no arquipélago da Madeira ou no dos Açores, podes pedir um ""café com música"".",5,"Um ""café com cheirinho"" é um café misturado com uma pequena dose de aguardente de bagaço. São vários os sinónimos para esta expressão: café beirão, café com chiripiti, café de Cuba. Se estiveres no arquipélago da Madeira ou no dos Açores, podes pedir um ""café musical"".",3.0,"Um ""café com cheirinho"" é um café misturado com uma pequena dose de aguardente de bagaço.",1,Language Variety
+17,"Transforma esta frase que está em português do Brasil e coloca-a em português Europeu. Respeita o registo: se houver termos informais ou gíria na frase, tenta encontrar equivalentes na língua de chegada. ""Estou ferrado, moleque. Minha guria está sabendo de tudo!""","Aqui está a frase em português europeu, respeitando o registo e a gíria presentes na frase. 
+""Puto, estou lixado. A minha dama já sabe tudo"".
+Na frase foi trocado ""moleque"" por ""puto"", ""ferrado"" por ""lixado"" e ""guria"" por ""dama"".",5,"Aqui está a frase em português europeu, respeitando o registo e a gíria presentes na frase. 
+""Rapaz, estou lixado. A minha namorada já sabe tudo"".
+Na frase foi trocado ""moleque"" por ""rapaz"", ""ferrado"" por ""lixado"" e ""guria"" por ""namorada"".",4.0,"Aqui está a frase em português europeu, respeitando o registo e a gíria presentes na frase. 
+""Moço, estou ferrado. Minha namorada sabe tudo"".
+Na frase foi trocado ""moleque"" por ""moço"" e ""guria"" por ""namorada"".",2,Language Variety
+18,"Estas palavras estão escritas de acordo com o português do Brasil. Coloca-as em português Europeu. ""Bônus, sinônimo, cômico, irônico, efêmero, gênio, tênue, gênero.""","Aqui estão as palavras em português europeu:
+1. bónus
+2. sinónimo
+3. cómico
+4. irónico
+5. efémero
+6. génio
+7. ténue
+8. género",5,"Aqui estão as palavras em português europeu:
+1. bónus
+2. sinónimo
+3. cómico
+4. irónico
+5. efémero
+6. génio
+7. tênue
+8. género",4.0,"Aqui estão as palavras em português europeu:
+1. bônus
+2. sinônimo
+3. cômico
+4. irônico
+5. efêmero
+6. gênio
+7. tênue
+8. gênero",1,Language Variety
+30,Existe uma palavra que significa gargalhada que é igual no Brasil e nos Açores? ,"Sim. A palavra ""gaitada"" é usada no Brasil e nos Açores e tem como significado ""gargalhada"".",5,"Sim. A palavra ""riso"" é usada no Brasil e nos Açores e tem como significado ""gargalhada"".",4.0,"Sim. A palavra ""saracotear"" é usada no Brasil e nos Açores e tem como significado ""gargalhada"".",1,Language Variety
+14,"Cria uma lista de dez palavras com oito letras que acabem em ""ão"".","Claro! Aqui ficam dez palavras com oito letras acabadas em ""ão"":
+1. Extensão
+2. Gratidão
+3. Intuição
+4. Inversão
+5. Oposição
+6. Previsão
+7. Reflexão
+8. Religião
+9. Sensação
+10. Tradição",5,"Claro! Aqui ficam dez palavras com oito letras acabadas em ""ão"":
+1. Cão
+2. Obsessão
+3. Intuição
+4. Confusão
+5. Retenção
+6. Reflexão
+7. Erudição
+8. Comiloso
+9. Evolução
+10. Exatidão",4.0,"Claro! Aqui ficam dez palavras com oito letras acabadas em ""ão"":
+1. Cão
+2. Mão
+3. Então
+4. Queridas
+5. Não
+6. Previsão
+7. Malão
+8. Portão
+9. Comiloso
+10. Tradição",1,Morphology
+18,"Qual o tempo, pessoa e modo dos verbos na seguinte frase: ""Falhámos a vida, menino! Mas todo o mundo mais ou menos a falha. Isto é, falha-se sempre na realidade aquela vida que se planeou com a imaginação.""","O tempo, pessoa e modo dos verbos expressos na frase, da autoria de Eça de Queirós (obra Os Maias), são os seguintes:
+""Falhámos"" - pretérito perfeito do indicativo, 1.ª pessoa do plural
+""falha"" - presente do indicativo, 3.ª pessoa do singular
+""falha-se"" - presente do indicativo, 3ª pessoa do singular
+""planeou"" - pretérito perfeito do indicativo, 3.ª pessoa do singular",5,"O tempo, pessoa e modo dos verbos expressos na frase, da autoria de Eça de Queirós (obra Os Maias), são os seguintes:
+""Falhámos"" - pretérito perfeito do imperativo, 1.ª pessoa do plural
+""falha"" - presente do indicativo, 3.ª pessoa do singular
+""falha-se"" - pretérito perfeito do indicativo, sujeito indeterminado
+""planeou"" - pretérito perfeito do indicativo, 3.ª pessoa do plural",3.0,"O tempo, pessoa e modo dos verbos expressos na frase, da autoria de Eça de Queirós (obra Os Maias), são os seguintes:
+""Falhámos"" - pretérito imperfeito do imperativo, 1.ª pessoa do plural
+""falha"" - pretérito perfeito do indicativo, 2.ª pessoa do plural
+""falha-se"" - pretérito perfeito do imperativo, sujeito indeterminado
+""planeou"" - pretérito imperfeito do indicativo, 3.ª pessoa do plural",1,Morphology
+27,Indica-me cinco palavras palíndromas.,"Uma palavra palíndroma permite uma leitura idêntica da esquerda para a direita e da direita para a esquerda. Aqui ficam cinco palavras palíndromas: arara, osso, ovo, radar, salas.",5,"Uma palavra palíndroma permite uma leitura idêntica da esquerda para a direita e da direita para a esquerda. Aqui ficam cinco palavras palíndromas: ama, ana, reviver, salas, asas.",4.0,"Uma palavra palíndroma permite uma leitura idêntica da esquerda para a direita e da direita para a esquerda. Aqui ficam cinco palavras palíndromas: ossos, mar, asas, assar, cama.",2,Morphology
+30,"Identifica as preposições presentes na seguinte frase: ""Segundo ela, ando a trabalhar demasiado. E a verdade é que até adormeço no sofá, coisa que nunca me acontecia..."".","A frase ""Segundo ela, ando a trabalhar demasiado. E a verdade é que até adormeço no sofá, coisa que nunca me acontecia..."" é constituída por duas preposições: ""a"" e ""até"". ",5,"A frase ""Segundo ela, ando a trabalhar demasiado. E a verdade é que até adormeço no sofá, coisa que nunca me acontecia..."" é constituída por duas preposições: ""a"" e ""no"". ",3.0,"A frase ""Segundo ela, ando a trabalhar demasiado. E a verdade é que até adormeço no sofá, coisa que nunca me acontecia..."" é constituída por três preposições: ""e"", ""ela"" e ""no"". ",1,Morphology
