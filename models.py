@@ -8,7 +8,9 @@ from concurrent.futures import ThreadPoolExecutor
 from typing import Callable
 from tqdm import tqdm
 
-import os, time
+import os, time, sys
+
+MAX_RETRIES = 10
 
 def parallel_generation(
         func : Callable[[str], str],
@@ -16,26 +18,26 @@ def parallel_generation(
         max_connections: int
     ) -> list[str]:
 
+    def wrapper(prompt : str) -> str:
+        res = func(prompt)
+        assert res, f"response of '{prompt[-80:]}' is None"
+        return res
+
+
     def retry(prompt : str) -> str:
-        for i in range(10):
-            try: return func(prompt)
+        for i in range(MAX_RETRIES):
+            try: return wrapper(prompt)
             except Exception as ex:
                 prompt_msg = prompt if len(prompt) <= 50 else (prompt[:50] + '...')
                 times = i + 1
-                print("Error doing API call :", ex)
-                print(f"RETRY {times:02}/10 '{prompt_msg.strip()}'")
-                time.sleep(.25 * times)
+                print("Error doing API call :", ex, file=sys.stderr)
+                print(f"RETRY {times:02}/{MAX_RETRIES} '{prompt_msg.strip()}'", file=sys.stderr)
+                time.sleep(1.5 * times)
 
-        return func(prompt)
+        return wrapper(prompt)
 
-    # adds a bar
     with ThreadPoolExecutor(max_workers=max_connections) as executor:
         return [result for result in tqdm(executor.map(retry, prompts), total=len(prompts))]
-        # return list(executor.map(func, prompts))
-
-    # with ThreadPoolExecutor(max_workers=max_connections) as executor:
-    #     return list(executor.map(func, prompts))
-
 
 class Model:
     def get_name(self) -> str: ...
@@ -76,7 +78,7 @@ class Gemini(Model):
         return parallel_generation(lambda prompt: 
             self.client.models.generate_content(
                 model=self.model_name, contents=prompt,
-                config=GenerateContentConfig(temperature=0)
+                config=GenerateContentConfig(temperature=0) # in Iago's words: to make it more stable
             ).text, # pyright: ignore
             prompts, max_connections
         ) 

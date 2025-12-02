@@ -1,7 +1,7 @@
 from dataclasses import dataclass
-from models import Gemini
+from models import Model
 import pandas as pd
-import re
+import re, sys
 
 PROMPT_1_SCORE_PT = """
 És um Classificador Profissional de Texto em Português Europeu.
@@ -61,6 +61,8 @@ class SamplePair:
 class Metric:
     score: int
     explanation: str
+    judge_prompt : str
+    judge_plain_answer: str
 
 def format_prompt_1_score_pt(prompt: str, answer: str, few_shots: list, category: str) -> str:
     few_shots_str = ""
@@ -89,22 +91,24 @@ def format_prompt_1_score_pt(prompt: str, answer: str, few_shots: list, category
         answer=answer
     )
 
-def extract_response_1_score_pt(response: str) -> Metric:
+def extract_response_1_score_pt(judge_prompt : str, response: str) -> Metric:
     reasoning = re.search(r"Raciocínio:\s*(.+?)\s*Pontuação Global:", response, re.DOTALL)
     score = re.search(r"Pontuação Global:\s*(\d+)", response)
     try:
         return Metric(
+            judge_prompt= judge_prompt,
+            judge_plain_answer= response,
             explanation = reasoning.group(1).strip(), # pyright: ignore
             score = float(score.group(1)) # pyright: ignore
         )
     except:
-        print("\n\n\n")
-        print(response)
-        print("\n\n\n")
+        print("\n\n\n", file=sys.stderr)
+        print(response, file=sys.stderr)
+        print("\n\n\n", file=sys.stderr)
         raise Exception("Error extracting response")
 
 def score_samples(
-        judge : Gemini,
+        judge : Model,
         pairs : list[SamplePair],
         category : str,
         max_connections = 20
@@ -132,7 +136,7 @@ def score_samples(
     ]
 
     return [
-        extract_response_1_score_pt(response) for response in judge.generate_in_batch(judge_prompts, max_connections)
+        extract_response_1_score_pt(judge_prompt, response) for judge_prompt, response in zip(judge_prompts, judge.generate_in_batch(judge_prompts, max_connections))
     ]
 
 

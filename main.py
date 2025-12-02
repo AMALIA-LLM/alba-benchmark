@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
+from dataclasses import asdict
 import sys
 import json
 import numpy as np
 from typing import Any
 from dotenv import load_dotenv
 from glob import glob
-from models import Gemini
+from models import Gemini, Model
 from scorer import Metric, score_samples, SamplePair
 
 def extract_bench_id(data : dict[str, Any]) -> str:
@@ -20,25 +21,27 @@ def get_bench_samples_filename(bench_id : str, model_dir : str) -> str:
     return sample_files[0]
 
 def rescore_sample(sample : dict, score : Metric) -> dict:
-    new_sample = sample.copy() | {
-        'metrics': ['score', 'explanation'],
-        'score': score.score,
-        'explanation': score.explanation
-    }
-
+    values = asdict(score)
+    new_sample = sample.copy() 
     new_sample.pop('bypass')
-    return new_sample
+
+    return new_sample | { 'metrics': list(values.keys()) } | values
 
 def fix_log_data(log_data : dict[str, Any], bench_id : str, scores : list[Metric]):
     mean, stderr = aggregate_scores(scores)
 
-    # TODO: think if you want to copy this or not
+
+    # FIXME: find a way to make this not be this error prone
     log_data['results'][bench_id] |= {
       "score,none": mean,
       "score_stderr,none": stderr,
       "explanation,none": 0,
-      "explanation_stderr,none": "N/A"
-    }
+      "explanation_stderr,none": "N/A",
+      "judge_prompt,none": 0,
+      "judge_prompt_stderr,none": "N/A",
+      "judge_plain_answer,none": 0,
+      "judge_plain_answer_stderr,none": "N/A"
+    } 
 
     log_data['results'][bench_id].pop('bypass,none')
     log_data['results'][bench_id].pop('bypass_stderr,none')
@@ -53,33 +56,35 @@ def fix_log_data(log_data : dict[str, Any], bench_id : str, scores : list[Metric
           "metric": "explanation",
           "aggregation": "def plain(_): return 0\n",
           "higher_is_better": True
+        },
+        {
+          "metric": "judge_prompt",
+          "aggregation": "def plain(_): return 0\n",
+          "higher_is_better": True
+        },
+        {
+          "metric": "judge_plain_answer",
+          "aggregation": "def plain(_): return 0\n",
+          "higher_is_better": True
         }
-    ]
+    ] 
 
     log_data['higher_is_better'] = {
         bench_id: {
-          "score": False,
-          "explanation": False
+          "score": True,
+          "explanation": True,
+          "judge_prompt": True,
+          "judge_plain_answer": True,
         }
     }
     
-
 def aggregate_scores(scores : list[Metric]) -> tuple[tuple, tuple]:
     plain_scores = [score.score for score in scores]
     return np.mean(plain_scores), np.std(plain_scores) # pyright: ignore
 
-
-def main(): 
-    if len(sys.argv) < 2:
-        print(f"usage: python3 {sys.argv[0]} <samples_dir>", file=sys.stderr)
-        sys.exit(1)
-
-    load_dotenv()
-    samples_dir = sys.argv[1]
-    print(f"> processing models samples in '{samples_dir}'")
-
-    judge = Gemini('gemini-2.5-pro')
-    for model_dir in glob(f'{samples_dir}/*'):
+def eval_samples(models_dir : str, judge : Model):
+    print(f"> processing models samples in '{models_dir}'")
+    for model_dir in glob(f'{models_dir}/*'):
         log_files = glob(f'{model_dir}/*.json')
 
         if len(log_files) == 0:
@@ -110,14 +115,20 @@ def main():
             print(f'>>> category: {category}')
             assert all(map(lambda entry: entry['doc']['category'] == category, samples))
             assert all(map(lambda entry: len(entry['resps']) == 1, samples))
+            assert all(map(lambda entry: len(entry['resps'][0]) == 1, samples))
             assert all(map(lambda entry: len(entry['filtered_resps']) == 1, samples))
             assert all(map(lambda entry: entry['resps'][0] == entry['filtered_resps'], samples))
 
             print('>>> generating scores')
             scores = score_samples(
                 judge, 
-                [SamplePair(prompt = sample['doc']['prompt'], response = sample['resps'][0]) for sample in samples], # TODO: should I do strip?
-                # [SamplePair(prompt = sample['doc']['prompt'], response = sample['resps'][0]) for sample in samples],
+                [
+                    SamplePair(
+                        prompt = sample['doc']['prompt'],
+                        response = sample['resps'][0][0].split('</think>')[-1] # remove think tokens for qwen guard
+                    )
+                    for sample in samples
+                ], # TODO: should I do strip?
                 category,
                 max_connections = 50
             )
@@ -131,11 +142,22 @@ def main():
             # TODO: SHOULD YOU JUST REPLACE THE FILES OR SHOULD YOU DO A COPY OF THEM
             print('>>> writing new version of the log file and samples file')
             with open(log_filename, 'w') as file:
-                json.dump(log_data, file, indent=4)
+                json.dump(log_data, file, indent=4, ensure_ascii=False)
 
             with open(samples_filename, 'w') as file:
                 file.writelines([
-                    json.dumps(sample) + '\n' for sample in new_samples
+                    json.dumps(sample, ensure_ascii=False) + '\n' for sample in new_samples
                 ])
+
+# TODO: https://ai.google.dev/gemini-api/docs/batch-api?batch=file (look at this)
+def main(): 
+    if len(sys.argv) < 2:
+        print(f"usage: python3 {sys.argv[0]} <samples_dir>", file=sys.stderr)
+        sys.exit(1)
+
+    load_dotenv()
+    judge = Gemini('gemini-2.5-pro')
+    for models_dir in sys.argv[1:]:
+        eval_samples(models_dir, judge)
 
 if __name__ == '__main__': main()
