@@ -11,6 +11,7 @@ from glob import glob
 
 from models import Gemini, HuggingFaceModel, Model
 from scorer import Metric, score_samples, SamplePair
+from typing import cast
 
 def extract_bench_id(data : dict[str, Any]) -> str:
     keys = list(data['results'].keys())
@@ -83,7 +84,8 @@ def aggregate_scores(scores : list[Metric]) -> tuple[tuple, tuple]:
     plain_scores = [score.score for score in scores]
     return np.mean(plain_scores), np.std(plain_scores) # pyright: ignore
 
-def score_models(models_dir : str, judge : Model):
+
+def legacy_score_models(models_dir : str, judge : Model): 
     print(f"> processing models samples in '{models_dir}'")
     for model_dir in glob(f'{models_dir}/*'):
         log_files = glob(f'{model_dir}/*.json')
@@ -150,7 +152,94 @@ def score_models(models_dir : str, judge : Model):
                     json.dumps(sample, ensure_ascii=False) + '\n' for sample in new_samples
                 ])
 
+def extract_model_name(model_name : str) -> str:
+    parts = model_name.split('/')
+    if not parts[-1]: parts.pop()
+    return '/'.join(parts[-2:]) if parts[-1].startswith('checkpoint') else parts[-1]
 
+RENAMES = {
+    "47-32k-9B-carminho-with_euroblocks_safety_hermes_customst/checkpoint-2875": "AMALIA-9B 32k v49",
+    "47-4k-9B-carminho-with_euroblocks_safety_hermes_customst/checkpoint-13590": "AMALIA-9B 4k v49",
+    "47-32k-llama/checkpoint-700": "AMALIA-LLaMA-3.1-8B-32k",
+    "49-32k-llama_instruct/checkpoint-1767": "AMALIA-LLaMA-3.1-8B-Instruct-32k",
+    "47-32k-qwen3_8B/checkpoint-1482": "AMALIA-Qwen3-8B-32k",
+    "49-32k-eurollm-9B/checkpoint-1928": "EuroLLM-AMALIA-9B-32k v49 (checkpoint 1928)",
+    "49-32k-gemma3-12B/checkpoint-1368": "AMALIA-Gemma3-12B-32k",
+    "47-safety-dpo-mix_safety_sft_200k/checkpoint-6738_merged": "49 DPO",
+    "50-carminho-big/checkpoint-1776": "AMALIA-9B-32k-big v50 (checkpoint 1776)", # 32k SFT-BIG
+    "50-carminho-big/checkpoint-3441": "AMALIA-9B-32k-big v50 (checkpoint 3441)", # 32k SFT-BIG
+    "50-carminho-big/checkpoint-3480": "AMALIA-9B-32k-big v50 (checkpoint 3480)",
+    "50-dpo-mix_safety_sft_200k_if/checkpoint-6892_merged": "AMALIA-9B-32k-big-DPO-small v50",
+    "50-carminho-big-old/checkpoint-18501":  "AMALIA-9B-4k-big v50",
+    "50-big-4k-dpo-big/checkpoint-6155_merged": "AMALIA-9B-4k-big-DPO-big v50",
+    "49-4k-eurollm-9B/checkpoint-12231": "EuroLLM AMALIA-9B 4k v49 (checkpoint 12231)",
+    "Llama-3.1-8B-Instruct": "LLaMA 3.1-Instruct-8B",
+    "Ministral-8B-Instruct-2410": "Ministral-8B",
+    "Mistral-7B-Instruct-v0.3": "Mistral-7B",
+    "OLMo-2-1124-7B-Instruct": "OLMo 2-7B",
+    "Qwen2.5-7B-Instruct": "Qwen 2.5-7B",
+    "gervasio-8b-portuguese-ptpt-decoder": "LLaMA-3.1-Gervasio-8B",
+    "salamandra-7b-instruct": "Salamandra-7B",
+}
+
+def new_score_models(models_log_files : list[str], judge : Model):
+    for file in models_log_files:
+
+        if file.endswith('_scored.csv'): continue
+
+        print(f"> loading '{file}'")
+        out_file = f'{file.rstrip('.csv')}_scored.csv'
+
+        if os.path.isfile(out_file):
+            print('>> skipping probably already scored ...')
+            continue
+
+
+        data = pd.read_csv(file)
+        model_name      =  data.iloc[0]['model_name']
+        real_model_name = RENAMES.get(extract_model_name(model_name), model_name)
+
+        print(f">> model name '{real_model_name}'")
+
+        scored_rows = []
+        for category, rows in data.groupby('category'):
+            print(f">> processing category '{category}'")
+            new_rows = rows.to_dict('records')
+
+            model_name     =  new_rows[0]['model_name']
+            real_model_name = RENAMES.get(extract_model_name(model_name), model_name)
+            
+            assert len(new_rows) == 50
+            scores = score_samples(
+                judge,
+                [ 
+                    SamplePair(
+                        prompt   = row['prompt'].split('</think>')[-1].strip(),
+                        response = row['model_response'] 
+                    ) 
+                    for row in new_rows 
+                ],
+                cast(str, category),
+                max_connections=50
+            )
+
+            scored_rows.extend(
+                row | asdict(score) | { 'model_name': real_model_name } for row, score in zip(new_rows, scores)
+            )
+            
+        frame = pd.DataFrame(data = scored_rows)
+        frame.set_index('prompt_id', inplace=True)
+        print(f'>> writing results to {out_file}')
+        frame.to_csv(out_file)
+
+
+def score_models(models_dir : str, judge : Model):
+    log_files = glob(f'{models_dir}/*.csv')
+
+    if len(log_files) == 0:
+        legacy_score_models(models_dir, judge)
+    else:
+        new_score_models(log_files, judge)
 
 def format_path(*path_to_file : str) -> str: 
     """ Preffixes file name with a timestamp and replace all '/' to '-' in the file portion of of the path"""
