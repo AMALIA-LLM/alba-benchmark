@@ -116,6 +116,7 @@ def score_samples(
 
     category_shots = FEWSHOT_CSV[FEWSHOT_CSV['category'] == category]
     assert len(category_shots) > 0
+    assert all(map(lambda pair: len(pair.response) > 0, pairs))
 
     few_shot_examples = [
         { 

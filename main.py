@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 
-from dataclasses import asdict
-import sys
-import json
+from dataclasses import asdict, dataclass
+import os, sys, json, time, tyro
 import numpy as np
-from typing import Any
+import pandas as pd
+
+from typing import Any, Union, Annotated
 from dotenv import load_dotenv
 from glob import glob
-from models import Gemini, Model
+
+from models import Gemini, HuggingFaceModel, Model
 from scorer import Metric, score_samples, SamplePair
 
 def extract_bench_id(data : dict[str, Any]) -> str:
@@ -29,7 +31,6 @@ def rescore_sample(sample : dict, score : Metric) -> dict:
 
 def fix_log_data(log_data : dict[str, Any], bench_id : str, scores : list[Metric]):
     mean, stderr = aggregate_scores(scores)
-
 
     # FIXME: find a way to make this not be this error prone
     log_data['results'][bench_id] |= {
@@ -82,7 +83,7 @@ def aggregate_scores(scores : list[Metric]) -> tuple[tuple, tuple]:
     plain_scores = [score.score for score in scores]
     return np.mean(plain_scores), np.std(plain_scores) # pyright: ignore
 
-def eval_samples(models_dir : str, judge : Model):
+def score_models(models_dir : str, judge : Model):
     print(f"> processing models samples in '{models_dir}'")
     for model_dir in glob(f'{models_dir}/*'):
         log_files = glob(f'{model_dir}/*.json')
@@ -125,7 +126,7 @@ def eval_samples(models_dir : str, judge : Model):
                 [
                     SamplePair(
                         prompt = sample['doc']['prompt'],
-                        response = sample['resps'][0][0].split('</think>')[-1] # remove think tokens for qwen guard
+                        response = sample['resps'][0][0].split('</think>')[-1].strip() # remove think tokens for qwen guard
                     )
                     for sample in samples
                 ], # TODO: should I do strip?
@@ -149,15 +150,84 @@ def eval_samples(models_dir : str, judge : Model):
                     json.dumps(sample, ensure_ascii=False) + '\n' for sample in new_samples
                 ])
 
+
+
+def format_path(*path_to_file : str) -> str: 
+    """ Preffixes file name with a timestamp and replace all '/' to '-' in the file portion of of the path"""
+    time_portion = time.strftime("%Y-%m-%dT%H-%M-%S%z")
+    file_name = f'{time_portion}_{path_to_file[-1].replace('/', '-')}' 
+    return file_name if len(path_to_file) == 1 else os.path.join(*path_to_file[:-1], file_name)
+
+@dataclass
+class ScoreConfig:
+    base_path : str | list[str]
+
+@dataclass
+class GenerationConfig:
+    model_name_or_path : str
+    output_base_path : str | None = None
+    system_prompt : str | None    = None
+
+def generate_responses(config : GenerationConfig):
+    from vllm import SamplingParams
+    model = HuggingFaceModel(
+        config.model_name_or_path,
+        system_prompt   = config.system_prompt,
+        sampling_params = SamplingParams(
+            temperature=0,
+            max_tokens=1024,
+        )
+    )
+
+    data  = pd.read_csv('./resources/prompts.csv')
+    assert len(data) == 400
+    prompts = list(data['prompt'])
+    result = model.generate_with_debug(
+        prompts, max_connections = len(prompts),
+    )
+    frame = pd.DataFrame(
+        data = list(zip(
+            data['id'],               # prompt_id
+            data['category'],         # category
+            [config.model_name_or_path] * len(prompts),   # model
+            prompts,                  # prompt
+            result.outputs,           # model_response
+            result.templated_inputs   # raw_model_input
+        )),
+        columns = ['prompt_id', 'category', 'model_name', 'prompt', 'model_response', 'raw_model_input'] # pyright: ignore
+    )
+
+    frame.set_index('prompt_id', inplace=True)
+    output_file = format_path(
+        config.output_base_path or '.',
+        config.model_name_or_path   \
+                .strip('/')         \
+                .lower()            \
+                .replace('_', '-')  \
+                .replace('/', '_') + '.csv'
+    )
+
+    frame.to_csv(output_file)
+    print(f"saved results in '{output_file}'")
+
 # TODO: https://ai.google.dev/gemini-api/docs/batch-api?batch=file (look at this)
 def main(): 
-    if len(sys.argv) < 2:
-        print(f"usage: python3 {sys.argv[0]} <samples_dir>", file=sys.stderr)
-        sys.exit(1)
+    args   = sys.argv[1:] if len(sys.argv) > 1 else ['--help']
+    choice = tyro.cli(
+        Union[
+            Annotated[GenerationConfig, tyro.conf.subcommand(name="generate")],
+            Annotated[ScoreConfig,   tyro.conf.subcommand(name="score")],
+        ], args=args # pyright: ignore
+    ) # pyright: ignore
 
-    load_dotenv()
-    judge = Gemini('gemini-2.5-pro')
-    for models_dir in sys.argv[1:]:
-        eval_samples(models_dir, judge)
+    if isinstance(choice, GenerationConfig):
+        generate_responses(choice)
+    else:
+        assert isinstance(choice, ScoreConfig)
+        load_dotenv()
+        judge = Gemini('gemini-2.5-pro')
+        paths = [choice.base_path] if isinstance(choice.base_path, str) else choice.base_path
+        for path in paths:
+            score_models(path, judge)
 
 if __name__ == '__main__': main()

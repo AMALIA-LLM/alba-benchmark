@@ -1,11 +1,12 @@
+from dataclasses import dataclass
 from google.genai.types import GenerateContentConfig
 from openai import OpenAI
 from google import genai 
 from itertools import batched
 from dotenv import load_dotenv
-# from vllm import LLM
+from google.genai.types import HttpOptions
 from concurrent.futures import ThreadPoolExecutor
-from typing import Callable
+from typing import Callable, cast
 from tqdm import tqdm
 
 import os, time, sys
@@ -65,10 +66,12 @@ class ChatGPT(Model):
         ) 
 
 class Gemini(Model):
+    # def __init__(self, model_name : str, **args):
     def __init__(self, model_name : str):
         self.model_name = model_name
-        self.client = genai.Client(
-            api_key=os.getenv('GEMINI_API_KEY')
+        self.client     = genai.Client(
+            api_key=os.getenv('GEMINI_API_KEY'),
+            # http_options=HttpOptions(timeout=30000),
         )
 
     def get_name(self) -> str:
@@ -82,19 +85,43 @@ class Gemini(Model):
             ).text, # pyright: ignore
             prompts, max_connections
         ) 
+
+@dataclass
+class GenerationResult:
+    outputs : list[str]
+    templated_inputs : list[str]
     
-# class HuggingFaceModel(Model):
-#     def __init__(self, model_name : str):
-#         # self.max_connections = max_connections
-#         self.model_name = model_name
-#         self.model = LLM(model=model_name)
-#
-#     def get_name(self) -> str:
-#         return self.model_name
-#
-#     def generate_in_batch(self, prompts: list[str], max_connections : int) -> list[str]:
-#         results = []
-#         for batch in batched(prompts, max_connections):
-#             results.extend(self.model.generate(batch))
-#         return [v.outputs[0].text for v in results]
+class HuggingFaceModel(Model):
+    def __init__(self, model_name : str, system_prompt : str | None = None, **gen_args):
+        from vllm import LLM
+        # self.max_connections = max_connections
+        self.model_name = model_name
+        self.model = LLM(model=model_name)
+        self.extra_msgs = [{"role": "system", "content": system_prompt }] if system_prompt else []
+        self.get_args = gen_args
+
+    def get_name(self) -> str:
+        return self.model_name
+
+    def generate_with_debug(self, prompts: list[str], max_connections : int) -> GenerationResult:
+        processed_prompts = cast(list[str], [
+            self.model.get_tokenizer().apply_chat_template(
+                self.extra_msgs + [{"role": "user", "content": prompt }],  # pyright: ignore
+                  tokenize=False, add_generation_prompt=True
+            ) for prompt in prompts
+        ])
+
+        results = []
+        for batch in batched(processed_prompts, max_connections):
+            results.extend(self.model.generate(
+                batch, **self.get_args 
+            ))
+
+        return GenerationResult(
+            outputs = [v.outputs[0].text for v in results],
+            templated_inputs = processed_prompts
+        )
+
+    def generate_in_batch(self, prompts: list[str], max_connections : int) -> list[str]:
+        return self.generate_with_debug(prompts, max_connections).outputs
 
