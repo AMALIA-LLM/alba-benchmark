@@ -50,7 +50,7 @@ Pontuação Global: <pontuação de 1 a 5>
 """
 
 # TODO: should I just add this inline?
-FEWSHOT_CSV = pd.read_csv("resources/fewshot_samples.csv", index_col='id')#, index_col=)
+FEWSHOT_CSV = pd.read_csv("fewshot_samples.csv", index_col='id')#, index_col=)
 
 @dataclass
 class SamplePair:
@@ -104,6 +104,7 @@ def extract_response_1_score_pt(judge_prompt : str, response: str) -> Metric:
     except:
         print("\n\n\n", file=sys.stderr)
         print(response, file=sys.stderr)
+        print('size', len(response), file=sys.stderr)
         print("\n\n\n", file=sys.stderr)
         raise Exception("Error extracting response")
 

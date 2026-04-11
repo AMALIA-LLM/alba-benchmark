@@ -1,0 +1,187 @@
+id,Prompt,Answer A (5),Rating,Answer B (4-3),Rating.1,Answer C (2-1),Rating.2
+11,"Indica-me a transcrição fonética da palavra ""sabático"".","Claro! A transcrição fonética é um método usado para transcrever os sons das línguas, sendo, para tal, usado o alfabeto fonético. Portanto, aqui está a transcrição fonética da palavra ""sabático"" é [sɐ.bˈa.ti.ku]. A pronúncia indicativa é a mesma para Lisboa padrão e Lisboa não padrão.",5,"Claro! A transcrição fonética é um método usado para transcrever os sons das línguas, sendo, para tal, usado o alfabeto fonético. Portanto, aqui está a transcrição fonética da palavra ""sabático"" é [sɐ.bˈa.ti].",3,"Claro! A transcrição fonética é um método usado para transcrever os sons das línguas, sendo, para tal, usado o alfabeto fonético. Portanto, aqui está a transcrição fonética da palavra ""sabático"" é [sɐ.bˈa.ti], de acordo com o padrão do português brasileiro.",1
+12,"Explica-me o que é o fenómeno fonético crase e dá exemplos de, pelo menos, três frases onde se verifique crase.","A crase é um fenómeno fonético que ocorre com a contração da preposição ""a"" com os determinantes artigos femininos (singular e plural: ""à"", ""às"") e com alguns demonstrativos (""àquele""). Assim sendo, verificamos que a crase é a contração de duas vogais numa só vogal. Aqui ficam frases onde ocorre crase:
+""Costumas ir àquele bar?"" (a + aquele)
+""Despacha-te, o filme começa às 18h!"" (a + as)
+""O que achas de oferecermos uma prenda à Marisa?"" (a + a)",5,"A crase é um fenómeno fonético que ocorre com a contração da preposição ""a"" com os determinantes artigos femininos (singular e plural: ""à"", ""às"") e com alguns demonstrativos (""àquele""). Assim sendo, verificamos que a crase é a contração de duas vogais numa só vogal. Aqui ficam frases onde ocorre crase:
+""Costumas ir àquele bar?"" (a + aquele)
+""O que achas de oferecermos uma prenda à Marisa?"" (a + a)",4,"A crase é um fenómeno fonético que ocorre com a contração da preposição ""a"" com os determinantes artigos femininos (singular e plural: ""à"", ""às"") e com alguns demonstrativos (""àquele""). Assim sendo, verificamos que a crase é a contração de duas vogais numa só vogal. Aqui ficam frases onde ocorre crase:
+""Você costuma ir àquele bar?"" (a + aquele)
+""O que você acha de darmos um presente à Marisa?"" (a + a)",2
+13,Indica-me cinco exemplos de palavras cuja sílaba é de formato aberto.,"Aqui ficam cinco palavras de sílaba aberta, ou seja, que não terminam em consoante: avaria, cacifo, numeração, objeto, transição.",5,"Aqui vão cinco palavras com sílaba aberta, ou seja, que não terminam em consoante: avaria, cacifo, transição.",3,"Aqui vão cinco palavras com sílaba aberta, ou seja, que não terminam em consoante: avarias.",1
+14,Dá-me cinco exemplos de palavras cuja sílaba é de formato fechado.,"Aqui estão cinco palavras de sílaba fechada, ou seja, que terminam em consoante: atravessar, dedais, facilitar, óculos, programar.",5,"Aqui estão cinco palavras de sílaba fechada, ou seja, que terminam em consoante: atravessar, dedais, óculos, programar.",4,"Aqui estão cinco palavras de sílaba fechada, ou seja, que terminam em consoante: atravessou, dedais, óculos, programacão, tênis.",2
+15,Podes criar um poema de seis versos com rima emparelhada?,"Claro! A rima emparelhada é um dos esquemas rimáticos possíveis em língua portuguesa. Aqui fica um poema de seis versos com rima emparelhada:
+
+Coração que batia
+Junto à água fria.
+Corria gelada
+Naquela alvorada.
+Levantou voo um beija-flor
+Que lhe sentia a dor.
+
+A rima emparelhada é obtida através das palavras batia/fria, gelada/alvorada e beija-flor/dor. 
+",5,"Claro! A rima emparelhada é um dos esquemas rimáticos possíveis em língua portuguesa. Aqui fica um poema de seis versos com rima emparelhada:
+
+Coração que batia
+Junto à água fria.
+Corria gelada
+E levantou voo um beija-flor.
+
+A rima emparelhada é obtida através das palavras batia/fria, gelada/beija-flor.
+",3,"Claro! A rima emparelhada é um dos esquemas rimáticos possíveis em língua portuguesa. Aqui fica um poema de dois versos com rima com cruzamento:
+
+Coração que batia
+Junto à água fria.
+
+A rima emparelhada é obtida através das palavras batia/fria.",1
+16,Quais os modos de articulação das consoantes em língua portuguesa?,"Existem quatro modos de articulação das consoantes em língua portuguesa. Distinguem-se entre oclusivas, fricativas, laterais, vibrantes.",5,"Existem três modos de articulação das consoantes em língua portuguesa. Distinguem-se entre oclusivas, fricativas, e laterais.",3,Existem dois modos de articulação das consoantes em língua portuguesa. Distinguem-se entre ocultas e friccionadas.,1
+17,Cria um poema de oito versos com rima cruzada.,"Claro! A rima cruzada (também designada rima alternada) é um dos esquemas rimáticos possíveis em língua portuguesa. Aqui fica um poema de oito versos, com duas estrofes, com rima cruzada:
+
+Indo, rindo, a vida vai fluindo
+Invariavelmente perturbada
+Por vezes escapulindo,
+Alada.
+
+Observa os astros, na noite escura
+Em busca de um sentido.
+Porque o que perdura
+Raramente é compreendido.
+
+A rima cruzada é obtida, na primeira estrofe, através das palavras fluindo/escapulindo, perturbada/alada. Já na segunda estrofe, a rima cruzada é obtida através das palavras escura/perdura, sentido/compreendido.",5,"Claro! A rima cruzada (também designada rima alternada) é um dos esquemas rimáticos possíveis em língua portuguesa. Aqui fica um poema de oito versos, com duas estrofes, com rima cruzada:
+
+Ia e fui
+Para o além
+Onde o tempo não flui
+nem se vê ninguém.
+
+Cairam todos
+que nem tordos
+na desilusão
+que era a sua definição.
+
+A rima cruzada é feita através de (verso 1 ""fui""/verso 3 ""flui"") e (verso 2 ""além""/verso 4 ""ninguém"") e do (verso 5 ""todos""/verso 6 ""tordos"") e (verso 7 ""desilusão""/verso 8 ""definição"").",4,"Claro! A rima cruzada (também designada rima alternada) é um dos esquemas rimáticos possíveis em língua portuguesa. Aqui fica um poema de oito versos, com uma estrofe, com rima cruzada:
+
+Que lindo que é o sol
+Que bela que é a lua
+Tudo reluz sobre o seu brilho
+Tudo fica resplandecente.
+Era tudo tão belo,
+Belo como o sol,
+Belo como a lua.
+",1
+18,"Dá-me exemplos de cinco palavras constituídas, cada qual, por um grupo consonântico.","Claro! Antes de mais, importa esclarecer o que são grupos consonânticos. É a designação dada a duas consoantes seguidas que pertencem à mesma sílaba. Aqui ficam cinco exemplos de palavras com grupo consonântico: bloco (blo.co), briga (bri.ga), flagrante (fla.gran.te), plural (plu.ral), travessia (tra.ves.si.a). Como se pode verificar pelos exemplos, os grupos consonânticos surgem com frequência nas palavras em que a segunda consoante é a letra ""l"" ou ""r"".",5,"Claro! Antes de mais, importa esclarecer o que são grupos consonânticos. É a designação dada a duas consoantes seguidas que pertencem à mesma sílaba. Aqui ficam cinco exemplos de palavras com grupo consonântico: brinco (brin.co), briga (bri.ga), flutuar (flu.tu.ar), pontual (pun.tu.al), tragédia (tra.gé.di.a).",4,"Claro! Antes de mais, importa esclarecer o que são grupos consonânticos. É a designação dada a duas consoantes seguidas que pertencem à mesma sílaba. Aqui ficam cinco exemplos de palavras com grupo consonântico: brilho (bri.lho), trazer (tra.zer), tanto (tan.to).",2
+19,"Dá-me exemplos de cinco palavras constituídas pelos grupos consonânticos ""gn"" e ""pn"".","Claro! Embora menos comuns do que nos casos em que a segunda consoante da palavra é ""l"" ou ""r"", os grupos consonânticos ""gn"" e ""pn"" também ocorrem em língua portuguesa. Portanto, aqui ficam cinco palavras constituídas pelos grupos consonânticos referidos: gnomo (gno.mo), gnu (gnu), pneometria (pne.o.me.tri.a), pneu (pneu), pneumologia (pneu.mo.lo.gi.a).",5,"Claro! Embora menos comuns do que nos casos em que a segunda consoante da palavra é ""l"" ou ""r"", os grupos consonânticos ""gn"" e ""pn"" também ocorrem em língua portuguesa. Portanto, aqui ficam cinco palavras constituídas pelos grupos consonânticos referidos: gnomo (gno.mo), gnu (gnu), pneumático (pneu.má.ti.co), pneu (pneu), mnemónico (mne.mó.ni.co).",4,"Claro! Embora menos comuns do que nos casos em que a segunda consoante da palavra é ""l"" ou ""r"", os grupos consonânticos ""gn"" e ""pn"" também ocorrem em língua portuguesa. Portanto, aqui ficam cinco palavras constituídas pelos grupos consonânticos referidos: gnomo (gno.mo), gongo (gon.go), mnemónico (mne.mó.ni.co).",2
+20,"Indica-me um trava-línguas com repetição de ""r"".","Claro! Aqui está um trava-línguas com repetição de ""r"": ""O rato roeu a rolha da garrafa do rei da Rússia.""",5,"Claro! Aqui está um trava-línguas com repetição de ""r"": ""Riram-se e sorriram quando ruiram ruínas muito bonitas na rua dos ruidosos ratos.""",4,"Claro! Aqui está um trava-línguas com repetição de ""r"": ""O rio rugia com o som das cataratas.""",2
+21,"Divide os seguintes versos em sílabas métricas e classifica-os de acordo com a sua escansão:
+“Verdes campos vi passar / na frescura do luar.”","Aqui está a escansão dos versos:
+Ver/des/ cam/pos/ vi/ pas/sar/
+na/ fres/cu/ra/ do/ lu/ar.
+
+A contagem de sílabas métricas é feita até à sílaba tónica da última palavra do verso. Sendo que tanto ""passar"" como ""luar"" são palavras agudas, ou seja, em ambas as palavras a sílaba tónica está na última sílaba, então em ambos os versos são contabilizadas as sílabas até ao fim, perfazendo um total de sete sílabas métricas. Assim sendo, ambos os versos são heptassílabos, o que corresponde à Redondilha Maior.",5,"Aqui está a escansão dos versos:
+Ver/des/ cam/pos/ vi/ pa/ssar/
+na/ fres/cu/ra/ do/ lu/ar.
+Ambos os versos são heptassílabos, o que corresponde à Redondilha Maior.",4,Ambos os versos são octassílabos.,1
+22,"Inventa uma frase que use repetições de sons sibilantes (/s/, /z/) para criar musicalidade.","Aqui está um trava-línguas que usa repetições de sons sibilantes (/s/, /z/) para criar musicalidade:
+""Zebras zarolhas são zeladas sucessivamente por zangões zangados só se saltarem sozinhas.""",5,"Aqui está um trava-línguas que usa repetições de sons sibilantes (/s/, /z/) para criar musicalidade:
+""Sazonal e incisivo, seria zeloso saltar agora.""",4,"Aqui está um trava-línguas que usa repetições de sons sibilantes (/s/, /z/) para criar musicalidade:
+""São sereias sem sentimentos.""",2
+23,"Cria um trava-línguas com a repetição do encontro consonantal ""tr"".","Aqui está um trava-línguas com a repetição do encontro consonantal ""tr"":
+""Trinca trutas tristes, traz trios, troca troncos, trama truques e traça trilhos.""",5,"Aqui está um trava-línguas com a repetição do encontro consonantal ""tr"":
+""Trazias trigo do triângulo triste.""",4,"Aqui está um trava-línguas com a repetição do encontro consonantal ""tr"":
+""Também teria torradas e trilhos.""",2
+24,Identifica fenómenos de síncope (queda de som no interior da palavra) e apócope (queda de som no fim da palavra) em exemplos do português europeu.,"Os processos de aférese, síncope e apócope, que são muito comuns na evolução das línguas, são responsáveis por muitas mudanças fonológicas em português.
+A aférese caracteriza-se pelo desaparecimento de um fonema no início da palavra. Em português europeu, um exemplo deste fenómeno é a palavra ""para"" (pɐ.ɾɐ) que na fala pode ser pronunciada como ""pra"" (pɾɐ).
+A síncope caracteriza-se pelo desaparecimento de um fonéma não final. Em português europeu, um exemplo deste fenómeno é a palavra ""fósforo"" (ˈfɔʃ.fu.ɾu) que na fala pode ser pronunciada como ""fósfro"" (ˈfɔʃ.fɾu).
+A apócope caracteriza-se pelo desaparecimento de um fonema no fim da palavra. Em português europeu, um exemplo deste fenómeno é a palavra ""couve"" (ˈko.vɨ) que na fala pode ser pronunciada como ""couv"" (ˈkov).",5,"Os processos de aférese, síncope e apócope, que são muito comuns na evolução das línguas, são responsáveis por muitas mudanças fonológicas em português.
+A aférese caracteriza-se pelo desaparecimento de um fonema no início da palavra. Em português europeu, um exemplo deste fenómeno é a palavra ""para"" (pɐ.ɾɐ) que na fala pode ser pronunciada como ""pra"" (pɾɐ).
+A síncope caracteriza-se pelo desaparecimento de um fonéma não final. Em português europeu, um exemplo deste fenómeno é a palavra ""fósforo"" (ˈfɔʃ.fu.ɾu) que na fala pode ser pronunciada como ""fósfro"" (ˈfɔʃ.fɾu).
+",3,"Os processos de aférese, síncope e apócope, que são muito comuns na evolução das línguas, são responsáveis por muitas mudanças fonológicas em português.
+A aférese caracteriza-se pelo desaparecimento de um fonema no fim da palavra. 
+A síncope caracteriza-se pelo desaparecimento de um fonéma no início da palavra.
+A apócope caracteriza-se pelo desaparecimento de um fonema não final. ",1
+25,"Inventa um poema de quatro versos que use repetições de sons sibilantes (/ʃ/, /ʒ/)) e que use rima para criar musicalidade.","Aqui está um poema de quatro versos que usa repetições de sons sibilantes (/ʃ/, /ʒ/)) e que usa rima para criar musicalidade:
+""Chove chuva que chora, 
+charmosa chuvinha que jorra, 
+chafariz jubilante e gentil 
+que já desabrochara outrora."" ",5,"Aqui está um poema de quatro versos que usa repetições de sons sibilantes (/ʃ/, /ʒ/)) e que usa rima para criar musicalidade:
+""Chove chuva chove chove, 
+Chove chuva chove,
+Chove chuva chove chove
+Chuva chuva chove.""",4,"Aqui está um poema de quatro versos que usa repetições de sons sibilantes (/ʃ/, /ʒ/)) e que usa rima para criar musicalidade:
+""Choveu um dia, 
+cheio de alegria,
+mas eu tenho alergia.""",2
+26,"Dá-me exemplos de palavras com 4 sílabas que rimam com ""carrinho"".","Aqui estão dez exemplos de palavras com 4 sílabas que rimam com ""carrinho"":
+1. coitadinho
+2. sentadinho
+3. coelhinho
+4. passarinho
+5. quadradinho
+6. direitinho
+7. bocadinho
+8. encaminho
+9. colarinho
+10. adivinho",5,"Aqui estão dez exemplos de palavras com 4 sílabas que rimam com ""carrinho"":
+1. coitadinho
+2. sentadinho
+3. fofinho
+4. passarinho
+5. quadradinho
+6. direitinho
+7. rapazinho
+8. encaminho
+9. colarinho
+10. minho",4,"Aqui estão dez exemplos de palavras com 4 sílabas que rimam com ""carrinho"":
+1. carro
+2. amarelinho
+3. fofinho
+4. rapazinho
+5. quadradinho
+6. milho
+7. hino
+9. carrito
+10. minho",2
+27,"Divide a palavra ""malabarista"" em sílabas e cria uma frase em que todas as sílabas sejam usadas.","A palavra ""malabarista"" dividida em sílabas seria: ma - la - ba - ris - ta
+Aqui está uma frase que usa todas as sílabas da palavra ""malabarista"":
+""A barista entornou café na mala.""",5,"A palavra ""malabarista"" dividida em sílabas seria: ma - la - ba - ris - ta
+Aqui está uma frase que usa todas as sílabas da palavra ""malabarista"":
+""A malabarista acenou-me.""",3,"A palavra ""malabarista"" dividida em sílabas seria: ma - la - ba - ris - ta
+Aqui está uma frase que usa todas as sílabas da palavra ""malabarista"":
+""A mala é baril.""",2
+28,"Escreve um trava-línguas com repetição do som ""ʃ"".","Aqui está um exemplo de um trava-línguas com repetição do som ""ʃ"":
+""Sabichão mexe-se, chora ""chucha"", chama charme, e despacha chouriço e salsicha.""",5,"Aqui está um exemplo de um trava-línguas com repetição do som ""ʃ"":
+""Chachadas com conversas de chacha, charadas chilream chateadas, sem nunca mexer nada.""",4,"Aqui está um exemplo de um trava-línguas com repetição do som ""ʃ"":
+""Xilofones chatos andam como gatos sem nunca se chatearem.""",2
+29,"Divide o seguinte verso em sílabas métricas e classifica-o de acordo com a sua escansão: ""As grandes árvores abanavam""","Divisão das sílabas métricas: As - gran - des - ár - vo - res - a - ba - na - vam
+O verso ""As grandes árvores abanavam"" é eneassílabo, ou seja, tem nove sílabas métricas.",5,"Divisão das sílabas métricas: As - gran - des - ár - vo - res - a - ba - na - vam
+O verso ""As grandes árvores abanavam"" é octossílabo, ou seja, tem oito sílabas métricas.",3,"O verso ""As grandes árvores abanavam"" é decassílabo, ou seja, tem cinco sílabas métricas.",1
+30,"Dá-me exemplos de profissões ou ocupações com três sílabas que rimam com ""madeira"".","Aqui estão dez exemplos de profissões ou ocupações com três sílabas que rimam com ""madeira"":
+1. ferreira
+2. livreira
+3. bombeira
+4. padeira
+5. arqueira
+6. banqueira
+7. vidreira
+8. parteira
+9. vaqueira
+10. pedreira",5,"Aqui estão dez exemplos de profissões ou ocupações com três sílabas que rimam com ""madeira"":
+1. ferreira
+2. livreira
+3. bombeira
+4. padeira
+5. arqueira
+6. banqueira
+7. vidreira
+8. parteira
+9. vaqueira
+10. trepadeira",4,"Aqui estão dez exemplos de profissões ou ocupações com três sílabas que rimam com ""madeira"":
+1. estrangeira
+2. livreira
+3. engenheira
+4. alcoviteira
+5. professora
+6. banqueira
+7. parteira
+9. médica
+10. trepadeira",2

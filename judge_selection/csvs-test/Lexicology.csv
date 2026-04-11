@@ -1,0 +1,86 @@
+id,Prompt,Answer A (5),Rating,Answer B (4-3),Rating.1,Answer C (2-1),Rating.2
+1,"Dá-me 5 sinónimos para ""inusitado"".","Aqui estão cinco sinónimos do adjetivo ""inusitado"":
+1. insólito
+2. anormal
+3. invulgar
+4. estranho
+5. inesperado",5,"Aqui estão cinco sinónimos do adjetivo ""inusitado"":
+1. incomum
+2. excêntrico
+3. inspirado
+4. excecional
+5. inesperado",4,"Aqui estão cinco sinónimos do adjetivo ""inusitado"":
+1. insólito
+2. regular
+3. comum
+4. interessante
+5. inesperado",2
+2,"Dá-me um exemplo de um hiperónimo possível para a seguinte lista de palavras: caderno, lapiseira, lápis, borracha, estojo, régua, tesoura, caneta, marcador, corretor.","Um hiperónimo é uma palavra que estabelece uma relação hierárquica com outras palavras, sendo o hiperónimo um termo geral que inlcui outras palavras (os hipónimos). Os hiperónimos possíveis para ""caderno, lapiseira, lápis, borracha, estojo, régua, tesoura, caneta, marcador, corretor"" podem ser ""material escolar"", ""artigos de papelaria"" ou ""material de escritório"".",5,"Um hiperónimo é uma palavra que estabelece uma relação hierárquica com outras palavras, sendo o hiperónimo um termo geral que inlcui outras palavras (os hipónimos). Os hiperónimos possíveis para ""caderno, lapiseira, lápis, borracha, estojo, régua, tesoura, caneta, marcador, corretor"" podem ser ""material escolar"", ""escola"" ou ""material de escritório"".",4,"Um hiperônimo é uma palavra que estabelece uma relação hierárquica com outras palavras, então o hiperônimo é um termo geral que inlcui outras palavras (os hipônimos). Os hiperônimos possíveis para ""caderno, lapiseira, lápis, borracha, estojo, régua, tesoura, caneta, marcador, corretor"" podem ser ""escolar"" ou ""aprendizado"".",1
+3,"Dá-me 5 antónimos para ""suave"".","Aqui estão cinco antónimos do adjetivo ""suave"":
+1. rugoso
+2. áspero
+3. enrugado
+4. bruto
+5. irregular",5,"Aqui estão cinco antónimos do adjetivo ""suave"":
+1. macio
+2. bruto
+3. rugoso
+4. fragoso
+5. turbulento",4,"Aqui estão cinco antónimos do adjetivo ""suave"":
+1. liso
+2. acidentado
+3. macio
+4. bruto
+5. humido",2
+4,"Dá-me 6 merónimos de ""árvore"".","Um merónimo é uma palavra que se refere a uma parte de um todo (o holónimo). Aqui estão seis merónimos de ""árvore"":
+1. folha 
+2. ramo 
+3. galho 
+4. tronco 
+5. flor 
+6. fruto",5,"Um merónimo é uma palavra que se refere a uma parte de um todo (o holónimo). Aqui estão seis merónimos de ""árvore"":
+1. arvorinha 
+2. ramo 
+3. galho 
+4. tronco 
+5. flor 
+6. fruto",4,"Um merônimo é uma palavra que refere uma parte de um todo (o holônimo). Aqui estão seis merônimos para ""árvore"":
+1. cipestre 
+2. pinheiro 
+3. laranjeira 
+4. figueira 
+5. macieira 
+6. plátano",1
+5,Dá-me um exemplo de palavras homógrafas.,"As palavras homógrafas são palavras que possuem a mesma grafia mas significados diferentes, sendo que por vezes também têm pronúncia diferente. 
+Um exemplo poderia ser a palavra ""acordo"", nome que significa concórdia e entendimento, e ""acordo"", verbo na primeira pessoa do singular do Presente do Indicativo.",5,"As palavras homógrafas são palavras que possuem a mesma grafia mas significados diferentes, sendo que também têm pronúncia diferente. 
+Um exemplo poderia ser a palavra ""corda"", nome que significa um conjunto de fios, e ""acordo"", verbo na primeira pessoa do singular do Presente do Indicativo.",3,"As palavras homôgrafas são palavras que possuem a mesma grafia e o mesmo sgnificado, sendo que têm pronúncia diferente. 
+Um exemplo poderia ser a palavra ""corda"", nome que significa um conjunto de fios, e ""corda"", nome que significa um fio para secar a roupa.",1
+6,Dá-me um exemplo de duas palavras homófonas.,"As palavras homófonas são palavras que tem a mesma pronúncia, mas grafias e significados diferentes.
+Duas palavras homófonas seriam, por exemplo, a palavra ""conselho"", que significa um parecer ou um ensinamento, e a palavra ""concelho"", que significa uma câmara ou município.",5,"As palavras homófonas são palavras que tem a mesma pronúncia, mas grafias e significados diferentes.
+Duas palavras homófonas seriam, por exemplo, a palavra ""por"", uma preposição e ""pôr"", um verbo.",3,"As palavras homôfonas são palavras que tem a mesma pronúncia, mas grafias e significados diferentes.
+Duas palavras homôfonas seriam, por exemplo, a palavra ""fio"" e a palavra ""rio"".",1
+7,"Dá-me 5 hipónimos para ""veículo"".","Um hipónimo é uma palavra mais específica cujo significado se encontra incluído no de outra (o hiperónimo).
+Aqui estão cinco hipónimos possíveis para o hiperónimo ""veículo"".
+1. carro 
+2. carrinha 
+3. autocarro 
+4. camião 
+5. autocaravana",5,"Um hipónimo é uma palavra mais específica cujo significado se encontra incluído no de outra (o hiperónimo).
+Aqui estão cinco hipónimos possíveis para o hiperónimo ""veículo"".
+1. carrão 
+2. carrinha 
+3. autocarro 
+4. carrinho 
+5. autocaravana",4,"Um hipônimo é uma palavra mais específica cujo significado se encontra incluído no de outra (o hiperônimo).
+Aqui estão cinco hipônimos possíveis para o hiperônimo ""veículo"".
+1. carro 
+2. carrinha 
+3. avião 
+4. barco 
+5. bicicleta",2
+8,"A palavra ""janela"" pode ser merónimo de que holónimos? Dá alguns exemplos.","Um merónimo é uma palavra que se refere a uma parte de um todo (o holónimo). 
+Aqui estão alguns exemplos de holónimos de ""janela"": casa, edifício, divisão, sala, prédio.",5,"Um merónimo é uma palavra que se refere a uma parte de um todo (o holónimo). 
+Aqui estão alguns exemplos de holónimos de ""janela"": casa, porta, divisão, sala, prédio.",4,"Um merônimo é uma palavra que se refere a uma parte de um todo (o holônimo). 
+Aqui estão alguns exemplos de holônimos de ""janela"": porta, saída, entrada, sala, prédio.",2
+9,Dá-me um exemplo de duas palavras parónimas.,"Palavras parónimas são palavras com grafias e pronúncias semelhantes mas significados diferentes. Duas palavras parónimas poderiam ser, por exemplo, a palavra ""descrição"", que significa ""enumeração"" ou ""ato de descrever"", e a palavra ""discrição"", que significa ""qualidade de discreto ou circunspecto"".",5,"Palavras parónimas são palavras com grafias e pronúncias semelhantes mas significados diferentes. Duas palavras parónimas poderiam ser, por exemplo, a palavra ""descrever"", que significa ""enumeração"" ou ""ato de descrever"", e a palavra ""discrição"", que significa ""qualidade de discreto ou circunspecto"".",4,"Palavras parônimas são palavras com grafias e pronúncias semelhantes mas significados diferentes. Duas palavras parónimas poderiam ser, por exemplo, a palavra ""inscrição"", que significa ""ato de inscrever"", e a palavra ""discrição"", que significa ""qualidade de discreto ou circunspecto"".",2
+10,Que palavras podem fazer parte do campo lexical de fórmula 1?,"Um campo lexical é um conjunto de palavras relacionadas por um significado a um determinado domínio conceptual. Algumas palavras que podem fazer parte do campo lexical de ""fórmula 1"" incluem: piloto, corrida, bandeira de xadrez, pneu, volante, pista, autódromo, circuito, mecânico, bandeira vermelha, bandeira amarela, comissário, reta da meta, linha de chegada, curva.",5,"Um campo lexical é um conjunto de palavras relacionadas por um significado a um determinado domínio conceptual. Algumas palavras que podem fazer parte do campo lexical de ""fórmula 1"" incluem: piloto, corrida, bandeira de xadrez, pneu, volante, pista, autódromo, circuito, mecânico, bandeira vermelha, bandeira amarela, comissário, reta da meta, linha de chegada, curva, mota, airbag.",4,"Um campo lexical é um conjunto de palavras relacionadas por um significado a um determinado domínio conceptual. Algumas palavras que podem fazer parte do campo lexical de ""fórmula 1"" incluem: formulinha, formulão, carrito, carrão, motinha, motão.",1

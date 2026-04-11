@@ -1,0 +1,83 @@
+id,Prompt,Answer A (5),Rating,Answer B (4-3),Rating.1,Answer C (2-1),Rating.2
+11,"Que outras formas posso usar para pedir ""café com cheirinho""?","Um ""café com cheirinho"" é um café misturado com uma pequena dose de aguardente de bagaço. São vários os sinónimos para esta expressão: café beirão, café com chiripiti, café cubano. Se estiveres no arquipélago da Madeira ou no dos Açores, podes pedir um ""café com música"".",5,"Um ""café com cheirinho"" é um café misturado com uma pequena dose de aguardente de bagaço. São vários os sinónimos para esta expressão: café beirão, café com chiripiti, café de Cuba. Se estiveres no arquipélago da Madeira ou no dos Açores, podes pedir um ""café musical"".",3,"Um ""café com cheirinho"" é um café misturado com uma pequena dose de aguardente de bagaço.",1
+12,"As frases seguintes estão em português do Brasil: ""Depois do almoço, a gente ficou de boa na rede, batendo papo e ouvindo música. De vez em quando batia um ventinho bom, e o cheirinho de café vindo da cozinha deixava tudo ainda mais gostoso."" Podes adaptar para que fique em português europeu e explicar as alterações?","Sim, claro! Aqui fica a frase adaptada para português europeu: ""Depois do alomoço, ficámos a descontrair no jardim, a conversar e a ouvir música. De vez em quando soprava uma brisa agradável e o cheirinho do café vindo da cozinha tornava a tarde ainda melhor.""
+
+Analisemos as alterações:
+""a gente"": é alterado para ""ficámos"". Em português do Brasil, ""a gente"" é usado como 1.ª pessoa do plural (sentido de ""nós"")
+""ficou de boa"": é típico do português do Brasil, mas não é usado na língua portuguesa
+""na rede"": isto é, ""rede de descanso"", não é comum em Portugal como sítio para descansar
+""batendo papo"": é uma expressão típica do português do Brasil
+""ouvindo"": o gerúndio é muito comum em português brasileiro; em português, há preferência pelo ""a"" + infinitivo
+""batia um ventinho bom"" e ""deixava tudo ainda mais gostoso"": é bastante informal, pelo uso do diminutivo (por exemplo). Em português europeu, usa-se linguagem mais neutra e formal.",5,"Sim, claro! Aqui fica a frase adaptada para português europeu: ""Depois do alomoço, ficámos a descontrair no jardim, a conversar e a ouvir música. De vez em quando soprava uma brisa agradável e o cheirinho do café vindo da cozinha tornava a tarde ainda melhor.""
+Analisemos as alterações:
+
+""a gente"": é alterado para ""ficámos"". Em português do Brasil, ""a gente"" é usado como 1.ª pessoa do plural (sentido de ""nós"")
+""na rede"": isto é, ""rede de descanso"", não é comum em Portugal como sítio para descansar
+""ouvindo"": o gerúndio é muito comum em português brasileiro; em português, há preferência pelo ""a"" + infinitivo
+""batia um ventinho bom"" e ""deixava tudo ainda mais gostoso"": é bastante informal, pelo uso do diminutivo (por exemplo). Em português europeu, usa-se linguagem mais neutra e formal.",4,"Sim, claro! Aqui fica a frase adaptada para português europeu: ""Depois do alomoço, ficámos a descontrair no jardim, a conversar e a ouvir música. De vez em quando soprava uma brisa gostosa e o cheirinho do café vindo da cozinha tornava a tarde ainda melhor.""",2
+13,"A frase ""O zelador esqueceu o casaco no apartamento, pegou o elevador e desceu correndo até a portaria pra avisar que o caminhão do gás já tinha passado"" está em português do Brasil. Que palavras é necessário mudar para que a frase fique em português europeu? Podes explicar as alterações?","Para que a frase fique em português europeu, é necessário substituir as seguintes palavras: ""zelador"", ""esqueceu"", ""pegou"", ""correndo"", ""a"", ""pra"" e ""caminhão"". Deste modo, a frase é a seguinte: ""O porteiro esqueceu-se do casaco no apartamento, apanhou o elevador e desceu a correr até à portaria para avisar que o camião do gás já tinha passado.""
+
+Analisemos as alterações:
+""zelador"": ""porteiro"" é a palavra equivalente em português europeu
+""esqueceu o casaco"": alteração para ""esqueceu-se"" e ""do casaco"", já que o português europeu exige o pronome reflexivo e a respetiva preposição
+""pegou"": o verbo associado ao uso do elevador é diferente em português europeu e português do Brasil
+""correndo"": o gerúndio é muito comum em português brasileiro; em português, há preferência pelo ""a"" + infinitivo
+""a"": é necessária a contração com artigo em português europeu
+""pra"": o português do Brasil permite a utilização da forma informal de ""para"", ao contrário do português de Portugal
+""caminhão"": a grafia é diferente nas duas variantes.",5,"Para que a frase fique em português europeu, é necessário substituir as seguintes palavras: ""zelador"", ""esqueceu"", ""pegou"", ""correndo"", ""a"", ""pra"" e ""caminhão"". Deste modo, a frase é a seguinte: ""O porteiro esqueceu o casaco no apartamento, apanhou o elevador e desceu a correr até à portaria para avisar que o camião do gás já tinha passado.""
+
+Analisemos as alterações:
+""zelador"": ""porteiro"" é a palavra equivalente em português europeu
+""pegou"": o verbo associado ao uso do elevador é diferente em português europeu e português do Brasil
+""correndo"":
+""a"": é necessária a contração com artigo em português europeu
+""pra"": o português do Brasil permite a utilização da forma informal de ""para"", ao contrário do português de Portugal
+""caminhão"": a grafia é diferente nas duas variantes.",3,"Para que a frase fique em português europeu, é necessário substituir algumas palavras. Aqui fica a frase alterada: ""O porteiro esqueceu o casaco, apanhou o elevador e desceu a correr até à portaria para avisar que o camião do gás.""",1
+14,"As frases seguintes estão em português do Brasil: ""No sábado, nós pegamos o ônibus direto para o apartamento do ator. Levamos suco na geladeira e umas meias na mochila, mas tive um enjôo no caminho."" Podes adaptar para que fique em português europeu?","Claro! Aqui fica a frase adaptada para português europeu: ""No sábado, apanhámos o autocarro direto para o andar do ator. Levámos um sumo na geleira e umas meias na mochila, mas tive um enjoo pelo caminho.""",5,"Claro! Aqui fica a frase adaptada para português europeu: ""No sábado, apanhámos o autocarro direto para o andar do ator. Levámos um suco na geleira e umas meias na mochila, mas tive um enjoo pelo caminho.""",4,"Claro! Aqui fica a frase adaptada para português europeu: ""No sábado, apanhámos o ônibus direto para o andar. Levamos um suco na geleira e umas meias na mochila, mas tive um enjôo pelo caminho.""",2
+15,"Diz-me se a seguinte frase está na variante português europeu ou português do Brasil: ""Depois de um dia puxado no trabalho, cheguei em casa, tomei um banho e me joguei no sofá pra maratonar minha série favorita."" ","Claro! A frase está em português do Brasil. Estão presentes na frase várias expressões usadas nessa variante, como ""cheguei em casa"", ""me joguei no sofá"" e ""pra maratonar"".",5,"Claro! A frase está em português do Brasil. Estão presentes na frase várias expressões usadas nessa variante, como ""me joguei no sofá"" e ""pra maratonar"".",3,Claro! A frase está em português europeu.,1
+16,"Identifica a variedade (Português do Brasil ou Português Europeu) presente na seguinte frase: ""Encontrei o gajo que me gamou cinquenta paus."" Explica o significado de toda a gíria que encontrares.","A frase está em português europeu. Na frase estão presentes vários termos que pertencem à gíria do português europeu, como o termo ""gajo"" (indivíduo cujo nome se desconhece ou se quer omitir), ""gamou"" (do verbo ""gamar"", roubar) e ""paus"" (unidade monetária equivalente a euros).",5,"A frase está em português europeu. Na frase estão presentes vários termos que pertencem à gíria do português europeu, como o termo ""gajo"" (indivíduo cujo nome se desconhece ou se quer omitir), e ""gamou"" (do verbo ""gamar"", roubar).",4,"A frase está em português do Brasil. Na frase estão presentes vários termos que pertencem à gíria do português, como o termo ""gamou"" (do verbo ""gamar"", ficar encantado).",1
+17,"Transforma esta frase que está em português do Brasil e coloca-a em português Europeu. Respeita o registo: se houver termos informais ou gíria na frase, tenta encontrar equivalentes na língua de chegada. ""Estou ferrado, moleque. Minha guria está sabendo de tudo!""","Aqui está a frase em português europeu, respeitando o registo e a gíria presentes na frase. 
+""Puto, estou lixado. A minha dama já sabe tudo"".
+Na frase foi trocado ""moleque"" por ""puto"", ""ferrado"" por ""lixado"" e ""guria"" por ""dama"".",5,"Aqui está a frase em português europeu, respeitando o registo e a gíria presentes na frase. 
+""Rapaz, estou lixado. A minha namorada já sabe tudo"".
+Na frase foi trocado ""moleque"" por ""rapaz"", ""ferrado"" por ""lixado"" e ""guria"" por ""namorada"".",4,"Aqui está a frase em português europeu, respeitando o registo e a gíria presentes na frase. 
+""Moço, estou ferrado. Minha namorada sabe tudo"".
+Na frase foi trocado ""moleque"" por ""moço"" e ""guria"" por ""namorada"".",2
+18,"Estas palavras estão escritas de acordo com o português do Brasil. Coloca-as em português Europeu. ""Bônus, sinônimo, cômico, irônico, efêmero, gênio, tênue, gênero.""","Aqui estão as palavras em português europeu:
+1. bónus
+2. sinónimo
+3. cómico
+4. irónico
+5. efémero
+6. génio
+7. ténue
+8. género",5,"Aqui estão as palavras em português europeu:
+1. bónus
+2. sinónimo
+3. cómico
+4. irónico
+5. efémero
+6. génio
+7. tênue
+8. género",4,"Aqui estão as palavras em português europeu:
+1. bônus
+2. sinônimo
+3. cômico
+4. irônico
+5. efêmero
+6. gênio
+7. tênue
+8. gênero",1
+19,"Em português europeu existe uma expressão equivalente à expressão brasileira ""ajoelhou, tem de rezar""?","Em português europeu existe a expressão ""fugir com o rabo à seringa"" que significa fugir de uma situação difícil ou desagradável à qual se comprometeu.",5,"Em português europeu existe a expressão ""fugir com o rabo à seringa"".",4,"Em português europeu existe a expressão ""feito em cima dos joelhos"".",1
+20,"Identifica se a seguinte frase está em PT-BR ou PT-PT, em registo formal ou em registo informal. Explica o significado de toda a gíria que encontrares.
+""Não é que o marmanjo se chibou quando a minha dama lhe perguntou onde é que eu 'tava?""","A frase está em português europeu e tem um registo informal. Na frase estão presentes vários termos que pertencem à gíria do português europeu, especialmente ao português falado em Portugal, como o termo ""marmanjo"" (homem ou jovem cujo nome é desconhecido ou omitido), ""chibou"" (do verbo ""chibar"", denunciar ou revelar algo), e ""dama"" (mulher ou namorada).",5,"A frase está em português europeu e tem um registo informal. Na frase estão presentes vários termos que pertencem à gíria do português europeu, especialmente ao português falado em Portugal, como o termo ""marmanjo"" (homem ou jovem cujo nome é desconhecido ou omitido) e ""chibou"" (do verbo ""chibar"", denunciar ou revelar algo).",4,"A frase está em português do Brasil e tem um registo formal. A frase tem gíria como ""se chibou"" (ficou magoado) e ""tava"" (forma curta do verbo ""estar"" muito usada no Brasil).",1
+21,"Identifica a variedade (Português do Brasil ou Português Europeu) presente na seguinte frase: ""Hoje peguei o ônibus depois do café da manhã e encontrei o cara que roubou minha bike.""","A frase está em português do Brasil. Na frase estão presentes vários termos pertencentes ao português do Brasil, tais como ""ônibus"", ""café da manhã"" e ""o cara"".",5,A frase está em português do Brasil. ,4,A frase está em português Europeu. ,1
+22,"Em Lisboa, quando se vai a um estabelecimento comercial que sirva bebidas alcoólicas, pode-se pedir uma Imperial. Como é que se faria esse pedido no Porto?","No Porto, pedir-se-ia um ""fino"", que é um regionalismo com o mesmo significado de ""imperial"".",5,"No Porto, pedir-se-ia um ""fino"".",4,"No Porto, pedir-se-ia um ""chope"".",1
+23,"Em Lisboa, por norma, usa-se o termo ""pastilha elástica"" para descrever uma goluseima mastigável que não deve ser engolida. Que termos são usados para esta goluseima no Brasil, no Porto, nos Açores, na Madeira, em Angola e em Moçambique?","Esta goluseima tem o nome de ""chiclete"" no Brasil, ""chicla"" no Porto, ""gamesse"" na Madeira, ""gama"" nos Açores e ""chuinga"" em Angola e Moçambique.",5,"Esta goluseima tem o nome de ""pastilha elástica"" em Lisboa, ""chicla"" no Porto, ""chiclete"" na Madeira, ""gama"" nos Açores e ""chuinga"" em Angola e Moçambique.",4,"Esta goluseima tem o nome de ""pastilha elástica"" em Lisboa, ""chiclete"" no Porto, ""gama"" na Madeira e nos Açores e ""chuinga"" em Angola e Moçambique.",2
+24,"No Brasil, o termo ""bala"" é usado para descrever uma pequena guloseima de açúcar que por norma se vende embrulhada em papel colorido plastificado ou metalizado. Em Portugal, como se chama esta gluseima? E o que é que o termo ""bala"" quer dizer em português europeu?","O nome desta guloseima em Portugal é ""rebuçado"". No entanto, em português europeu, a palavra ""bala"" tem o significado de projétil de arma de fogo.",5,"O nome desta guloseima em Portugal é ""doce"". No entanto, em português europeu, a palavra ""bala"" tem o significado de projétil de arma de fogo.",3,"O nome desta guloseima em Portugal é ""confeito"". No entanto, em português europeu, a palavra ""bala"" tem o significado de doce.",1
+25,"No Brasil, usa-se o termo ""pirolito"" para descrever uma goluseima de açúcar enfiada num palito para que possa ser lambida. Em Portugal e em Angola, como se chama esta goluseima?","Esta goluseima tem o nome de ""chupa-chupa"" em Portugal e ""sambapito"" em Angola.",5,"Esta goluseima tem o nome de ""chupa"" em Portugal e ""sambapito"" em Angola.",4,"Esta goluseima tem o nome de ""doce"" em Portugal e ""pirulito"" em Angola.",1
+26,"No Porto, diz-se sapatilhas. Em Lisboa, dir-se-ia como?","Em Lisboa, dir-se-ia ""ténis"", que é um regionalismo com o mesmo significado de ""sapatilhas"".",5,"Em Lisboa, dir-se-ia ""ténis"".",4,"Em Lisboa, dir-se-ia ""sabrinas"".",1
+27,"Em Lisboa, quando se vai a um estabelecimento comercial que sirva café, pode-se pedir um garoto. Como é que se faria esse pedido no Porto?","No Porto, pedir-se ia um ""pingo"", que é um regionalismo com o mesmo significado de ""garoto"".",5,"No Porto, pedir-se ia um ""pingo"".",4,"No Porto, pedir-se ia um ""rapaz"".",1
+28,"Em Lisboa, quando se vai a um estabelecimento comercial que sirva café, pode-se pedir uma bica. Como é que se faria esse pedido no Porto?","No Porto, pedir-se ia um ""cimbalino"", que é um regionalismo com o mesmo significado de ""bica"".",5,"No Porto, pedir-se ia um ""cimbalino"".",4,"No Porto, pedir-se ia um ""abatanado"".",1
+29,"Qual é o termo usado para ""coscuvilheira"" na Ilha da Madeira?","Na Ilha da Madeira, usa-se o termo ""bilhardeira"", que é um regionalismo com o mesmo significado de ""coscuvilheira"".",5,"Na Ilha da Madeira, usa-se o termo ""bilhardeira"".",3,"Na Ilha da Madeira, usa-se o termo ""mexeriqueira"".",2
+30,Existe uma palavra que significa gargalhada que é igual no Brasil e nos Açores? ,"Sim. A palavra ""gaitada"" é usada no Brasil e nos Açores e tem como significado ""gargalhada"".",5,"Sim. A palavra ""riso"" é usada no Brasil e nos Açores e tem como significado ""gargalhada"".",4,"Sim. A palavra ""saracotear"" é usada no Brasil e nos Açores e tem como significado ""gargalhada"".",1

@@ -1,0 +1,47 @@
+id,Prompt,Answer A (5),Rating,Answer B (4-3),Rating.1,Answer C (2-1),Rating.2
+1,"Na seguinte frase, identifica o sujeito, o verbo e o objeto:  ""O Manuel vendeu a sua mota.""","Na frase ""O Manuel vendeu a sua mota."": o sujeito é ""O Manuel"", o verbo é ""vendeu"" e o objeto é ""a sua mota"".",5,"Na frase ""O Manuel vendeu a sua mota."": o sujeito é ""O Manuel"", o verbo é ""a sua mota"" e o objeto é ""vendeu"".",3,"Na frase ""O Manuel vendeu a sua mota."": o sujeito é ""O Manuel"" e o verbo é ""a sua casa"".",1
+2,"Identifica e classifica a oração subordinada na frase: ""Onde eu moro, toda a gente é simpática.""","Na frase ""Onde eu moro, toda a gente é simpática."", ""onde eu moro"" é uma Oração Subordinada Adverbial Locativa.",5,"Na frase ""Onde eu moro, toda a gente é simpática."", ""onde eu moro"" é uma Oração Subordinada Adverbial.",3,"Na frase ""Onde eu moro, toda a gente é simpática."", ""onde eu moro"" é, na verdade, uma Oração Coordenada.",1
+3,"Demonstra porque é que na frase ""Ela caiu ao chão e as amigas ajudaram-na."", ""e as amigas ajudaram-na"" é uma oração coordenada.","É possível demonstrar que ""e as amigas ajudaram-na"" é uma oração coordenada através de dois métodos:
+1. As orações coordenadas não podem ser coordenadas entre si visto que ficam agramaticais.
+Exemplo: *Ela caiu ao chão e as amigas ajudaram-na mas e ninguém se aleijou.
+2. As orações coordenadas não podem ser movidas, ou tornam-se agramaticais.
+Exemplo: *E as amigas ajudaram-na ela caiu ao chão.",5,"É possível demonstrar que ""e as amigas ajudaram-na"" é uma oração coordenada através de dois métodos:
+1. As orações coordenadas não podem ser coordenadas entre si visto que ficam agramaticais.
+Exemplo: *Ela caiu ao chão e as amigas ajudaram-na mas e ninguém se aleijou.
+2. As orações coordenadas podem ser movidas.
+Exemplo: *E as amigas ajudaram-na ela caiu ao chão.",3,"É possível demonstrar que ""e as amigas ajudaram-na"" é uma oração coordenada através de dois métodos:
+1. As orações coordenadas podem ser movidas.
+Exemplo: *E as amigas ajudaram-na ela caiu ao chão.",1
+4,"Na frase ""O André comprou os legumes para o irmão no supermercado"", identifica o complemento e o modificador.","""Aqui estão os complementos e modificadores presentes na frase """"O André comprou os legumes para o irmão no supermercado"""":
+""""os legumes"""": complemento direto
+""""para o irmão"""": complemento indireto
+""""no supermercado"""": modificador do grupo verbal""",5,"Aqui estão os complementos e modificadores presentes na frase ""O André comprou os legumes para o irmão no supermercado"":
+""os legumes"": complemento direto
+""para o irmão"": complemento
+""no supermercado"": modificador do grupo verbal",4,"Aqui estão os complementos e modificadores presentes na frase ""O André comprou os legumes para o irmão no supermercado"":
+""os legumes"": complemento
+""para o irmão"": complemento
+""no supermercado"": modificador",2
+5,"Qual é o sujeito da seguinte frase: ""Fomos muito rápidos.""","O sujeito presente na frase é um sujeito nulo subentendido. Embora não esteja expresso na frase, o sujeito pode ser identificado pela forma verbal de ""fomos"" que se apresenta na primeira pessoa do plural, ficando subentendido que o sujeito será ""nós"". ",5,"O sujeito presente na frase é um sujeito nulo expletivo. Embora não estando expresso na frase, ele pode ser identificado pela forma verbal de ""fomos"" que se apresenta na primeira pessoa do plural, ficando subentendido que o sujeito será ""nós"". ",3,"O sujeito presente na frase é ""rápidos"".",1
+6,Dá-me um exemplo de uma frase com sujeito pós-verbal.,"Aqui está um exemplo de uma frase com sujeito pós-verbal, ou seja, em que o sujeito ocorre após o verbo: 
+""Aqui vai a gente.""
+Verbo: vai
+Sujeito: a gente",5,"Aqui está um exemplo de uma frase com sujeito pós-verbal, ou seja, em que o sujeito ocorre após o verbo: 
+""Aqui vai a gente.""
+Verbo: vai
+Sujeito: aqui",3,"Aqui está um exemplo de uma frase com sujeito pós-verbal: 
+""Vai a gente.""
+Verbo: gente
+Sujeito: vai",1
+7,"Coloca esta frase na forma passiva: ""Ele vendeu a mota.""","Aqui está a frase na forma passiva:
+""A mota foi vendida por ele.""",5,"Aqui está a frase na forma passiva:
+""A mota foi vendida.""",3,"Aqui está a frase na forma subjetiva:
+""A moto foi vendida.""",1
+8,"Coloca esta frase na forma ativa: ""Os carros foram conduzidos pelos pilotos.""","Aqui está a frase na forma ativa:
+""Os pilotos conduziram os carros.""",5,"Aqui está a frase na forma subjetiva:
+""Os pilotos conduziram os carros.""",3,"""Os carros foram dirigidos pelos pilotos.""",1
+9,"As palavras nesta frase estão na ordem errada. ""caducas perenes folhas verdes outono inverno ano as as as as no e no o se que árvores inteiro mantêm geralmente árvores enquanto perdem suas"" Reconstrói a frase. ","Aqui está a frase com as palavras na ordem correta:
+""As árvores caducas geralmente perdem as suas folhas no outono e no inverno enquanto que as árvores perenes se mantêm verdes o ano inteiro.""",5,"Aqui está a frase com as palavras na ordem correta:
+""As árvores geralmente perdem as suas folhas no outono e no inverno enquanto que as árvores perenes se mantêm o ano inteiro.""",4,"Aqui está a frase com as palavras na ordem correta:
+""Árvores caducas perdem suas folhas no outono, geralmente, e no inverno enquanto que as perenes árvores se mantêm verdes verdes o ano inteiro.""",2
+10,"Que tipo de frase é ""Podes vir connosco este fim-de-semana?"". Escolhe entre as opções disponíveis: declarativa, exclamativa, interrogativa, imperativa.","A frase ""Podes vir connosco este fim-de-semana?"" é interrogativa.",5,"A frase ""Podes vir connosco este fim-de-semana?"" é imperativa.",3,"A frase ""Podes vir connosco este fim-de-semana?"" é condicional.",1

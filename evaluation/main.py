@@ -9,9 +9,11 @@ from typing import Any, Union, Annotated
 from dotenv import load_dotenv
 from glob import glob
 
-from models import Gemini, HuggingFaceModel, Model
+from models import Gemini, ChatGPT, HuggingFaceModel, Model
 from scorer import Metric, score_samples, SamplePair
 from typing import cast
+
+from datasets import load_dataset
 
 def extract_bench_id(data : dict[str, Any]) -> str:
     keys = list(data['results'].keys())
@@ -133,7 +135,7 @@ def legacy_score_models(models_dir : str, judge : Model):
                     for sample in samples
                 ], # TODO: should I do strip?
                 category,
-                max_connections = 50
+                max_connections = 25
             )
 
             # the following 2 instructions tries to format the samples and log_data as if the whole pipeline was ran on 
@@ -159,7 +161,7 @@ def extract_model_name(model_name : str) -> str:
 
 RENAMES = {
     "47-32k-9B-carminho-with_euroblocks_safety_hermes_customst/checkpoint-2875": "AMALIA-9B 32k v49",
-    "47-4k-9B-carminho-with_euroblocks_safety_hermes_customst/checkpoint-13590": "AMALIA-9B 4k v49",
+    "47-4k-9B-carminho-with_euroblocks_safety_hermes_customst/checkpoint-13590": "AMALIA-9B 4k v49 (checkpoint 13590)",
     "47-32k-llama/checkpoint-700": "AMALIA-LLaMA-3.1-8B-32k",
     "49-32k-llama_instruct/checkpoint-1767": "AMALIA-LLaMA-3.1-8B-Instruct-32k",
     "47-32k-qwen3_8B/checkpoint-1482": "AMALIA-Qwen3-8B-32k",
@@ -209,7 +211,7 @@ def new_score_models(models_log_files : list[str], judge : Model):
             model_name     =  new_rows[0]['model_name']
             real_model_name = RENAMES.get(extract_model_name(model_name), model_name)
             
-            assert len(new_rows) == 50
+            assert len(new_rows) == 100
             scores = score_samples(
                 judge,
                 [ 
@@ -257,23 +259,43 @@ class GenerationConfig:
     output_base_path : str | None = None
     system_prompt : str | None    = None
 
-def generate_responses(config : GenerationConfig):
+def load_model(config : GenerationConfig) -> Model:
+    name_or_path = config.model_name_or_path
+    api_models = [
+        ('gemini/', Gemini),
+        ('chatgpt/', ChatGPT)
+    ]
+
+    for prefix, builder in api_models:
+        if name_or_path.startswith(prefix):
+            model_id = '/'.join( name_or_path.split('/')[1:] )
+            print(f"loading API model '{model_id}'")
+            return builder(model_id)
+    
     from vllm import SamplingParams
-    model = HuggingFaceModel(
+    return HuggingFaceModel(
         config.model_name_or_path,
         system_prompt   = config.system_prompt,
         sampling_params = SamplingParams(
-            temperature=0,
+            temperature=0.0,
+            # top_p=1.0,
             max_tokens=1024,
+            seed=42,
         )
     )
 
-    data  = pd.read_csv('./resources/prompts.csv')
-    assert len(data) == 400
+def generate_responses(config : GenerationConfig):
+    model = load_model(config)
+    data  = load_dataset('carminho/alba', 'prompts')['train'].to_pandas()
+
+    assert isinstance(data, pd.DataFrame)
+    assert len(data) == 800
+
     prompts = list(data['prompt'])
-    result = model.generate_with_debug(
-        prompts, max_connections = len(prompts),
+    result  = model.generate_with_debug(
+        prompts, max_connections = 50,
     )
+
     frame = pd.DataFrame(
         data = list(zip(
             data['id'],               # prompt_id
@@ -309,11 +331,11 @@ def main():
         ], args=args # pyright: ignore
     ) # pyright: ignore
 
+    load_dotenv()
     if isinstance(choice, GenerationConfig):
         generate_responses(choice)
     else:
         assert isinstance(choice, ScoreConfig)
-        load_dotenv()
         judge = Gemini('gemini-2.5-pro')
         paths = [choice.base_path] if isinstance(choice.base_path, str) else choice.base_path
         for path in paths:

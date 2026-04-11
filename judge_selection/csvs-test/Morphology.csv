@@ -1,0 +1,267 @@
+id,Prompt,Answer A (5),Rating,Answer B (4-3),Rating.1,Answer C (2-1),Rating.2
+1,"Identifica o tempo, modo e pessoa dos verbos na seguinte frase: ""Eu queria um gelado mas só se fôssemos almoçar primeiro.""","Na frase ""Eu queria um gelado mas só se fôssemos almoçar primeiro."" estão presentes três verbos:
+- ""queria"", primeira pessoa do singular do pretérito imperfeito do Indicativo;
+- ""fôssemos"", primeira pessoa do plural do pretérito imperfeito do Conjuntivo;
+- ""almoçar"", impessoal.",5,"Na frase ""Eu queria um gelado mas só se fôssemos almoçar primeiro."" estão presentes três verbos:
+- ""queria"", primeira pessoa do singular do pretérito imperfeito do Imperativo;
+- ""fôssemos"", primeira pessoa do plural do pretérito imperfeito do Condicional;
+- ""almoçar"", impessoal.",3.0,"Na frase ""Eu queria um gelado mas só se fôssemos almoçar primeiro."" estão presentes três verbos:
+- ""queria"", terceira pessoa do plural do pretérito imperfeito do Imperativo;
+- ""fôssemos"", primeira pessoa do singular do pretérito perfeito do Condicional;
+- ""almoçar"", imperativo.",1
+2,"Classifica os adjetivos da seguinte frase quanto ao grau: ""Aquele edifício é muito alto, mas o que está ao lado dele é o mais alto deles todos"".","Na frase estão presentes dois adjetivos.
+- na primeira ocorrência, o adjetivo em ""muito alto"" está no grau superlativo absoluto analítico;
+- na segunda ocorrência, o adjetivo em ""o mais alto"" está no grau superlativo relativo de superioridade.",5,"Na frase estão presentes dois adjetivos.
+- na primeira ocorrência, o adjetivo em ""muito alto"" está no grau superlativo absoluto sintético;
+- na segunda ocorrência, o adjetivo em ""o mais alto"" está no grau superlativo relativo de inferioridade.",3.0,"Na frase estão presentes dois adjetivos.
+- na primeira ocorrência, o adjetivo em ""muito alto"" está no grau absolutivo sintético;
+- na segunda ocorrência, o adjetivo em ""o mais alto"" está no grau superlativo sintético de inferioridade.",1
+3,"Dá-me todos os graus do adjetivo ""pobre"" com exemplos.","Aqui estão todos os graus do adjetivo ""pobre"" com exemplos:
+
+Grau normal: pobre
+Exemplo: O Tiago é pobre.
+
+Grau comparativo de inferioridade: menos pobre que
+Exemplo: O Tiago é menos pobre que a Ana.
+
+Grau comparativo de igualdade: tão pobre como
+Exemplo: O Tiago é tão pobre como a Ana.
+
+Grau comparativo de superioridade: mais pobre que
+Exemplo: O Tiago é mais pobre que a Ana.
+
+Grau superlativo absoluto analítico: muito pobre
+Exemplo: O Tiago é muito pobre.
+
+Grau superlativo absoluto sintético: paupérrimo/pobríssimo
+Exemplo: O Tiago é paupérrimo. / O Tiago é pobríssimo.
+
+Grau superlativo relativo de inferioridade: o menos pobre
+Exemplo: O Tiago é o menos pobre nesta vila.
+
+Grau superlativo relativo de superioridade: o mais pobre
+Exemplo: O Tiago é o mais pobre nesta vila.",5,"Aqui estão todos os graus do adjetivo ""pobre"" com exemplos:
+
+Grau normal: pobre
+Exemplo: O Tiago é pobre.
+
+Grau comparativo de inferioridade: menos pobre que
+Exemplo: O Tiago é menos pobre que a Ana.
+
+Grau comparativo de igualdade: tão pobre como
+Exemplo: O Tiago é tão pobre como a Ana.
+
+Grau comparativo de superioridade: mais pobre que
+Exemplo: O Tiago é mais pobre que a Ana.
+
+Grau superlativo relativo analítico: muito pobre
+Exemplo: O Tiago é muito pobre.
+
+Grau superlativo relativo sintético: pobríssimo
+Exemplo: O Tiago é pobríssimo.
+
+Grau superlativo relativo de inferioridade: o menos pobre
+Exemplo: O Tiago é o menos pobre nesta vila.
+
+Grau superlativo relativo de superioridade: o mais pobre
+Exemplo: O Tiago é o mais pobre nesta vila.",4.0,"Aqui estão todos os graus do adjetivo ""pobre"" com exemplos:
+
+Grau normal: pobre
+Exemplo: O Tiago é muito pobre.
+
+Grau comparativo de inferioridade: mais pobre que
+Exemplo: O Tiago é tão pobre como a Ana.
+
+Grau superlativo de igualdade: tão pobre como
+Exemplo: O Tiago é mais pobre que a Ana.
+
+Grau superlativo de superioridade: menos pobre que
+Exemplo: O Tiago é mais pobre que a Ana.
+
+Grau superlativo relativo analítico: muito pobre
+Exemplo: O Tiago é muito pobre.
+
+Grau superlativo relativo sintético: pobrissíssimo
+Exemplo: O Tiago é pobrissíssimo.
+",1
+4,"Dá-me uma lista com 20 palavras que comecem com ""int"".","Aqui estão vinte palavras que começam por ""int"":
+1. interessante
+2. interrogar
+3. intérprete
+4. interesse
+5. interrogatório
+6. interrogação
+7. intimista
+8. intrínseco
+9. intensidade
+10. intermitente
+11. integridade
+12. intenção
+13. intransigente
+14. intenso
+15. interação
+16. intuito
+17. interlocutor
+18. intermediário
+19. inteligível
+20. inteligente",5,"Aqui estão vinte palavras que começam por ""int"":
+1. interessante
+2. enteral
+3. intérprete
+4. interesse
+5. interação
+6. inspiração
+7. intimista
+8. intenso
+9. increpar
+10. intermitente
+11. integridade
+12. intenção
+13. integridade
+14. intenso
+15. interação
+16. intuito
+17. interlocutor
+18. intermediário
+19. inculturação
+20. intimista",3.0,"Aqui estão vinte palavras que começam por ""int"":
+1. interessante
+2. enteral
+3. intérprete
+4. interesse
+5. interação
+6. inspiração
+7. intercâmbio
+8. intenso
+9. increpar
+10. intermitente
+11. icônico
+12. intenção
+13. incômodo
+14. intenso
+15. interação
+16. inidôneo
+17. irônico
+18. intermediário
+19. inculturação
+20. intimista",1
+5,"Quais são as palavras com mais letras ""i"" em português?","Aqui estão algumas das palavras em português europeu com mais letras ""i"":
+1. indivisibilidade: 6 letras ""i""
+2. ininteligibilidade: 6 letras ""i""
+3. anticonstitucionalissimamente: 5 letras ""i""",5,"Aqui estão algumas das palavras em português europeu com mais letras ""i"":
+1. indivisibilidade: 7 letras ""i""
+2. ininteligibilidade: 7 letras ""i""
+3. anticonstitucionalissimamente: 4 letras ""i""",4.0,"Aqui estão as palavras em português europeu com mais letras ""i"":
+1. início: 4 letras ""i""
+2. irônico: 2 letras ""i""
+3. incômodo: 2 letras ""i""",1
+6,"Dá-me uma lista de 10 palavras que contenham as vogais a, e, i, o e u sem repetir nenhuma vogal ou consoante.","Aqui está uma lista de dez palavras que contêm as vogais ""a"", ""e"", ""i"", ""o"" e ""u"" sem repetir nenhuma vogal ou consoante:
+1. toupeira
+2. banqueiro
+3. requintado
+4. tabuleiro
+5. goluseima
+6. eucalipto
+7. fogueira
+8. exaustivo
+9. catequismo
+10. euforia",5,"Aqui está uma lista de dez palavras que contêm as vogais ""a"", ""e"", ""i"", ""o"" e ""u"" sem repetir nenhuma vogal ou consoante:
+1. toupeira
+2. arquiteto
+3. requintado
+4. tabuleiro
+5. desilusão
+6. eucalipto
+7. fogueira
+8. exaustivo
+9. agricultor
+10. euforia",4.0,"Aqui está uma lista de dez palavras que contêm as vogais ""a"", ""e"", ""i"", ""o"" e ""u"" sem repetir nenhuma vogal ou consoante:
+1. comunidade
+2. arquiteto
+3. requintado
+4. madeira
+5. desilusão
+6. eucalipto
+7. ousadia
+8. areia
+9. agricultor
+10. euforia",2
+7,"Cria uma lista com 10 palavras com 6 letras que acabem em ""ço"".","Aqui está uma lista com dez palavras de seis letras que acabam em ""ço"":
+1. começo
+2. noviço
+3. almoço
+4. pedaço
+5. maciço
+6. caroço
+7. soluço
+8. ouriço
+9. ricaço
+10. espaço",5,"Aqui está uma lista com dez palavras de seis letras que acabam em ""ço"":
+1. aço
+2. boliço
+3. avanço
+4. abraço
+5. maciço
+6. caroço
+7. almôço
+8. começo
+9. ameaço
+10. apreço",4.0,"Aqui está uma lista com dez palavras de seis letras que acabam em ""ço"":
+1. aço
+2. boliço
+3. avanço
+4. sádico
+5. pescoço
+6. encalço
+7. almôço
+8. começo
+9. ameaço
+10. adereço",2
+8,"Dá-me 5 exemplos de palavras complexas com o mesmo radical que ""perfume"".","Aqui estão 5 palavras complexas com o mesmo radical que ""perfume"":
+1. perfumadamente
+2. perfumar 
+3. perfumista 
+4. perfumado 
+5. perfumaria",5,"Aqui estão 5 palavras complexas com o mesmo radical que ""perfume"":
+1. perfumadamente
+2. perfumar 
+3. perfurar 
+4. perfumado 
+5. lança-perfume",3.0,"Aqui estão 5 palavras complexas com o mesmo radical que ""perfume"":
+1. perfumadamente
+2. perfume 
+3. perfurar 
+4. lança-perfume",2
+9,"Classifica todas as palavras da seguinte frase: ""Eu já não volto mais.""","Aqui estão as palavras da frase ""Eu já não volto mais."" com a sua classificação.
+Eu: pronome pessoal
+já: advérbio de tempo
+não: advérbio de negação
+volto: verbo, presente do indicativo, primeira pessoa do singular
+mais: advérbio de quantidade",5,"Aqui estão as palavras da frase ""Eu já não volto mais."" com a sua classificação.
+Eu: pronome pessoal
+já: advérbio 
+não: advérbio
+volto: verbo
+mais: advérbio ",4.0,"Aqui estão as palavras da frase ""Eu já não volto mais."" com sua classificação.
+Eu: pronome
+já: adverbio 
+não: adverbio
+volto: verbo
+mais: adverbio",2
+10,"Adiciona sufixos avaliativos aumentativos a estas palavras:
+cadeira, mala, porta, neve, carro.","Aqui estão as palavras fornecidas com sufixos avaliativos aumentativos:
+1. Cadeira - Cadeirão
+2. Mala - Malão
+3. Porta - Portão
+4. Neve - Nevão
+5. Carro - Carrão",5,"Aqui estão as palavras fornecidas com seus sufixos avaliativos aumentativos:
+1. Cadeira - Cadeirão
+2. Mala - Malão
+3. Porta - Portão
+4. Neve - Nevão
+5. Carro - Carrete",3.0,"Aqui estão as palavras fornecidas com seus sufixos avaliativos aumentativos:
+1. Cadeira - Cadeirinha
+2. Mala - Malona
+3. Porta - Porta Maior
+4. Neve - Nevão
+5. Carro - Carreta",1

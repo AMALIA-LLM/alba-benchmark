@@ -1,0 +1,143 @@
+id,Prompt,Answer A (5),Rating,Answer B (4-3),Rating.1,Answer C (2-1),Rating.2
+11,Faz uma lista das preposições existentes em língua portuguesa.,"As preposições ligam dois termos de uma frase e estabelecem relações semânticas diversas, como de tempo, espaço e movimento. Aqui ficam as preposições existentes em língua portuguesa: a, ante, após, até, com, contra, de, desde, em, entre, para, perante, por, segundo, sem, sob, sobre, trás. ",5,"As preposições ligam dois termos de uma frase e estabelecem relações semânticas diversas, como de tempo, espaço e movimento. Aqui ficam as preposições existentes em língua portuguesa: a, ante, até, com, mais, contra, de, desde, em, entre, para, perante, por, sem, sob, sobre, trás. ",4.0,"As preposições ligam dois termos de uma frase e estabelecem relações semânticas diversas, como de tempo, espaço e movimento. Aqui ficam as preposições existentes em língua portuguesa: a, antes, até, mais, contra, de, desde, no, entre, para, mesmo, pôr, sem, sob, sobre, depois. ",2
+12,Indica-me três palavras parassintéticas.,"Antes de mais, importa definir o que são palavras parassintéticas. Formadas através do processo morfológico parassíntese, as palavras parassintéticas exibem, em simultâneo, um prefixo e um sufixo. Então, aqui ficam três exemplos:
+Apadrinhar (a + padrinho + ar)
+Descampado (des + campo + ado)
+Emagrecer (e + magr + ecer)",5,"Primeiro, é importante definir palavras parassintéticas. Formadas pelo processo morfológico da parassíntese, as palavras parassintéticas apresentam um prefixo e um sufixo. Então, aqui estão três exemplos:
+Apadrinhar (a + padrinha + ar)
+Descampado (des + campo + ar)
+Emagrecer (e + magr + ecer)",4.0,"As palavras parassintéticas apresentam um prefixo e um sufixo. Aqui ficam três exemplos:
+Apadrinhar (a + padrinho + ar)
+Descampado (des + campo + ar)
+Emagrecer (e + magro + cer)",2
+13,Dá-me três exemplos de palavras complexas.,"Antes de mais, importa referir que existem, em língua portuguesa, palavras simples e palavras complexas. As palavras simples são formadas por um único radical (por exemplo, casa: sendo ""cas"" o radical e ""a"" o índice temático), enquanto as palavras complexas são formadas por derivação ou composição. Então, aqui ficam três palavras complexas: 
+Caixote (caix + ote)
+Garrafão (garrafa + ão)
+Girassol (gira + sol)",5,"Antes de mais nada, é importante notar que em português existem palavras simples e palavras complexas. Palavras simples são formadas por uma única raiz (por exemplo, ""cas"": com ""cas"" como raiz e ""a"" como índice temático), enquanto palavras complexas são formadas por derivação ou composição. Então, aqui estão três palavras complexas:
+Caixote (caixa + ote)
+Garrafão (garraf + ão)
+Girassol (gira + ssol)",3.0,"Palavras simples são formadas por uma única raiz (por exemplo, ""cas"": com ""cas"" como raiz e ""a"" como índice temático), enquanto palavras complexas são formadas por derivação ou composição. Então, aqui estão três palavras complexas:
+Caixote (caix + o + te)
+Garrafão (gar + raf + ão)
+Girassol (gira + ssol)",1
+14,"Cria uma lista de dez palavras com oito letras que acabem em ""ão"".","Claro! Aqui ficam dez palavras com oito letras acabadas em ""ão"":
+1. Extensão
+2. Gratidão
+3. Intuição
+4. Inversão
+5. Oposição
+6. Previsão
+7. Reflexão
+8. Religião
+9. Sensação
+10. Tradição",5,"Claro! Aqui ficam dez palavras com oito letras acabadas em ""ão"":
+1. Cão
+2. Obsessão
+3. Intuição
+4. Confusão
+5. Retenção
+6. Reflexão
+7. Erudição
+8. Comiloso
+9. Evolução
+10. Exatidão",4.0,"Claro! Aqui ficam dez palavras com oito letras acabadas em ""ão"":
+1. Cão
+2. Mão
+3. Então
+4. Queridas
+5. Não
+6. Previsão
+7. Malão
+8. Portão
+9. Comiloso
+10. Tradição",1
+15,"Quais os constituintes morfológicos da palavra ""rapazinho""?","Aqui ficam os constituintes morfológicos da palavra ""rapazinho"":
+[rapaz] - radical
+[inho] - sufixo de grau diminutivo",5,"Aqui ficam os constituintes morfológicos da palavra ""rapazinho"":
+[rapaz] - radical
+[inho] - sufixo",4.0,"Aqui ficam os constituintes morfológicos da palavra ""rapazinho"":
+[rapaz] - raiz
+[inho] - sufixo de grau diminuitivo",2
+16,"Quais os constituintes morfológicos da palavra ""desconforto""?","Aqui ficam os constituintes morfológicos da palavra ""desconforto"":
+[des] - prefixo
+[conforto] - radical",5,"Aqui ficam os constituintes morfológicos da palavra ""desconforto"":
+[des] - prefixo
+[conforto] - raiz",4.0,"Aqui ficam os constituintes morfológicos da palavra ""desconforto"":
+[des] - prefixo
+[con] - sufixo
+[forto] - radix",1
+17,Dá-me três exemplos de classes fechadas de palavras.,"Claro! Antes disso, importa definir o que são classes fechadas de palavras. Trata-se de um conjunto finito de palavras, à qual é raro serem acrescentadas novas palavras. Os seguintes exemplos constituem classes fechadas de palavras: pronomes, determinantes, quantificadores.",5,"Claro! Antes disso, é importante definir classes de palavras fechadas. São conjuntos finitos de palavras, aos quais raramente se acrescentam novos itens. Os exemplos a seguir constituem classes de palavras fechadas: pronomes, determinantes, quantificadores e conjunções.",3.0,"Claro! Antes disso, é importante definir clases de palavras fechadas. São conjuntos finitos de palavras, aos quais raramente se acrescentam novos itens. Os exemplos siguientes constituem classes de palavras cerradas: preposições, advérbios, verbos.",1
+18,"Qual o tempo, pessoa e modo dos verbos na seguinte frase: ""Falhámos a vida, menino! Mas todo o mundo mais ou menos a falha. Isto é, falha-se sempre na realidade aquela vida que se planeou com a imaginação.""","O tempo, pessoa e modo dos verbos expressos na frase, da autoria de Eça de Queirós (obra Os Maias), são os seguintes:
+""Falhámos"" - pretérito perfeito do indicativo, 1.ª pessoa do plural
+""falha"" - presente do indicativo, 3.ª pessoa do singular
+""falha-se"" - presente do indicativo, 3ª pessoa do singular
+""planeou"" - pretérito perfeito do indicativo, 3.ª pessoa do singular",5,"O tempo, pessoa e modo dos verbos expressos na frase, da autoria de Eça de Queirós (obra Os Maias), são os seguintes:
+""Falhámos"" - pretérito perfeito do imperativo, 1.ª pessoa do plural
+""falha"" - presente do indicativo, 3.ª pessoa do singular
+""falha-se"" - pretérito perfeito do indicativo, sujeito indeterminado
+""planeou"" - pretérito perfeito do indicativo, 3.ª pessoa do plural",3.0,"O tempo, pessoa e modo dos verbos expressos na frase, da autoria de Eça de Queirós (obra Os Maias), são os seguintes:
+""Falhámos"" - pretérito imperfeito do imperativo, 1.ª pessoa do plural
+""falha"" - pretérito perfeito do indicativo, 2.ª pessoa do plural
+""falha-se"" - pretérito perfeito do imperativo, sujeito indeterminado
+""planeou"" - pretérito imperfeito do indicativo, 3.ª pessoa do plural",1
+19,"Altera os verbos da frase para o modo imperativo: ""Trouxeste o que te pedi do supermercado?""","Claro! Aqui fica a frase alterada para o modo imperativo: ""Traz o que te pedi do supermercado."" A forma ""trouxeste"" foi alterada do pretérito perfeito do indicativo para o presente do imperativo. A forma ""pedi"" mantém-se no pretérito perfeito.",5,"Claro! Aqui fica a frase alterada para o modo imperativo: ""Trarás o que te pedi do supermercado."" A forma ""trouxeste"" foi alterada do pretérito imperfeito do indicativo para o presente do imperativo. A forma ""pedi"" mantém-se no pretérito perfeito.",3.0,"Claro! Aqui fica a frase alterada para o modo imperativo: ""Trarás o que te pedirei do supermercado."" A forma ""trouxeste"" foi alterada do pretérito imperfeito do indicativo para o futuro. A forma ""pedi"" mantém-se no pretérito imperfeito.",1
+20,"Analisa tempo, pessoa e modo dos verbos na frase seguinte: ""Se me tivesses dito mais cedo, teria cancelado a reserva.""","Aqui fica, então, a análise do tempo, pessoa e modo dos verbos da frase apresentada:
+""tivesses dito"" - pretérito mais-que-perfeito do conjuntivo, 2.ª pessoa do singular
+""teria cancelado"" - pretérito do condicional , 3.ª pessoa do singular",5,"Aqui fica, então, a análise do tempo, pessoa e modo dos verbos da frase apresentada:
+""tivesses dito"" - pretérito perfeito do conjuntivo, 2.ª pessoa do singular
+""teria cancelado"" - pretérito do condicional , 3.ª pessoa do singular",4.0,"Aqui fica, então, a análise do tempo, pessoa e modo dos verbos da frase apresentada:
+""tivesses dito"" - presente do condicional, 2.ª pessoa do singular
+""teria cancelado"" - condicional , 3.ª pessoa do plural",2
+21,"Classifica o grau dos adjetivos presentes na seguinte frase: ""O Cláudio optou por comprar o computador mais caro da loja. Apesar de ser mais rápido do que o anterior que tinha comprado, os amigos disseram-lhe que, apesar disso, foi caríssimo. No entanto, o Cláudio acredita que fez uma escolha mais acertada do que no passado.""","Os adjetivos apresentados na frase ""O Cláudio optou por comprar o computador mais caro da loja. Apesar de ser tão rápido como o anterior que tinha comprado, os amigos disseram-lhe que, apesar disso, foi caríssimo. No entanto, o Cláudio acredita que fez uma escolha mais acertada do que no passado"" estão nos seguintes graus:
+""mais caro"" - grau superlativo relativo de superioridade
+""mais rápido do que"" - grau comparativo de superioridade
+""caríssimo"" - grau superlativo absoluto sintético
+""mais acertada"" - grau comparativo de superioridade",5,"Os adjetivos apresentados na frase ""O Cláudio optou por comprar o computador mais caro da loja. Apesar de ser tão rápido como o anterior que tinha comprado, os amigos disseram-lhe que, apesar disso, foi caríssimo. No entanto, o Cláudio acredita que fez uma escolha mais acertada do que no passado"" estão nos seguintes graus:
+""mais caro"" - grau superlativo superioridade
+""tão rápido como"" - grau comparativo de igualdade
+""caríssimo"" - grau superlativo sintético
+""mais acertada"" - grau comparativo de superioridade",4.0,"Os adjetivos apresentados na frase ""O Cláudio optou por comprar o computador mais caro da loja. Apesar de ser tão rápido como o anterior que tinha comprado, os amigos disseram-lhe que, apesar disso, foi caríssimo. No entanto, o Cláudio acredita que fez uma escolha mais acertada do que no passado"" estão nos seguintes graus:
+""mais caro"" - grau superlativo
+""tão rápido como"" - grau comparativo
+""caríssimo"" - grau sintético
+""mais acertada"" - grau comparativo ",2
+22,Explica-me a diferença entre um interfixo e um sufixo.,Claro! Um interfixo trata-se de um afixo que se verifica entre duas formas de base ou entre uma base e um afixo. Já um sufixo é um afixo que se coloca à direita de uma forma de base.,5,Claro! Um interfixo trata-se de um sufixo que se verifica entre duas formas de base ou entre uma base e um afixo. Já um sufixo é um afixo que se coloca à esquerda de uma forma de base.,3.0,Claro! Um interfixo trata-se de um afixo que se verifica antes de duas formas de base ou antes de uma base e um afixo. Já um sufixo é um afixo que se coloca à esquerda de uma forma de base.,2
+23,Podes dar-me três exemplos de palavras com interfixo?,"Claro! Antes de mais, importa esclarecer que um interfixo é um afixo que se verifica entre duas formas de base ou entre uma base e um afixo. Então, aqui estão cinco palavras com interfixo: avozinho (letra ""z""), cafezinho (letra ""z""), psicopata (letra ""o"").",5,"Claro! Antes de mais, importa esclarecer que um interfixo é um afixo que se verifica entre duas formas de base ou entre uma base e um afixo. Então, aqui estão cinco palavras com interfixo: cazinha (letra ""z""), florzinha (letra ""z""), agricultor (letra ""c"").",4.0,"Claro! Antes de mais, importa esclarecer que um interfixo é um afixo que se verifica antes de duas formas de base ou antes de uma base e um afixo. Então, aqui estão cinco palavras com interfixo: avozinha (letra ""o""), florzinha (letra ""r""), florista (letra ""i"").",2
+24,"Identifica as vogais temáticas dos seguintes verbos: correr, avançar, trocar, invadir, roer.","Claro! Em língua portuguesa, existem três vogais temáticas que permitem identificar os verbos de acordo com a conjugação a que pertencem (primeira conjugação, segunda conjugação e terceira conjugação). Assim sendo, agrupemos os verbos apresentados de acordo com as vogais temáticas:
+avanç[a]r, troc[a]r - vogal temática [a]
+corr[e]r, ro[e]r - vogal temática [e]
+invad[i]r - vogal temática [i]",5,"Claro! Em língua portuguesa, existem três vogais temáticas que permitem identificar os verbos de acordo com a conjugação a que pertencem (primeira conjugação, segunda conjugação e terceira conjugação). Agrupe-se os verbos apresentados de acordo com as vogais temáticas:
+avançar, trocar - vogal temática ar
+correr, roer - vogal temática er
+invadir - vogal temática ir",4.0,"Claro! Em língua portuguesa, existem três vogais temáticas que permitem identificar os verbos de acordo com a conjugação a que pertencem (primeira conjugação, segunda conjugação e terceira conjugação). Agrupe-se os verbos apresentados de acordo com as vogais temáticas:
+avançar - vogal temática ar
+correr, trocar - vogal temática er
+roer - vogal temática or
+invadir - vogal temática ir",2
+25,Podes explicar-me o que é um verbo defetivo unipessoal?,"Claro! Existem dois tipos de verbos defetivos, unipessoal e impessoal. Um verbo defetivo unipessoal requer um sujeito específico e, por norma, é apenas flexionado no infinitivo e na 3.ª pessoa do singular e do plural. Tratam-se de verbos que exprimem vozes de animais, como ladrar (cão), miar (gato), balir (ovelha) ou cacarejar (galinha). 
+Aqui ficam alguns exemplos da sua utilização: ""O gato mia"", ""A ovelha bale"", ""As galinhas cacarejam"".",5,"Claro! Existem dois tipos de verbos defetivos, unipessoal e impessoal. Um verbo defetivo unipessoal requer um sujeito específico e é apenas flexionado no infinitivo e na 3.ª pessoa do singular e do plural. Tratam-se de verbos que exprimem vozes de animais, como ladrar (cão), miar (gato), balir (ovelha) ou cacarejar (galinha). 
+Aqui ficam alguns exemplos da sua utilização: ""O gato diz ""miau"""", ""A ovelha diz ""báááá"""", ""As galinhas dizem ""cocorococó"".",4,"Claro! Existem dois tipos de verbos defetivos, unipessoal e impessoal. Um verbo defetivo unipessoal requer um sujeito específico e é apenas flexionado no infinitivo e na 3.ª pessoa do singular e do plural. Tratam-se de verbos que exprimem vozes de animais, como ãoão (cão), miau (gato), báááá (ovelha) ou cocorococó (galinha). 
+Aqui ficam alguns exemplos da sua utilização: ""O gato diz ""miau"""", ""A ovelha diz ""báááá"""", ""As galinhas dizem ""cocorococó"".",2
+26,Explica-me o que é um verbo defetivo impessoal.,"Existem dois tipos de verbos defetivos, unipessoal e impessoal. Um verbo defetivo impessoal apresenta sujeito nulo expletivo e flexiona apenas no infinitivo e na 3.ª pessoa do singular. O seu uso restringe-se quase exclusivamente à expressão de fenómenos atmosféricos. Inclui também o verbo haver quando tem como significado existir.
+Aqui ficam alguns exemplos da utilização de verbos defetivos impessoais: ""Está a trovejar"", ""Anoitece cada vez mais cedo"", ""Há muitas questões no ar"".",5,"Existem dois tipos de verbos defetivos, unipessoal e impessoal. Um verbo defetivo impessoal apresenta sujeito nulo expletivo e flexiona apenas no infinitivo e na 3.ª pessoa do singular. O seu uso restringe-se exclusivamente à expressão de fenómenos atmosféricos. Inclui também o verbo haver quando tem como significado existir.
+Aqui ficam alguns exemplos da utilização de verbos defetivos impessoais: ""Troveja"", ""Está a anoitecer cada vez mais cedo"".",3.0,"No Português do Brasil, existem dois tipos de verbos defetivos, unipessoal e impessoal. Um verbo defetivo impessoal apresenta sujeito nulo expletivo e flexiona apenas no infinitivo e na 3.ª pessoa do singular. O seu uso restringe-se exclusivamente à expressão de fenómenos atmosféricos. Inclui também o verbo haver quando tem como significado existir.
+Aqui ficam alguns exemplos da utilização de verbos defetivos impessoais: ""Troveja"", ""Está escuro cada vez mais cedo"".",2
+27,Indica-me cinco palavras palíndromas.,"Uma palavra palíndroma permite uma leitura idêntica da esquerda para a direita e da direita para a esquerda. Aqui ficam cinco palavras palíndromas: arara, osso, ovo, radar, salas.",5,"Uma palavra palíndroma permite uma leitura idêntica da esquerda para a direita e da direita para a esquerda. Aqui ficam cinco palavras palíndromas: ama, ana, reviver, salas, asas.",4.0,"Uma palavra palíndroma permite uma leitura idêntica da esquerda para a direita e da direita para a esquerda. Aqui ficam cinco palavras palíndromas: ossos, mar, asas, assar, cama.",2
+28,Quais as conjugações verbais existentes em língua portuguesa?,"Existem, em língua portuguesa, três conjugações verbais. Estas distinguem-se pela vogal temática, ou seja, a 1.ª conjugação tem tema em -a- e inclui os verbos que terminam em -ar, como ""avaliar"", ""comprar"" ou ""guardar""; a 2.ª conjugação tem tema em -e- e inclui os verbos que terminam em -er, como ""correr"", ""dizer"" ou ""moer""; a 3.ª conjugação tem tema em -i- e inclui os verbos que terminam em -ir, como ""assistir"", ""conduzir"" ou ""sorrir"".",5,"Existem, em língua portuguesa, três conjugações verbais. Estas distinguem-se pela vogal temática, ou seja, a 1.ª conjugação tem tema em -ar- e inclui os verbos que terminam em -ar, como ""avaliar"", ""comprar"" ou ""guardar""; a 2.ª conjugação tem tema em -er- e inclui os verbos que terminam em -er, como ""correr"", ""dizer"" ou ""moer""; a 3.ª conjugação tem tema em -ir- e inclui os verbos que terminam em -ir, como ""assistir"", ""conduzir"" ou ""sorrir"".",4.0,"Existem, no português do Brasil, três conjugações verbais. Estas distinguem-se pela vogal temática, ou seja, a 2.ª conjugação tem tema em -ar- e inclui os verbos que terminam em -ar, como ""avaliar"", ""comprar"" ou ""guardar""; a 1.ª conjugação tem tema em -er- e inclui os verbos que terminam em -er, como ""correr"", ""dizer"" ou ""moer""; a 3.ª conjugação tem tema em -or- e inclui os verbos que terminam em -or, como ""pôr"", ""compor"" ou ""propor"".",2
+29,"Dá-me 5 exemplos de palavras complexas com o radical de ""vento"".","Aqui estão cinco exemplos de palavras complexas com o radical de ""vento"":
+1. vendaval
+2. ventania
+3. ventoso
+4. ventoinha
+5. ventosamente",5,"Aqui estão cinco exemplos de palavras complexas com o radical de ""vento"":
+1. ventinho
+2. vento
+3. ventoso
+4. ventoinha
+5. ventosamente",4.0,"Aqui estão cinco exemplos de palavras complexas com o radical de ""vento"":
+1. vendaval
+2. ventania
+3. venda
+4. evento
+5. inventar",2
+30,"Identifica as preposições presentes na seguinte frase: ""Segundo ela, ando a trabalhar demasiado. E a verdade é que até adormeço no sofá, coisa que nunca me acontecia..."".","A frase ""Segundo ela, ando a trabalhar demasiado. E a verdade é que até adormeço no sofá, coisa que nunca me acontecia..."" é constituída por duas preposições: ""a"" e ""até"". ",5,"A frase ""Segundo ela, ando a trabalhar demasiado. E a verdade é que até adormeço no sofá, coisa que nunca me acontecia..."" é constituída por duas preposições: ""a"" e ""no"". ",3.0,"A frase ""Segundo ela, ando a trabalhar demasiado. E a verdade é que até adormeço no sofá, coisa que nunca me acontecia..."" é constituída por três preposições: ""e"", ""ela"" e ""no"". ",1

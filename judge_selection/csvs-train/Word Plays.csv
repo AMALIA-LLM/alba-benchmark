@@ -1,0 +1,153 @@
+id,Prompt,Answer A (5),Rating,Answer B (4-3),Rating.1,Answer C (2-1),Rating.2
+11,"Cria uma frase com, pelo menos, cinco palavras terminadas em ""ões"".","Claro! Aqui está uma frase com seis palavras terminadas em ""ões"": ""Os dragões vaguearam pelas erupções dos vulcões, em grandes exclamações, junto dos leões e dos abelhões.""",5,"Claro! Aqui está uma frase com seis palavras terminadas em ""ões"": ""Os dragões vaguearam pelas erupções dos vulcões junto dos leões e dos abelhões.""",4,"Claro! Aqui está uma frase com seis palavras terminadas em ""ões"": ""Dragões vagaram pelas erupções junto dos leões.""",2
+12,"Cria uma frase em que todas as palavras começam pela letra ""c"".","Aqui fica uma frase com todas as palavras começadas pela letra ""c"": ""César, coagido, cometeu crimes com canivetes."" ",5,"Aqui vai uma frase com todas as palavras começadas pela letra ""c"": ""César, coagido, cometeu crimes com facas."" ",3,"Aqui vai uma frase com todas as palavras começadas pela letra ""c"": ""Rui, em silêncio, cometeu delitos."" ",1
+13,Cria uma frase com palavras cuja ordem seja decrescente do número de letras de cada palavra.,"Claro! Aqui está uma frase com as palavras por ordem decrescente do número de letras de cada palavra: ""Transformações complexas exigem tempo para mim.""",5,"Claro! Aqui está uma frase com as palavras por ordem decrescente do número de letras de cada palavra: ""Transformações complexas exigem-nos tempo.""",4,"Beleza! Aqui vai uma frase com as palavras por ordem decrescente do número de letras de cada palavra: ""Transformações complexas exigem-nos tempo e espaço.""",2
+14,"Cria duas frases, com relação entre si, com mais do que três advérbios de modo.","Claro! Aqui ficam duas frases, com relação entre si, com quatro advérbios de modo: ""Hoje em dia, é extremamente difícil comprar casa, especialmente para os jovens. Portanto, a transição plena para a idade adulta faz-se, indubitavelmente, significativamente mais tarde.""",5,"Claro! Aqui ficam duas frases, com relação entre si, com dois advérbios de modo: ""Hoje em dia, é extremamente difícil comprar casa, sobretudo para os jovens. Portanto, a transição plena para a idade adulta faz-se, indubitavelmente, mais tarde.""",3,"Claro! Aqui fica uma frase com dois advérbios de modo: ""Hoje em dia, é extremamente difícil comprar casa, sobretudo para os jovens. Portanto, a transição plena para a idade adulta faz-se, indubitavelmente, mais tarde.""",1
+15,"Cria uma frase em que todas as palavras começam pela letra ""o"".","Claro! Aqui fica uma frase com todas as palavras começadas pela letra ""o"": ""Obediente, o Osvaldo observou os óculos."" ",5,"Claro! Aqui fica uma frase com todas as palavras começadas pela letra ""o"": ""Obediente, o Osvaldo observou os pássaros."" ",4,"Claro! Aqui vai uma frase com todas as palavras começadas pela letra ""o"": ""Compenentrado, o Rui observou os pássaros."" ",2
+16,Cria uma frase apenas com palavras de sete letras.,"Aqui fica uma frase apenas com palavras de sete letras: ""Íntegro, Eduardo refutou, debalde.""",5,"Aqui fica uma frase apenas com palavras de sete letras: ""Sem filtros, Eduardo refutou, sem sucesso, a questão.""",3,"Aqui fica uma frase apenas com palavras de oito letras: ""Afastada, Madalena censurou, cética, a resposta.""",1
+17,Escreve uma frase apenas com palavras de duas e de três letras.,"Aqui fica uma frase em que todas as palavras têm só duas e três letras: ""Ema tem fé no céu ou no mar?""",5,"Aqui fica uma frase em que todas as palavras têm só duas e três letras: ""Ema, tens fé no céu ou no mar?""",4,"Aqui fica uma frase em que todas as palavras têm só duas e três letras: ""Ema, tens fé no campo ou na rebentação do mar?""",2
+18,Cria várias frases com palavras que não tenham mais do que seis letras.,"Aqui estão quatro frases compostas por palavras que não têm mais do que seis letras: ""A Maria sentiu uma dor imensa no peito. Quis gritar, pedir ajuda, fugir, mas não o fez. Em vez disso, caiu no sofá, sem força nas pernas. Sem ser capaz sequer de falar, passou a mão pelo cabelo e fechou os olhos.""",5,"Beleza! Aqui estão quatro frases compostas por palavras que não têm mais do que seis letras: ""A Maria sentiu palpitações imensas no peito. Quis gritar, pedir ajuda, fugir, mas não conseguiu. Em vez disso, caiu no sofá, sem força nas pernas. Sem ser capaz sequer de falar, pousou a mão em cima do coração e fechou os olhos.""",3,"Beleza! Aqui está uma frase composta por palavras que não têm mais do que seis letras: ""A Maria sentiu uma dor imensa no peito.""",1
+19,"Substitui as palavras de oito letras da seguinte frase por sinónimos: ""O Miguel depressa percebeu que o seu Bobby nunca mais voltaria a saltar. Depois daquele acidente, a vida do seu cãozinho seria completamente diferente.""","Aqui está a frase ""O Miguel depressa percebeu que o seu Bobby nunca mais voltaria a saltar. Depois daquele acidente, a vida do seu cãozinho seria completamente diferente."" com as palavras de oito letras (""depressa"", ""percebeu"", ""voltaria"", ""acidente"", cãozinho"") substituídas por sinónimos: ""O Miguel rapidamente compreendeu que o seu Bobby nunca mais iria saltar. Depois daquele desastre, a vida do seu cachorrinho seria completamente diferente.""",5,"Aqui está a frase ""O Miguel depressa percebeu que o seu Bobby nunca mais voltaria a saltar. Depois daquele acidente, a vida do seu cãozinho seria completamente diferente."" com as palavras de oito letras (""depressa"", ""percebeu"", ""voltaria"", ""acidente"") substituídas por sinónimos: ""O Miguel rapidamente compreendeu que o seu Bobby nunca mais iria saltar. Depois daquele desastre, a vida do seu cãozinho seria completamente diferente.""",4,"Aqui está a frase ""O Miguel depressa percebeu que o seu Bobby nunca mais voltaria a saltar. Depois daquele acidente, a vida do seu cãozinho seria completamente diferente."" com as palavras de oito letras (""depressa"", ""percebeu"", ""voltaria"", ""completamente"") substituídas por sinónimos: ""O Miguel rapidamente compreendeu que o seu Bobby nunca mais iria saltar. Depois daquele acidente, a vida do seu cãozinho seria totalmente diferente.""",2
+20,"Substitui as palavras de oito letras da seguinte frase por antónimos: ""O Miguel depressa percebeu que o seu Bobby nunca mais voltaria a saltar. Depois daquele acidente, a vida do seu cãozinho seria completamente diferente.""","Aqui está a frase ""O Miguel depressa percebeu que o seu Bobby nunca mais voltaria a saltar. Depois daquele acidente, a vida do seu cãozinho seria completamente diferente."" com as palavras de oito letras (""depressa"", ""percebeu"", ""voltaria"", ""acidente"", cãozinho"") substituídas por sinónimos: ""O Miguel lentamente desentendeu que o seu Bobby nunca mais partiria a saltar. Depois daquela peripécia, a vida do seu cãozão seria completamente diferente.""",5,"Aqui está a frase ""O Miguel depressa percebeu que o seu Bobby nunca mais voltaria a saltar. Depois daquele acidente, a vida do seu cãozinho seria completamente diferente."" com as palavras de oito letras (""depressa"", ""voltaria"", ""cãozinho"", ""Bobby"") substituídas por sinónimos: ""O Miguel lentamente percebeu que o seu Biggy nunca mais partiria a saltar. Depois daquela peripécia, a vida do seu cãozinho seria completamente diferente.""",3,"Aqui está a frase ""O Miguel depressa percebeu que o seu Bobby nunca mais voltaria a saltar. Depois daquele acidente, a vida do seu cãozinho seria completamente diferente."" com as palavras de oito letras (""Miguel"", ""depressa"", ""nunca"", ""diferente"") substituídas por sinónimos: ""O Carlos depressa percebeu que o seu Biggy não mais partiria a saltar. Depois daquela peripécia, a vida do seu cãozinho seria completamente outra.""",1
+21,"Podes alterar a frase seguinte de forma a que tenha o sentido oposto: ""Com uma lesão grave, o mais novo jogador da seleção nacional de futebol marcou muito poucos golos.""?","Claro! Aqui está a frase alterada para ter o sentido oposto: ""Sem lesões, o mais velho jogador da seleção nacional de futebol marcou bastantes golos.""",5,"Beleza! Aqui está a frase alterada para ter o sentido oposto: ""Sem lesões, o mais velho jogador da seleção nacional de futebol marcou bastantes gols.""",3,"Beleza! Aqui está a frase alterada para ter o sentido oposto: ""Sem lesões, o mais novo jogador da seleção nacional de futebol marcou bastantes gols.""",1
+22,"Identifica os verbos da frase seguinte e substitui-os por sinónimos: ""Os miúdos acabaram de montar a árvore de Natal. Agora só lhes resta esperar pela chegada do Pai Natal.""","A frase ""Os miúdos acabaram de montar a árvore de Natal. Agora, só lhes resta esperar pela chegada do Pai Natal."" é composta pelos verbos ""acabar"", ""montar"", ""restar"" e ""esperar"". Aqui fica a frase com os verbos originais substituídos por sinónimos: ""Os miúdos terminaram de armar a árvore de Natal. Agora só lhes falta aguardar pela chegada do Pai Natal.""",5,"A frase ""Os miúdos acabaram de montar a árvore de Natal. Agora, só lhes resta esperar pela chegada do Pai Natal."" é composta pelos verbos ""acabar"", ""montar"" e ""esperar"". Aqui fica a frase com os verbos originais substituídos por sinónimos: ""Os miúdos terminaram de armar a árvore de Natal. Agora só lhes resta aguardar pela chegada do Pai Natal.""",4,"A frase ""Os miúdos acabaram de montar a árvore de Natal. Agora, só lhes resta esperar pela chegada do Pai Natal."" é composta pelos verbos ""acabar"", ""montar"" e ""esperar"". Aqui fica a frase com os verbos originais substituídos por sinônimos: ""Os miúdos terminaram de armar a árvore de Natal. Agora só lhes resta aguardar pela chegada do Papai Noel.""",2
+23,"Identifica os nomes da frase seguinte e substituí-os por sinónimos: ""Hoje preciso de sair mais cedo do trabalho. Vou assistir à peça de teatro da escola do miúdo.""","A frase ""Hoje preciso de sair mais cedo do trabalho. Vou assistir à peça de teatro da escola do miúdo"" é composta pelos nomes ""trabalho"", ""peça"", ""teatro"", ""escola"" e ""miúdo"". Aqui fica a frase com os nomes originais substituídos por sinónimos: ""Hoje preciso de sair mais cedo do emprego. Vou assistir à representação teatral do colégio do menino.""",5,"A frase ""Hoje preciso de sair mais cedo do trabalho. Vou assistir à peça de teatro da escola do miúdo"" é composta pelos nomes ""trabalho"", ""escola"" e ""miúdo"". Aqui fica a frase com os nomes originais substituídos por sinónimos: ""Hoje preciso de sair mais cedo do emprego. Vou assistir à peça do colégio do menino.""",3,"A frase ""Hoje preciso de sair mais cedo do trabalho. Vou assistir à peça de teatro da escola do miúdo"" é composta pelos nomes ""cedo"", ""vou assistir"" e ""miúdo"".",1
+24,"Identifica os adjetivos da frase seguinte e substitui-os por sinónimos: ""Fiz uma sopa incrível! Rica, saborosa e até o Mário, que não aprecia sopa, repetiu!""","A frase ""Fiz uma sopa incrível! Rica, saborosa e até o Mário, que não aprecia sopa, repetiu!"" é composta pelos adjetivos ""incrível"", ""rica"" e ""saborosa"". Aqui fica a frase com os adjetivos originais substituídos por sinónimos: ""Fiz uma sopa maravilhosa! Consistente, deliciosa e até o Mário, que não aprecia sopa, repetiu!""",5,"A frase ""Fiz uma sopa incrível! Rica, saborosa e até o Mário, que não aprecia sopa, repetiu!"" é composta pelos adjetivos ""rica"" e ""saborosa"". Aqui fica a frase com os adjetivos originais substituídos por sinónimos: ""Fiz uma sopa incrível! Consistente, deliciosa e até o Mário, que não aprecia sopa, repetiu!""",4,"A frase ""Fiz uma sopa incrível! Rica, saborosa e até o Mário, que não aprecia sopa, repetiu!"" é composta pelos adjetivos ""sopa"" e ""saborosa"". Aqui fica a frase com os adjetivos originais substituídos por sinônimos: ""Fiz um caldo incrível! Consistente, delicioso e até o Mário, que não aprecia sopa, repetiu!""",2
+25,"A frase ""Em casa eu tenho uma grande variedade de frutas, que incluem maçãs, bananas, laranjas, mirtilos e morangos."" pode ser obtida a partir da seguinte sopa de letras? esauecaerdvnanrgatiahe,mdseolmitroimmrsajananr,,agolsas.nanabasuãeçdaommeulcnieuqsaturfede
+","Sim, é possível obter esta frase a partir desta sopa de letras.
+Na sopa de letras estão 86 letras e na frase também estão 86 letras. Para além disso, há uma correspondência perfeita no número de repetições de cada letra: 
+a - 15
+e - 10
+s - 7
+n - 7
+r - 6
+m - 6
+u - 5
+d - 4
+i - 4
+o - 4
+t - 3
+l - 3
+c - 2
+g - 2
+h - 1
+v - 1
+f - 1
+q - 1
+ç - 1
+ã - 1
+b - 1
+j - 1",5,"Sim, dá pra montar essa frase a partir dessa sopa de letras.
+Na sopa de letras há 85 letras e na frase também estão 85 letras. Para além disso, há uma correspondência perfeita na quantidade de vezes que cada letra se repete: 
+a - 15
+e - 10
+s - 7
+n - 7
+r - 6
+m - 6
+u - 5
+d - 4
+i - 4
+o - 4
+t - 3
+l - 3
+c - 2
+g - 2
+h - 1
+v - 1
+f - 1
+q - 1
+ç - 1
+ã - 1
+b - 1
+j - 1",3,"Sim, dá pra montar essa frase a partir dessa sopa de letras.
+Na sopa de letras há 8 letras e na frase também estão 9 letras. Para além disso, há uma correspondência perfeita na quantidade de vezes que cada letra se repete.",1
+26,"Cria um acróstico com a palavra ""mar"".","Aqui está um acróstico com a palavra ""mar"".
+
+Maresia
+Areia
+Rio",5,"Olha só um acróstico com a palavra ""mar"".
+
+Maresia
+Areia
+Rio",4,"Olha só um acróstico com a palavra ""mar"".
+
+Maresia
+Areia",2
+27,"Cria um acróstico com a palavra ""gato"" sobre gatos.","Aqui está um acróstico com a palavra ""gato"" sobre gatos:
+
+Galante
+Astuto
+Teimoso
+Observador",5,"Aqui está um acróstico com a palavra ""gato"" sobre gatos:
+
+Galante
+Observador
+Teimoso
+Cordial",3,"Aqui está um acróstico com a palavra ""gato"" sobre gatos:
+
+Animal
+Teimoso
+Grato
+Observador",1
+28,"Estou a jogar scrabble e preciso de saber quantas palavras de 5 e 6 letras posso formar com 2 letras s, 2 letras a, 1 letra d e 1 letra o.","Aqui está uma lista com todas as palavras de 5 e 6 letras que é possível formar com duas letras ""s"", duas letras ""a"", uma letra ""d"" e uma letra""o"":
+
+6 letras:
+assado
+ossada
+
+5 letras:
+assoa
+dosas",5,"Aqui está uma lista com todas as palavras de 5 e 6 letras que é possível formar com duas letras ""s"", duas letras ""a"", uma letra ""d"" e uma letra""o"":
+
+6 letras:
+assado
+
+5 letras:
+assoa
+dosas",4,"Aqui está uma lista com todas as palavras de 5 letras que é possível formar com duas letras ""s"", duas letras ""a"", uma letra ""d"" e uma letra""o"":
+
+5 letras:
+assoa
+dosas",2
+29,Cria um caligrama simples em formato de triângulo retângulo que descreve um triângulo retângulo.,"Aqui está um caligrama simples em formato de triângulo retângulo que descreve um triângulo retângulo:
+
+É
+um
+triângulo
+retângulo
+o triângulo
+que tiver um
+ângulo interno
+reto de 90 graus.",5,"Aqui está um caligrama simples em formato de triângulo retangulo que descreve um triângulo retangulo:
+
+É
+um
+triângulo
+o triângulo
+que tiver um
+angulo interno.",3,"Aqui está um caligrama simples em formato de triângulo retangulo que descreve um triângulo retangulo:
+
+É um triângulo retangulo, o triângulo que tiver um angulo interno reto de 90 graus.",1
+30,"Estou a jogar scrabble e preciso de saber quantas palavras de 4 e 5 letras posso formar com 1 letra b, 1 letra s, 2 letras a e 1 letra o.","Aqui está uma lista com todas as palavras de 4 e 5 letras que é possível formar com uma letra ""b"", uma letra ""s"", duas letras ""a"" e uma letra ""o"".
+
+4 letras:
+abas
+boas
+soba
+
+5 letras:
+sabão",5,"Aqui está uma lista com todas as palavras de 4 e 5 letras que é possível formar com uma letra ""b"", uma letra ""s"", duas letras ""a"" e uma letra ""o"".
+
+4 letras:
+abas
+boas
+
+5 letras:
+sabão",4,"Aqui está uma lista com todas as palavras de 4 e 5 letras que é possível formar com uma letra ""b"", uma letra ""s"", duas letras ""a"" e uma letra ""o"".
+
+4 letras:
+abas
+
+5 letras:
+nabos",2

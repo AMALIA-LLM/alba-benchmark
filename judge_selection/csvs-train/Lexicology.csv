@@ -1,0 +1,167 @@
+id,Prompt,Answer A (5),Rating,Answer B (4-3),Rating.1,Answer C (2-1),Rating.2
+11,"Diz-me cinco palavras da família de palavras de ""fruta"".","Aqui ficam cinco palavras da família de palavras de ""fruta"": frutado, fruteira, frutaria, frutose, frutífero.",5,"Aqui ficam cinco palavras da família de palavras de ""fruta"": frutinha, disfrutar, freira, frutose, frutífero.",4,"Aqui ficam cinco palavras da família de palavras de ""fruta"": fruta, frutinha, freira, frutona, fruir, frugalidade.",2
+12,Dá-me um exemplo de três neologismos usados em língua portuguesa associados à política.,"Os neologismos são palavras novas ou palavras já existentes numa língua que ganham novas aceções. A pouco e pouco, estes vocábulos incorporam-se na língua. No contexto político, são, por exemplo, criadas para designar o conjunto de ideias e práticas políticas e também o período governativo do político a que se referem. Assim, aqui ficam três neologismos cuja dinâmica lexical é política: salazarismo, bolsonarismo, cavaquismo. ",5,"Os neologismos são palavras novas ou palavras já existentes numa língua que ganham novas aceções. A pouco e pouco, estes vocábulos incorporam-se na língua. No contexto político, são, por exemplo, criadas para designar o conjunto de ideias e práticas políticas e também o período governativo do político a que se referem. Assim, aqui ficam três neologismos cuja dinâmica lexical é política: ciberativismo, pós-verdade, fake news. ",4,"Os neologismos são palavras novas ou palavras já existentes numa língua que ganham novas aceções. A pouco e pouco, estes vocábulos incorporam-se na língua. No contexto político, são, por exemplo, criadas para designar o conjunto de ideias e práticas políticas e também o período governativo do político a que se referem. Assim, aqui ficam três neologismos cuja dinâmica lexical é política: estadão, bolsominoria, fake news. ",2
+13,Dá-me um exemplo de três arcaísmos existentes em língua portuguesa.,"Um arcaísmo é uma palavra ou construção considerada antiquada e que caiu em desuso. Aqui ficam exemplos de três arcaísmos: petiz, janota, alvíssaras.",5,"Um arcaísmo é uma palavra ou construção considerada antiquada e que caiu em desuso. Aqui ficam exemplos de três arcaísmos: Deslumbração, janota, alvíssaras.",4,Um arcaísmo é uma palavra ou construção considerada antiquada e que caiu em desuso. Aqui fica um exemplo de um arcaísmo: arcaíco.,2
+14,Indica-me cinco exemplos de palavras monossémicas.,"Claro! Palavras monossémicas são aquelas que têm apenas um significado. Aqui estão cinco exemplos de palavras monossémicas: dermatologista, estetoscópio, hexágono, milímetro, septicemia.",5,"Claro! Palavras monossémicas são aquelas que têm apenas um significado. Aqui estão cinco exemplos de palavras monossémicas: pediatra, giroscópio, pentágono, centímetro, coração.",4,"Claro! Palavras monossémicas são aquelas que têm apenas um significado. Aqui estão cinco exemplos de palavras monossémicas: sorte, fortuna, coração.",2
+15,Dá-me cinco exemplos de palavras polissémicas.,"Palavras polissémicas, em oposição às palavras monossémicas, são aquelas que têm mais do que um significado. A maioria das palavras é polissémica. Então, aqui ficam cinco exemplos de palavras polissémicas: banco, formigueiro, letra, manga, serra.",5,"Palavras polissémicas, em oposição às palavras monossémicas, são aquelas que têm mais do que um significado. A maioria das palavras é polissémica. Então, aqui ficam cinco exemplos de palavras polissémicas: banco, quilograma, letra, manga, serra.",4,"Palavras polissémicas, em oposição às palavras monossémicas, são aquelas que têm mais do que um significado. A maioria das palavras é polissémica. Então, aqui ficam cinco exemplos de palavras polissémicas: estetoscópio, quilograma, cardiologista.",2
+16,"Indica-me seis sinónimos da palavra ""crise"".","Claro! Apresento seis sinónimos da palavra ""crise"":
+1. Ataque
+2. Perturbação
+3. Carência
+4. Escassez
+5. Perigo
+6. Acometimento",5,"Claro! Apresento seis sinónimos da palavra ""crise"":
+1. Alteração
+2. Conflito
+3. Comoção
+4. Perturbação
+5. Transtorno
+6. Dádiva",4,"Claro! Apresento seis sinónimos da palavra ""crise"":
+1. Dádiva
+2. Felicidade
+3. Crise
+4. Paz
+5. Calma
+",1
+17,"E, agora, podes indicar-me seis antónimos da palavra ""crise""?","Claro! Aqui ficam seis antónimos da palavra ""crise"":
+1. Bonança
+2. Fortuna
+3. Abundância
+4. Avanço
+5. Progresso
+6. Paz",5,"Claro! Aqui ficam seis antónimos da palavra ""crise"":
+1. Dádiva
+2. Graça
+3. Calma
+4. Avanço
+5. Conflito
+6. Paz",4,"Claro! Aqui ficam seis antónimos da palavra ""crise"":
+1. Bonaça
+2. Carência
+3. Transtorno
+4. Comoção
+5. Conflito
+6. Perigo",1
+18,Podes dar-me três exemplos de palavras truncadas?,"Claro! A truncação é um dos processos irregulares de formação de palavras e que se traduz na criação de uma palavra através da eliminação da sua parte final. Aqui ficam os três exemplos: fã (fanático), metro (metropolitano), otorrino (otorrinolaringologista).",5,"Claro! A truncação é um dos processos irregulares de formação de palavras e que se traduz na criação de uma palavra através da eliminação da sua parte final. Aqui ficam os três exemplos: fã (fantástico), metro (métrica), otorrino (otorrinolaringologista).",3,"Claro! A truncação é um dos processos irregulares de formação de palavras e que se traduz na criação de uma palavra através da adição da sua parte final. Aqui ficam os três exemplos: fã (fantástico), metro (métrica), otorrino (rinoceronte).",1
+19,Dá-me três exemplos de palavras formadas por amálgama.,"A amálgama é um dos processos irregulares de formação de palavras e que se traduz na criação de uma palavra a partir da junção de, pelo menos, partes de duas palavras. Aqui ficam três exemplos: cibernauta (cibernética + astronauta), cantautor (cantor + autor), portunhol (português + espanhol).",5,"A amálgama é um dos processos irregulares de formação de palavras e que se traduz na criação de uma palavra a partir da junção de, pelo menos, partes de duas palavras. Aqui ficam três exemplos: cibernauta (cibernética + autoclante), cantautor (cantor + autor), portunhol (português + espanhol).",4,"A amálgama é um dos processos irregulares de formação de palavras e que se traduz na criação de uma palavra a partir da junção de, pelo menos, partes de três palavras. Aqui ficam três exemplos: cibernauta (cibernética + auto + colante).",2
+20,"A palavra ""amálgama"" é monossémica ou polissémica?","A palavra ""amálgama"" é polissémica, ou seja, tem mais do que um significado. Tem, entre outros, os seguintes significados: 
+No ramo da química: combinação de mercúrio com outro metal
+No sentido figurado: miscelânea, confusão
+No ramo da linguística: processo irregular de formação de palavras.",5,"A palavra ""amálgama"" é polissémica, ou seja, tem mais do que um significado. Tem, entre outros, os seguintes significados: 
+No ramo da química: combinação de prata com outro metal
+No sentido figurado: miscelânea, confusão
+No ramo da linguística: processo regular de formação de palavras.",3,"A palavra ""amálgama"" é polissémica, ou seja, tem apenas  um significado. Tem o seguinte significado: 
+No ramo da linguística: processo regular de formação de palavras.",1
+21,"Indica-me cinco palavras que façam parte da família de palavras de ""campo"".","Claro! Aqui ficam cinco palavras que fazem parte da família de palavras de ""campo"": campestre, camponês, campino, campismo, campesino.",5,"Claro! Aqui ficam cinco palavras que fazem parte da família de palavras de ""campo"": campestre, camponês, campino, campismo.",4,"Claro! Aqui ficam cinco palavras que fazem parte da família de palavras de ""campo"": capô, capoeira, campo de futebol, campo de campismo.",1
+22,"Indica-me cinco palavras que façam parte do campo lexical de ""campo"".","Aqui estão cinco palavras que pertencem ao campo lexical de ""campo"": planície, trator, agricultura, flores, prado.",5,"Aqui estão cinco palavras que pertencem ao campo lexical de ""campo"": planície, trator, agricultura, flores, campestre.",4,"Aqui estão cinco palavras que pertencem ao campo lexical de ""campo"": camões, campismo, campinho, campito, campestre.",1
+23,"Indica-me cinco sinónimos da palavra ""rude"".","A relação de sinonímia entre palavras significa que são equivalentes, ou seja, que têm o mesmo significado. Aqui estão cinco sinónimos da palavra ""rude"":
+1. Bruto
+2. Grosseiro
+3. Ignorante
+4. Ríspido
+5. Tosco",5,"A relação de sinonímia entre palavras significa que são equivalentes, ou seja, que têm o mesmo significado. Aqui estão cinco sinónimos da palavra ""rude"":
+1. Bruto
+2. Grotesco
+3. Ignorante
+4. Risonho
+5. Tosco",4,"A relação de sinonímia entre palavras significa que são opostas, ou seja, que têm significados opostos. Aqui estão cinco sinónimos da palavra ""rude"":
+1. Suave
+2. Calmo
+3. Educado
+4. Fofo
+5. Querido",1
+24,"Qual é o campo semântico da palavra ""nota""?","O campo semântico é o conjunto dos significados que uma palavra ou expressão pode ter nos diferentes contextos em que se encontra ou em que é usada. ""Nota"" pode referir-se a:
+- uma nota musical;
+- uma anotação;
+- uma nota de dinheiro físico;
+- notar algo, no sentido de observar ou constatar;
+- digno de nota, no sentido de algo merecedor de reconhecimento;
+- nota de teste, exame ou disciplina, no sentido de classificação obtida.",5,"O campo semântico é o conjunto dos significados que uma palavra ou expressão pode ter nos diferentes contextos em que se encontra ou em que é usada. ""Nota"" pode referir-se a:
+- uma nota musical;
+- um notário;
+- uma nota de dinheiro físico;
+- notar algo, no sentido de observar ou constatar;
+- digno de nota, no sentido de algo merecedor de reconhecimento;
+- nota de teste, exame ou disciplina, no sentido de classificação obtida.",4,"O campo semântico é o conjunto dos significados que uma palavra ou expressão pode ter nos diferentes contextos em que se encontra ou em que é usada. ""Nota"" pode referir-se a: nota, notinha, notita.",1
+25,Dá-me cinco exemplos de empréstimos lexicais usados em língua portuguesa.,"O empréstimo lexical consiste na transferência de uma palavra de determinada língua para outra. Aqui ficam cinco exemplos de empréstimos que já fazem parte do léxico português: batom, cocktail, e-mail, hambúrguer, marketing. As palavras ""hambúrguer"" e ""batom"" não mantiveram a grafia de origem, tendo passado por alterações gráficas. Pelo contrário, ""cocktail"", ""e-mail"" e ""marketing"" mantêm a grafia da língua de origem.",5,"O empréstimo lexical consiste na transferência de uma palavra de determinada língua para outra. Aqui ficam cinco exemplos de empréstimos que já fazem parte do léxico português: jipe, omelete, e-mail, toilete, croissant. As palavras ""jipe"" e ""omelete"" não mantiveram a grafia de origem, tendo passado por alterações gráficas. Pelo contrário, ""toilete"", ""e-mail"" e ""croissant"" mantêm a grafia da língua de origem.",4,"O empréstimo lexical consiste na transferência de uma palavra de determinada língua para outra. Aqui ficam cinco exemplos de empréstimos que já fazem parte do léxico português: party, phone. ",1
+26,Indica-me dez palavras que façam parte do campo lexical de escola.,"Aqui estão dez palavras que fazem parte do campo lexical de escola:
+1. professores
+2. alunos
+3. material escolar
+4. quadro
+5. mesas
+6. cadeiras
+7. giz
+8. computador
+9. sala de aula
+10. recreio",5,"Aqui estão dez palavras que fazem parte do campo lexical de escola:
+1. professores
+2. professora
+3. material escolar
+4. alunos
+5. aluno
+6. cadeiras
+7. giz
+8. médico
+9. sala de aula
+10. recreio",4,"Aqui estão dez palavras que fazem parte do campo lexical de escola:
+1. escola
+2. escolinha
+3. escolita
+4. escolazinha
+5. descola
+6. descolamento
+7. escolarização
+8. escola
+",1
+27,Indica-me dez palavras da família de palavras de terra.,"Aqui estão dez palavras da família de palavras de terra:
+1. terreno
+2. terrestre
+3. térreo
+4. terramoto
+5. aterrar
+6. território
+7. terreiro
+8. terráqueo
+9. extra-terrestre
+10. enterrar",5,"Aqui estão dez palavras da família de palavras de terra:
+1. terreno
+2. terrestre
+3. térreo
+4. terramoto
+5. aterrar
+6. território
+7. terreiro
+8. terráqueo
+9. extra-terrestre
+10. terá",4,"Aqui estão dez palavras da família de palavras de terra:
+1. cavar
+2. plantar
+3. árvore
+4. planta
+5. quintal
+6. pomar
+7. agricultura
+8. vida
+",1
+28,Podes dar-me cinco exemplos de palavras em que houve extensão semântica?,"A extensão semântica acontece quando uma palavra existente adquire um novo significado. Habitualmente, verifica-se uma analogia entre o significado da base e do novo termo. Aqui estão cinco palavras com extensão semântica:
+1. Bolsa: o significado da base (saco, mala) estendeu-se ao domínio financeiro (bolsa de valores)
+2. Janela: o significado da base (abertura na parede de uma construção) estendeu-se ao domínio informático (área de um ecrã que permite visualizar informações)
+3. Portal: o significado da base (porta principal, pórtico) estendeu-se ao domínio informático (designa um ponto de acesso a conteúdos)
+4. Rato: o significado da base (animal) estendeu-se ao domínio informático (dispositivo que se liga ao computador)
+5. Vírus: o significado da base (agente infecioso) estendeu-se ao domínio informático (programa que interfere no funcionamento de um computador)",5,"A extensão semântica acontece quando uma palavra existente adquire um novo significado. Habitualmente, verifica-se uma analogia entre o significado da base e do novo termo. Aqui estão cinco palavras com extensão semântica:
+1. Bolsa: o significado da base (saco, mala) estendeu-se ao domínio da moda (acessório)
+2. Janela: o significado da base (abertura na parede de uma construção) estendeu-se ao domínio da arquitetura (abertura na parede de uma construção)
+3. Portal: o significado da base (porta principal, pórtico) estendeu-se ao domínio informático (designa um ponto de acesso a conteúdos)
+4. Rato: o significado da base (animal) estendeu-se ao domínio informático (dispositivo que se liga ao computador)
+5. Vírus: o significado da base (agente infecioso) estendeu-se ao domínio informático (programa que interfere no funcionamento de um computador)",4,"A extensão semântica acontece quando uma palavra existente adquire um novo significado. Aqui estão cinco palavras com extensão semântica:
+1. Bolsa (bolsa normal) e bolsita (bolsa pequena)
+2. Janela (janela normal) e janelita (janela pequena)
+3. Porta (porta normal) e portão (porta grande)
+4. Rato (rato normal) e ratazana (rato grande)
+5. Vírus (agente infecioso) e Virose (doença contagiosa)",1
+29,Dá-me um exemplo de duas palavras parónimas.,"Palavras parónimas são palavras com grafias e pronúncias semelhantes mas significados diferentes. Duas palavras parónimas poderiam ser, por exemplo, a palavra ""despensa"", que significa ""lugar ou divisão onde são armazenados alimentos"", e a palavra ""dispensa"", que significa ""uma isenção de cumprimento de uma obrigação"".",5,"Palavras parónimas são palavras com grafias e pronúncias semelhantes mas significados diferentes. Duas palavras parónimas poderiam ser, por exemplo, a palavra ""despensa"", que significa ""lugar ou divisão onde são armazenados alimentos"", e a palavra ""despesa"", que significa ""gasto"".",3,"Palavras parónimas são palavras com grafias e pronúncias iguais mas significados diferentes. Duas palavras parónimas poderiam ser, por exemplo, a palavra ""cozer"", que significa ""cozinhar algo em água quente"", e a palavra ""coser"", que significa ""dar pontos com uma agulha"".",1
+30,Dá-me um exemplo de duas palavras homófonas.,"As palavras homófonas são palavras que tem a mesma pronúncia, mas grafias e significados diferentes.
+Duas palavras homófonas seriam, por exemplo, a palavra ""assento"", que é algo na qual as pessoas se podem sentar, e a palavra ""acento"", que é um sinal gráfico.",5,"As palavras homófonas são palavras que tem a mesma pronúncia e grafia, mas significados diferentes.
+Duas palavras homófonas seriam, por exemplo, a palavra ""assento"", que é algo na qual as pessoas se podem sentar, e a palavra ""acento"", que é um sinal gráfico.",3,"As palavras homófonas são palavras que tem a mesma pronúncia e grafia, mas significados diferentes.
+Duas palavras homófonas seriam, por exemplo, a palavra ""banco"" (estabelecimento financeiro) e a palavra ""banco"" (que é algo na qual as pessoas se podem sentar).",1
