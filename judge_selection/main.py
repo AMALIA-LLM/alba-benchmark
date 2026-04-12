@@ -222,11 +222,11 @@ def get_all_csvs(folder: str) -> list:
             csvs.append(os.path.join(folder, file))
     return csvs
 
-def run_model_configurations(model, strategies, ns, prompt_types, csvs, pbar, lock):
+def run_model_configurations(model, strategies, ns, prompt_types, csvs, pbar, lock, results_folder):
     model_name = model.model
     skip = False
     # get all folders on "results"
-    folders = [f for f in os.listdir(RESULTS_FOLDER)]
+    folders = [f for f in os.listdir(results_folder)]
     for strategy in strategies:
         for n in ns:
             for prompt_type in prompt_types:
@@ -245,31 +245,32 @@ def run_model_configurations(model, strategies, ns, prompt_types, csvs, pbar, lo
                     skip = False
                     continue
 
-                results_folder = f"{RESULTS_FOLDER}/{model.model}_{strategy}_{n}_{prompt_type}_{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}"
-                os.makedirs(results_folder, exist_ok=True)
+                run_results_folder = f"{results_folder}/{model.model}_{strategy}_{n}_{prompt_type}_{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}"
+                os.makedirs(run_results_folder, exist_ok=True)
                 
                 with lock:
                     pbar.set_description(f"{model.model} | {strategy} | {n} shots | {prompt_type}")
                 
                 for csv in csvs:
-                    process_csv(csv, results_folder, model, strategy, n, prompt_type)
-                make_result_stats(results_folder, model, strategy, n, prompt_type)
+                    process_csv(csv, run_results_folder, model, strategy, n, prompt_type)
+                make_result_stats(run_results_folder, model, strategy, n, prompt_type)
                 
                 with lock:
                     pbar.update(1)
 
-def delete_redundant_folders():
+def delete_redundant_folders(results_folder: str):
+    os.makedirs(results_folder, exist_ok=True)
     # look at results folder
-    folders = [f for f in os.listdir(RESULTS_FOLDER)]
+    folders = [f for f in os.listdir(results_folder)]
     # if a folder does not have the file "Z-Stats.json" delete it
     for folder in folders:
-        if not os.path.exists(f"{RESULTS_FOLDER}/{folder}/Z-Stats.json"):
+        if not os.path.exists(f"{results_folder}/{folder}/Z-Stats.json"):
             print(f"Deleting {folder}")
-            os.system(f"rm -rf {RESULTS_FOLDER}/{folder}")
+            os.system(f"rm -rf {results_folder}/{folder}")
 
 
-def main():
-    delete_redundant_folders()
+def main(results_folder: str, csv_folder: str):
+    delete_redundant_folders(results_folder)
     from threading import Lock
     
     models = [BedrockClient("openai.gpt-oss-120b-1:0"), BedrockClient("openai.gpt-oss-safeguard-120b")] # OpenAIClient() GeminiClient() DeepseekClient()
@@ -277,19 +278,19 @@ def main():
     few_shot_ns = [2, 3, 4, 5]
     prompt_types = [PromptType.PROMPT_3_SCORES, PromptType.PROMPT_1_SCORE, PromptType.PROMPT_3_SCORES_PT, PromptType.PROMPT_1_SCORE_PT]
     
-    csvs = get_all_csvs(CSV_FILE)
+    csvs = get_all_csvs(csv_folder)
     
     total_iterations = len(models) * len(few_shot_strategies) * len(few_shot_ns) * len(prompt_types)
     lock = Lock()
     
     with tqdm(total=total_iterations, desc="Progress") as pbar:
         with ThreadPoolExecutor(max_workers=len(models)) as executor:
-            futures = [executor.submit(run_model_configurations, model, few_shot_strategies, few_shot_ns, prompt_types, csvs, pbar, lock) for model in models]
+            futures = [executor.submit(run_model_configurations, model, few_shot_strategies, few_shot_ns, prompt_types, csvs, pbar, lock, results_folder) for model in models]
             for future in futures:
                 future.result()
 
-def run_evaluation(few_shot_strategies, few_shot_ns, prompt_types, models, split_folder):
-    delete_redundant_folders()
+def run_evaluation(few_shot_strategies, few_shot_ns, prompt_types, models, split_folder, results_folder):
+    delete_redundant_folders(results_folder)
     from threading import Lock
     
     csvs = get_all_csvs(split_folder)
@@ -298,68 +299,81 @@ def run_evaluation(few_shot_strategies, few_shot_ns, prompt_types, models, split
     
     with tqdm(total=total_iterations, desc="Progress") as pbar:
         with ThreadPoolExecutor(max_workers=len(models)) as executor:
-            futures = [executor.submit(run_model_configurations, model, few_shot_strategies, few_shot_ns, prompt_types, csvs, pbar, lock) for model in models]
+            futures = [executor.submit(run_model_configurations, model, few_shot_strategies, few_shot_ns, prompt_types, csvs, pbar, lock, results_folder) for model in models]
             for future in futures:
                 future.result()
 
-def update_all_zScores():
-    for folder in os.listdir(RESULTS_FOLDER):
-        if os.path.isdir(os.path.join(RESULTS_FOLDER, folder)):
-            make_result_stats(os.path.join(RESULTS_FOLDER, folder), None, None, 0, None, update=True)
+def update_all_zScores(results_folder: str):
+    for folder in os.listdir(results_folder):
+        if os.path.isdir(os.path.join(results_folder, folder)):
+            make_result_stats(os.path.join(results_folder, folder), None, None, 0, None, update=True)
 
-def update_all_ratings():
+def update_all_ratings(results_folder: str):
     # For all folders inside
-    folders = [f for f in os.listdir(RESULTS_FOLDER)]
+    folders = [f for f in os.listdir(results_folder)]
     # For all files inside the folder not named Z-Stats.json
     for folder in tqdm(folders):
-        if os.path.isdir(os.path.join(RESULTS_FOLDER, folder)):
-            for file in os.listdir(os.path.join(RESULTS_FOLDER, folder)):
+        if os.path.isdir(os.path.join(results_folder, folder)):
+            for file in os.listdir(os.path.join(results_folder, folder)):
                 if file.endswith("Z-Stats.json"):
                   continue  
                 # Open the json file
-                with open(os.path.join(RESULTS_FOLDER, folder, file), "r") as f:
+                with open(os.path.join(results_folder, folder, file), "r") as f:
                     ratings: list[dict] = json.load(f)
                     # For each element, add a key "generous_difference_score"
                     for elem in ratings:
                         elem["generous_difference_score"] = generous_diference_calc(elem["overall_score"], elem["expecting_score"])
-                with open(os.path.join(RESULTS_FOLDER, folder, file), "w") as f2:
+                with open(os.path.join(results_folder, folder, file), "w") as f2:
                     json.dump(ratings, f2, indent=4, ensure_ascii=False)
 
 
 
-def find_optimal_config():
+def find_best_judge(results_folder: str):
     run_evaluation(
         few_shot_strategies = [FewShotType.SIZE_SAMPLE],
         few_shot_ns         = [3],
         prompt_types        = [PromptType.PROMPT_1_SCORE_PT],
         models = [
-            GeminiClient(), OpenAIClient(), DeepSeekClient(), 
-            GeminiClient("gemini-2.5-flash"), OpenAIClient("gpt-5.1-2025-11-13"), DeepSeekClient("deepseek-reasoner"),
-            BedrockClient("us.amazon.nova-premier-v1:0"), BedrockClient("cohere.command-r-plus-v1:0"),
-            BedrockClient("openai.gpt-oss-120b-1:0"), BedrockClient("openai.gpt-oss-safeguard-120b")
+            #GeminiClient(), 
+            #OpenAIClient(), 
+            #DeepSeekClient(), 
+            #GeminiClient("gemini-2.5-flash"), 
+            #OpenAIClient("gpt-5.1-2025-11-13"), 
+            #DeepSeekClient("deepseek-reasoner"),
+            #BedrockClient("us.amazon.nova-premier-v1:0"), 
+            #BedrockClient("cohere.command-r-plus-v1:0"),
+            BedrockClient("openai.gpt-oss-120b-1:0"), 
+            BedrockClient("openai.gpt-oss-safeguard-120b")
         ],
-        split_folder = 'csvs-train'
+        split_folder = 'judge_selection/csvs-train',
+        results_folder = results_folder
     )
 
-def find_best_judge():
+def find_optimal_config(results_folder: str):
     run_evaluation(
         few_shot_strategies = [FewShotType.RANDOM, FewShotType.SIMILARITY, FewShotType.SIZE_SAMPLE],
         few_shot_ns = [2, 3, 4, 5],
         prompt_types = [PromptType.PROMPT_3_SCORES, PromptType.PROMPT_1_SCORE, PromptType.PROMPT_3_SCORES_PT, PromptType.PROMPT_1_SCORE_PT],
         models = [
-            GeminiClient(), OpenAIClient(), DeepSeekClient(), 
-            GeminiClient("gemini-2.5-flash"), OpenAIClient("gpt-5.1-2025-11-13"), DeepSeekClient("deepseek-reasoner"),
-            BedrockClient("us.amazon.nova-premier-v1:0"), BedrockClient("cohere.command-r-plus-v1:0"),
-            BedrockClient("openai.gpt-oss-120b-1:0"), BedrockClient("openai.gpt-oss-safeguard-120b")
+            GeminiClient(), 
+            OpenAIClient(), 
+            DeepSeekClient(), 
+            GeminiClient("gemini-2.5-flash"), 
+            OpenAIClient("gpt-5.1-2025-11-13"), 
+            DeepSeekClient("deepseek-reasoner"),
+            BedrockClient("us.amazon.nova-premier-v1:0"), 
+            BedrockClient("cohere.command-r-plus-v1:0"),
+            BedrockClient("openai.gpt-oss-120b-1:0"), 
+            BedrockClient("openai.gpt-oss-safeguard-120b")
         ],
-        split_folder = 'csvs-test'
+        split_folder = 'judge_selection/csvs-test',
+        results_folder = results_folder
     )
 
-RESULTS_FOLDER = "results-test" 
 if __name__ == "__main__":
-    os.makedirs(RESULTS_FOLDER, exist_ok=True)
-    # update_all_zScores()
-    # main()
+    results_folder = "judge_selection/results-test"
+    # update_all_zScores(results_folder)
+    # main(results_folder, "judge_selection/csvs-test")
 
-    find_optimal_config()
-    find_best_judge()
+    # find_optimal_config(results_folder)
+    find_best_judge(results_folder)
