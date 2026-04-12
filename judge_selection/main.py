@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import pandas as pd
 from choose_few_shot import few_shot, FewShotType
 from prompts import format_prompt, PromptType
@@ -268,27 +270,6 @@ def delete_redundant_folders(results_folder: str):
             print(f"Deleting {folder}")
             os.system(f"rm -rf {results_folder}/{folder}")
 
-
-def main(results_folder: str, csv_folder: str):
-    delete_redundant_folders(results_folder)
-    from threading import Lock
-    
-    models = [BedrockClient("openai.gpt-oss-120b-1:0"), BedrockClient("openai.gpt-oss-safeguard-120b")] # OpenAIClient() GeminiClient() DeepseekClient()
-    few_shot_strategies = [FewShotType.RANDOM, FewShotType.SIMILARITY, FewShotType.SIZE_SAMPLE]
-    few_shot_ns = [2, 3, 4, 5]
-    prompt_types = [PromptType.PROMPT_3_SCORES, PromptType.PROMPT_1_SCORE, PromptType.PROMPT_3_SCORES_PT, PromptType.PROMPT_1_SCORE_PT]
-    
-    csvs = get_all_csvs(csv_folder)
-    
-    total_iterations = len(models) * len(few_shot_strategies) * len(few_shot_ns) * len(prompt_types)
-    lock = Lock()
-    
-    with tqdm(total=total_iterations, desc="Progress") as pbar:
-        with ThreadPoolExecutor(max_workers=len(models)) as executor:
-            futures = [executor.submit(run_model_configurations, model, few_shot_strategies, few_shot_ns, prompt_types, csvs, pbar, lock, results_folder) for model in models]
-            for future in futures:
-                future.result()
-
 def run_evaluation(few_shot_strategies, few_shot_ns, prompt_types, models, split_folder, results_folder):
     delete_redundant_folders(results_folder)
     from threading import Lock
@@ -328,28 +309,29 @@ def update_all_ratings(results_folder: str):
 
 
 
-def find_best_judge(results_folder: str):
+def find_best_judge():
     run_evaluation(
         few_shot_strategies = [FewShotType.SIZE_SAMPLE],
         few_shot_ns         = [3],
         prompt_types        = [PromptType.PROMPT_1_SCORE_PT],
         models = [
-            #GeminiClient(), 
-            #OpenAIClient(), 
-            #DeepSeekClient(), 
-            #GeminiClient("gemini-2.5-flash"), 
-            #OpenAIClient("gpt-5.1-2025-11-13"), 
-            #DeepSeekClient("deepseek-reasoner"),
-            #BedrockClient("us.amazon.nova-premier-v1:0"), 
-            #BedrockClient("cohere.command-r-plus-v1:0"),
+            GeminiClient(), 
+            OpenAIClient(), 
+            DeepSeekClient(), 
+            GeminiClient("gemini-2.5-flash"), 
+            OpenAIClient("gpt-5.1-2025-11-13"), 
+            DeepSeekClient("deepseek-reasoner"),
+            BedrockClient("us.amazon.nova-premier-v1:0"), 
+            BedrockClient("cohere.command-r-plus-v1:0"),
             BedrockClient("openai.gpt-oss-120b-1:0"), 
             BedrockClient("openai.gpt-oss-safeguard-120b")
         ],
-        split_folder = 'judge_selection/csvs-train',
-        results_folder = results_folder
+        split_folder = 'csvs-train',
+        results_folder = 'best_judge_results'
+
     )
 
-def find_optimal_config(results_folder: str):
+def find_optimal_config():
     run_evaluation(
         few_shot_strategies = [FewShotType.RANDOM, FewShotType.SIMILARITY, FewShotType.SIZE_SAMPLE],
         few_shot_ns = [2, 3, 4, 5],
@@ -366,14 +348,14 @@ def find_optimal_config(results_folder: str):
             BedrockClient("openai.gpt-oss-120b-1:0"), 
             BedrockClient("openai.gpt-oss-safeguard-120b")
         ],
-        split_folder = 'judge_selection/csvs-test',
-        results_folder = results_folder
+        split_folder = 'csvs-test',
+        results_folder = 'optimal_config_results'
     )
 
 if __name__ == "__main__":
-    results_folder = "judge_selection/results-test"
+    # results_folder = "best_judge_results"
     # update_all_zScores(results_folder)
-    # main(results_folder, "judge_selection/csvs-test")
 
-    # find_optimal_config(results_folder)
-    find_best_judge(results_folder)
+    # use the `run_evaluation()` function to run you custom experiments
+    find_optimal_config()
+    find_best_judge()
