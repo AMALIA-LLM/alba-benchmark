@@ -1,4 +1,11 @@
-# ALBA Benchmark
+# ALBA: A European Portuguese Benchmark for Evaluating Language and Linguistic Dimensions in Generative LLMs
+
+This repository provides the code and resources for running the **ALBA benchmark**, introduced in the paper  
+[ALBA: A European Portuguese Benchmark for Evaluating Language and Linguistic Dimensions in Generative LLMs](https://arxiv.org/abs/2603.26516), accepted at **PROPOR 2026**.
+
+ALBA is designed to systematically evaluate generative large language models (LLMs) across a range of linguistic and language-specific dimensions in European Portuguese, enabling more rigorous and fine-grained analysis of model performance.
+
+## Code Structure
 
 This repository has **two main pipelines**:
 
@@ -114,3 +121,20 @@ python main.py
 ```
 
 Results are written to the folders configured in `judge_selection/main.py` (for example `best_judge_results` and `optimal_config_results`).
+
+
+## How to Cite
+
+If you use this repository or the ALBA benchmark in your work, please cite:
+
+```bibtex
+@misc{vieira2026albaeuropeanportuguesebenchmark,
+  title        = {ALBA: A European Portuguese Benchmark for Evaluating Language and Linguistic Dimensions in Generative LLMs},
+  author       = {Inês Vieira and Inês Calvo and Iago Paulo and James Furtado and Rafael Ferreira and Diogo Tavares and Diogo Glória-Silva and David Semedo and João Magalhães},
+  year         = {2026},
+  eprint       = {2603.26516},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.CL},
+  url          = {https://arxiv.org/abs/2603.26516}
+}
+```
