@@ -37,7 +37,6 @@ def few_shot_random(df: pd.DataFrame, n: int= 3) -> list:
         })
     return few_shots
 
-# TODO: Check later..
 def few_shot_similarity(df: pd.DataFrame, n: int= 3) -> list:
     answers = df["Answer A (5)"].tolist()
     vectorizer = TfidfVectorizer()

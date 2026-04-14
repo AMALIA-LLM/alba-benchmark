@@ -103,7 +103,6 @@ class Gemini(Model):
         return self.model_name
 
     def generate_in_batch(self, prompts: list[str], max_connections : int) -> list[str]:
-        # TODO: look at 'retryDelay' and start using that
         return parallel_generation(lambda prompt: 
             self.client.models.generate_content(
                 model=self.model_name, contents=prompt,

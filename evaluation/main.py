@@ -35,7 +35,6 @@ def rescore_sample(sample : dict, score : Metric) -> dict:
 def fix_log_data(log_data : dict[str, Any], bench_id : str, scores : list[Metric]):
     mean, stderr = aggregate_scores(scores)
 
-    # FIXME: find a way to make this not be this error prone
     log_data['results'][bench_id] |= {
       "score,none": mean,
       "score_stderr,none": stderr,
@@ -133,7 +132,7 @@ def legacy_score_models(models_dir : str, judge : Model):
                         response = sample['resps'][0][0].split('</think>')[-1].strip() # remove think tokens for qwen guard
                     )
                     for sample in samples
-                ], # TODO: should I do strip?
+                ],
                 category,
                 max_connections = 25
             )
@@ -142,9 +141,8 @@ def legacy_score_models(models_dir : str, judge : Model):
             # lm-evaluation-harness, the purpose of this is to try to be able to use the their display tool for debug and
             # have our scripts that already take results from lm-evaluation-harness work on these ones as well
             new_samples = [ rescore_sample(sample, score) for sample, score in zip(samples, scores) ]
-            fix_log_data(log_data, bench_id, scores) # TODO: think if you want to copy or just alter the current one
+            fix_log_data(log_data, bench_id, scores)
 
-            # TODO: SHOULD YOU JUST REPLACE THE FILES OR SHOULD YOU DO A COPY OF THEM
             print('>>> writing new version of the log file and samples file')
             with open(log_filename, 'w') as file:
                 json.dump(log_data, file, indent=4, ensure_ascii=False)
@@ -321,7 +319,6 @@ def generate_responses(config : GenerationConfig):
     frame.to_csv(output_file)
     print(f"saved results in '{output_file}'")
 
-# TODO: https://ai.google.dev/gemini-api/docs/batch-api?batch=file (look at this)
 def main(): 
     args   = sys.argv[1:] if len(sys.argv) > 1 else ['--help']
     choice = tyro.cli(

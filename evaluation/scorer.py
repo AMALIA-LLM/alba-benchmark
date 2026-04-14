@@ -50,7 +50,7 @@ Pontuação Global: <pontuação de 1 a 5>
 """
 
 # TODO: should I just add this inline?
-FEWSHOT_CSV = pd.read_csv("fewshot_samples.csv", index_col='id')#, index_col=)
+FEWSHOT_CSV = pd.read_csv("fewshot_samples.csv", index_col='id')
 
 @dataclass
 class SamplePair:
@@ -140,7 +140,3 @@ def score_samples(
     return [
         extract_response_1_score_pt(judge_prompt, response) for judge_prompt, response in zip(judge_prompts, judge.generate_in_batch(judge_prompts, max_connections))
     ]
-
-
-# FEWSHOT_CSV['category'] = FEWSHOT_CSV['category'].replace('Culture-Bound Semantics', 'Culture-bound Semantics') # TODO: do the inverse of this everywhere
-# print(FEWSHOT_CSV['category'].unique())
