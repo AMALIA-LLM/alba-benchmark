@@ -1,7 +1,7 @@
 # ALBA: A European Portuguese Benchmark for Evaluating Language and Linguistic Dimensions in Generative LLMs
 
 This repository provides the code and resources for running the **ALBA benchmark**, introduced in the paper  
-[ALBA: A European Portuguese Benchmark for Evaluating Language and Linguistic Dimensions in Generative LLMs](https://arxiv.org/abs/2603.26516), accepted at **PROPOR 2026**.
+[ALBA: A European Portuguese Benchmark for Evaluating Language and Linguistic Dimensions in Generative LLMs](https://aclanthology.org/2026.propor-1.69/), accepted at **PROPOR 2026**.
 
 ALBA is designed to systematically evaluate generative large language models (LLMs) across a range of linguistic and language-specific dimensions in European Portuguese, enabling more rigorous and fine-grained analysis of model performance.
 
