@@ -128,13 +128,24 @@ Results are written to the folders configured in `judge_selection/main.py` (for 
 If you use this repository or the ALBA benchmark in your work, please cite:
 
 ```bibtex
-@misc{vieira2026albaeuropeanportuguesebenchmark,
-  title        = {ALBA: A European Portuguese Benchmark for Evaluating Language and Linguistic Dimensions in Generative LLMs},
-  author       = {Inês Vieira and Inês Calvo and Iago Paulo and James Furtado and Rafael Ferreira and Diogo Tavares and Diogo Glória-Silva and David Semedo and João Magalhães},
-  year         = {2026},
-  eprint       = {2603.26516},
-  archivePrefix= {arXiv},
-  primaryClass = {cs.CL},
-  url          = {https://arxiv.org/abs/2603.26516}
+@inproceedings{vieira-etal-2026-alba,
+    title = "{ALBA}: A {E}uropean {P}ortuguese Benchmark for Evaluating Language and Linguistic Dimensions in Generative {LLM}s",
+    author = "Vieira, In{\^e}s  and
+      Calvo, In{\^e}s  and
+      Paulo, Iago  and
+      Furtado, James  and
+      Ferreira, Rafael  and
+      Tavares, Diogo  and
+      Gl{\'o}ria-Silva, Diogo  and
+      Semedo, David  and
+      Magalh{\~a}es, Jo{\~a}o",
+    booktitle = "Proceedings of the 17th International Conference on Computational Processing of {P}ortuguese ({PROPOR} 2026) - Vol. 1",
+    month = apr,
+    year = "2026",
+    address = "Salvador, Brazil",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.propor-1.69/",
+    pages = "697--707",
+    ISBN = "979-8-89176-387-6"
 }
 ```
