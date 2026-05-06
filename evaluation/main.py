@@ -1,161 +1,18 @@
 #!/usr/bin/env python3
 
 from dataclasses import asdict, dataclass
-import os, sys, json, time, tyro
-import numpy as np
+import os, sys, time, tyro
 import pandas as pd
 
-from typing import Any, Union, Annotated
+from typing import Union, Annotated
 from dotenv import load_dotenv
 from glob import glob
 
 from models import Gemini, ChatGPT, HuggingFaceModel, Model
-from scorer import Metric, score_samples, SamplePair
-from typing import cast
+from scorer import score_samples, SamplePair, ScoreExtractionException, MAX_JUDGE_RESPONSE_TOKENS
+from typing import cast, Literal
 
 from datasets import load_dataset
-
-def extract_bench_id(data : dict[str, Any]) -> str:
-    keys = list(data['results'].keys())
-    assert len(keys) == 1
-    return keys[0]
-
-def get_bench_samples_filename(bench_id : str, model_dir : str) -> str:
-    sample_files = glob(f'{model_dir}/samples_{bench_id}*.jsonl')
-    assert len(sample_files) == 1, f"found more than 1 samples file for '{bench_id}': {','.join(sample_files)}"
-    return sample_files[0]
-
-def rescore_sample(sample : dict, score : Metric) -> dict:
-    values = asdict(score)
-    new_sample = sample.copy() 
-    new_sample.pop('bypass')
-
-    return new_sample | { 'metrics': list(values.keys()) } | values
-
-def fix_log_data(log_data : dict[str, Any], bench_id : str, scores : list[Metric]):
-    mean, stderr = aggregate_scores(scores)
-
-    log_data['results'][bench_id] |= {
-      "score,none": mean,
-      "score_stderr,none": stderr,
-      "explanation,none": 0,
-      "explanation_stderr,none": "N/A",
-      "judge_prompt,none": 0,
-      "judge_prompt_stderr,none": "N/A",
-      "judge_plain_answer,none": 0,
-      "judge_plain_answer_stderr,none": "N/A"
-    } 
-
-    log_data['results'][bench_id].pop('bypass,none')
-    log_data['results'][bench_id].pop('bypass_stderr,none')
-
-    log_data['configs'][bench_id]['metric_list'] = [
-        {
-          "metric": "score",
-          "aggregation": "mean",
-          "higher_is_better": True
-        },
-        {
-          "metric": "explanation",
-          "aggregation": "def plain(_): return 0\n",
-          "higher_is_better": True
-        },
-        {
-          "metric": "judge_prompt",
-          "aggregation": "def plain(_): return 0\n",
-          "higher_is_better": True
-        },
-        {
-          "metric": "judge_plain_answer",
-          "aggregation": "def plain(_): return 0\n",
-          "higher_is_better": True
-        }
-    ] 
-
-    log_data['higher_is_better'] = {
-        bench_id: {
-          "score": True,
-          "explanation": True,
-          "judge_prompt": True,
-          "judge_plain_answer": True,
-        }
-    }
-    
-def aggregate_scores(scores : list[Metric]) -> tuple[tuple, tuple]:
-    plain_scores = [score.score for score in scores]
-    return np.mean(plain_scores), np.std(plain_scores) # pyright: ignore
-
-
-def legacy_score_models(models_dir : str, judge : Model): 
-    print(f"> processing models samples in '{models_dir}'")
-    for model_dir in glob(f'{models_dir}/*'):
-        log_files = glob(f'{model_dir}/*.json')
-
-        if len(log_files) == 0:
-            print(f"> skipping '{model_dir}' ...")
-            continue
-
-        print(f"> processing '{model_dir}' ...")
-        for log_filename in log_files:
-            print(f">> processing log file '{log_filename}'")
-            with open(log_filename) as file:
-                log_data = json.load(file)
-
-            bench_id = extract_bench_id(log_data)
-            print(f'>>> bench_id: {bench_id}')
-
-            if len(log_data['configs'][bench_id]['metric_list']) > 1:
-                print('>> skipping log file (it was most probably already rescored) ...')
-                continue
-
-            samples_filename = get_bench_samples_filename(bench_id, model_dir)
-            print(f'>>> loading sample file: {samples_filename}')
-
-            with open(samples_filename) as file:
-                samples = [json.loads(sample) for sample in file]
-
-            category = samples[0]['doc']['category']
-
-            print(f'>>> category: {category}')
-            assert all(map(lambda entry: entry['doc']['category'] == category, samples))
-            assert all(map(lambda entry: len(entry['resps']) == 1, samples))
-            assert all(map(lambda entry: len(entry['resps'][0]) == 1, samples))
-            assert all(map(lambda entry: len(entry['filtered_resps']) == 1, samples))
-            assert all(map(lambda entry: entry['resps'][0] == entry['filtered_resps'], samples))
-
-            print('>>> generating scores')
-            scores = score_samples(
-                judge, 
-                [
-                    SamplePair(
-                        prompt = sample['doc']['prompt'],
-                        response = sample['resps'][0][0].split('</think>')[-1].strip() # remove think tokens for qwen guard
-                    )
-                    for sample in samples
-                ],
-                category,
-                max_connections = 25
-            )
-
-            # the following 2 instructions tries to format the samples and log_data as if the whole pipeline was ran on 
-            # lm-evaluation-harness, the purpose of this is to try to be able to use the their display tool for debug and
-            # have our scripts that already take results from lm-evaluation-harness work on these ones as well
-            new_samples = [ rescore_sample(sample, score) for sample, score in zip(samples, scores) ]
-            fix_log_data(log_data, bench_id, scores)
-
-            print('>>> writing new version of the log file and samples file')
-            with open(log_filename, 'w') as file:
-                json.dump(log_data, file, indent=4, ensure_ascii=False)
-
-            with open(samples_filename, 'w') as file:
-                file.writelines([
-                    json.dumps(sample, ensure_ascii=False) + '\n' for sample in new_samples
-                ])
-
-def extract_model_name(model_name : str) -> str:
-    parts = model_name.split('/')
-    if not parts[-1]: parts.pop()
-    return '/'.join(parts[-2:]) if parts[-1].startswith('checkpoint') else parts[-1]
 
 RENAMES = {
     "47-32k-9B-carminho-with_euroblocks_safety_hermes_customst/checkpoint-2875": "AMALIA-9B 32k v49",
@@ -182,64 +39,103 @@ RENAMES = {
     "salamandra-7b-instruct": "Salamandra-7B",
 }
 
-def new_score_models(models_log_files : list[str], judge : Model):
-    for file in models_log_files:
+def extract_model_name(model_name : str) -> str:
+    parts = model_name.split('/')
+    if not parts[-1]: parts.pop()
+    return '/'.join(parts[-2:]) if parts[-1].startswith('checkpoint') else parts[-1]
 
-        if file.endswith('_scored.csv'): continue
+def save_checkpoint(entries : list[dict], filename : str):
+    frame = pd.DataFrame(data = entries)
+    frame.set_index('prompt_id', inplace=True)
+    frame.to_csv(filename)
 
-        print(f"> loading '{file}'")
-        out_file = f'{file.rstrip('.csv')}_scored.csv'
+def score_model_file(model_file : str, judge : Model):
+    if model_file.endswith('_scored.csv'): return
 
-        if os.path.isfile(out_file):
-            print('>> skipping probably already scored ...')
+    print(f"> loading '{model_file}'")
+    out_file = f'{model_file.rstrip('.csv')}_scored.csv'
+
+    if os.path.isfile(out_file):
+        print('>> skipping probably already scored ...')
+        return
+
+    checkpoint_file = os.path.join(
+        os.path.dirname(out_file),
+        f'.{os.path.basename(out_file)}.checkpoint'
+    )
+
+    checkpoint_data = []
+    checkpoint_categories = set()
+    if os.path.isfile(checkpoint_file):
+        checkpoint = pd.read_csv(checkpoint_file)
+        checkpoint_categories.update(
+            checkpoint['category'].unique()
+        )
+        checkpoint_data.extend( checkpoint.to_dict('records') )
+        assert len(checkpoint_data) == len(checkpoint_categories) * 100
+
+        print(f'>> loaded {len(checkpoint_data)} entries from saved checkpoint')
+
+    data = pd.read_csv(model_file)
+    model_name      =  data.iloc[0]['model_name']
+    real_model_name = RENAMES.get(extract_model_name(model_name), model_name)
+
+    print(f">> model name '{real_model_name}'")
+    scored_rows = [] + checkpoint_data
+    for category, rows in data.groupby('category'):
+        if category in checkpoint_categories:
+            print(f">> category '{category}' found in checkpoint, skipping it ...")
             continue
 
+        print(f">> processing category '{category}'")
+        new_rows = rows.to_dict('records')
 
-        data = pd.read_csv(file)
-        model_name      =  data.iloc[0]['model_name']
+        model_name     =  new_rows[0]['model_name']
         real_model_name = RENAMES.get(extract_model_name(model_name), model_name)
+        
+        assert len(new_rows) == 100
+        scores = score_samples(
+            judge,
+            [ 
+                SamplePair(
+                    prompt   = row['prompt'],
+                    response = row['model_response'].split('</think>')[-1].strip(), 
+                ) 
+                for row in new_rows 
+            ],
+            cast(str, category),
+            max_connections=50
+        )
 
-        print(f">> model name '{real_model_name}'")
+        scored_rows.extend(
+            row | asdict(score) | { 'model_name': real_model_name } for row, score in zip(new_rows, scores)
+        )
 
-        scored_rows = []
-        for category, rows in data.groupby('category'):
-            print(f">> processing category '{category}'")
-            new_rows = rows.to_dict('records')
+        save_checkpoint(scored_rows, checkpoint_file)
 
-            model_name     =  new_rows[0]['model_name']
-            real_model_name = RENAMES.get(extract_model_name(model_name), model_name)
-            
-            assert len(new_rows) == 100
-            scores = score_samples(
-                judge,
-                [ 
-                    SamplePair(
-                        prompt   = row['prompt'].split('</think>')[-1].strip(),
-                        response = row['model_response'] 
-                    ) 
-                    for row in new_rows 
-                ],
-                cast(str, category),
-                max_connections=50
-            )
+    os.rename(checkpoint_file, out_file)
+    print(f'>> saving results as {out_file}')
 
-            scored_rows.extend(
-                row | asdict(score) | { 'model_name': real_model_name } for row, score in zip(new_rows, scores)
-            )
-            
-        frame = pd.DataFrame(data = scored_rows)
-        frame.set_index('prompt_id', inplace=True)
-        print(f'>> writing results to {out_file}')
-        frame.to_csv(out_file)
-
+def score_with_retries(model_file : str, judge : Model, max_retry = 2):
+    for i in range(max_retry + 1):
+        try: return score_model_file(model_file, judge)
+        except ScoreExtractionException:
+            print(f'{i + 1}/{max_retry} retrying to score \'{extract_model_name(model_file)}\'')
 
 def score_models(models_dir : str, judge : Model):
-    log_files = glob(f'{models_dir}/*.csv')
+    models_list   = glob(f'{models_dir}/*.csv') if os.path.isdir(models_dir) else [models_dir]
+    failed_models = []
 
-    if len(log_files) == 0:
-        legacy_score_models(models_dir, judge)
-    else:
-        new_score_models(log_files, judge)
+    for model_file in models_list:
+        try:
+            score_with_retries(model_file, judge)
+        except Exception as e:
+            print(f'* failed to score \'{model_file}\':', e, file=sys.stderr)
+            failed_models.append(model_file)
+
+    if len(failed_models) > 0:
+        print('** failed to models:', *failed_models, sep='\n- ',file=sys.stderr)
+        sys.exit(1)
 
 def format_path(*path_to_file : str) -> str: 
     """ Preffixes file name with a timestamp and replace all '/' to '-' in the file portion of of the path"""
@@ -249,13 +145,19 @@ def format_path(*path_to_file : str) -> str:
 
 @dataclass
 class ScoreConfig:
-    base_path : str | list[str]
+    base_path : str | list[str] # a list of dirname or filename with the results from the `generate` command
+    judge : Literal['gpt-oss', 'gemini'] = 'gemini'
 
 @dataclass
 class GenerationConfig:
     model_name_or_path : str
     output_base_path : str | None = None
     system_prompt : str | None    = None
+
+@dataclass
+class AggregationConfig:
+    base_path : str
+    results_file : str = 'alba_results.csv'
 
 def load_model(config : GenerationConfig) -> Model:
     name_or_path = config.model_name_or_path
@@ -273,13 +175,14 @@ def load_model(config : GenerationConfig) -> Model:
     from vllm import SamplingParams
     return HuggingFaceModel(
         config.model_name_or_path,
-        system_prompt   = config.system_prompt,
-        sampling_params = SamplingParams(
-            temperature=0.0,
-            # top_p=1.0,
-            max_tokens=1024,
-            seed=42,
-        )
+        system_prompt = config.system_prompt,
+        generation_cfg = {
+            'sampling_params': SamplingParams(
+                temperature=0.0,
+                max_tokens=1024,
+                seed=42,
+            )
+        }
     )
 
 def generate_responses(config : GenerationConfig):
@@ -319,23 +222,68 @@ def generate_responses(config : GenerationConfig):
     frame.to_csv(output_file)
     print(f"saved results in '{output_file}'")
 
+
+def get_judge_model(judge : str) -> Model:
+    if judge == 'gemini':
+        return Gemini('gemini-2.5-pro')
+
+    if judge == 'gpt-oss':
+        from vllm import SamplingParams
+        return HuggingFaceModel(
+            model_name = 'openai/gpt-oss-120b',
+            generation_cfg   = { 
+                'sampling_params': SamplingParams(temperature=0.0, max_tokens=MAX_JUDGE_RESPONSE_TOKENS, seed=42) 
+            },
+            llm_cfg = {
+                'gpu_memory_utilization'   : 0.80,
+                'disable_custom_all_reduce': True,
+                'dtype': 'bfloat16',
+            },
+    )
+
+    raise ValueError(f"invalid judge '{judge}' expected either 'gemini' or 'gpt-oss'")
+
+def aggregate_results(cfg : AggregationConfig):
+
+    results_pattern = os.path.join(cfg.base_path, '*_scored.csv')
+    results_file_list = glob(results_pattern) if os.path.isdir(cfg.base_path) else [cfg.base_path]
+
+    entries = []
+    for file in results_file_list:
+        print(f'> processing \'{file}\'')
+        data  = pd.read_csv(file)
+        model = data.iloc[0]['model_name']
+
+        results = cast(pd.Series, data.groupby('category')['score'].mean())
+        entries.append(
+            { 'model': model } | { key : round(((value - 1) / 4) * 100, 2) for key, value in results.items()}
+        )
+
+    frame = pd.DataFrame(data = entries)
+    frame.set_index('model', inplace=True)
+    frame.to_csv(cfg.results_file)
+    print(f'saving results to \'{cfg.results_file}\'')
+
 def main(): 
     args   = sys.argv[1:] if len(sys.argv) > 1 else ['--help']
     choice = tyro.cli(
         Union[
             Annotated[GenerationConfig, tyro.conf.subcommand(name="generate")],
             Annotated[ScoreConfig,   tyro.conf.subcommand(name="score")],
+            Annotated[AggregationConfig,   tyro.conf.subcommand(name="aggregate")],
         ], args=args # pyright: ignore
     ) # pyright: ignore
 
     load_dotenv()
     if isinstance(choice, GenerationConfig):
         generate_responses(choice)
-    else:
-        assert isinstance(choice, ScoreConfig)
-        judge = Gemini('gemini-2.5-pro')
+    elif isinstance(choice, ScoreConfig):
+        judge = get_judge_model(choice.judge)
         paths = [choice.base_path] if isinstance(choice.base_path, str) else choice.base_path
         for path in paths:
             score_models(path, judge)
+    else:
+        assert isinstance(choice, AggregationConfig)
+        aggregate_results(choice)
 
 if __name__ == '__main__': main()

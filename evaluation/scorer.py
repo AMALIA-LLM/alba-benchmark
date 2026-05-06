@@ -3,6 +3,8 @@ from models import Model
 import pandas as pd
 import re, sys
 
+MAX_JUDGE_RESPONSE_TOKENS = 10240
+
 PROMPT_1_SCORE_PT = """
 És um Classificador Profissional de Texto em Português Europeu.
 Vais avaliar uma determinada interação na categoria de: {category}
@@ -51,6 +53,8 @@ Pontuação Global: <pontuação de 1 a 5>
 
 # TODO: should I just add this inline?
 FEWSHOT_CSV = pd.read_csv("fewshot_samples.csv", index_col='id')
+
+class ScoreExtractionException(Exception): pass
 
 @dataclass
 class SamplePair:
@@ -101,12 +105,27 @@ def extract_response_1_score_pt(judge_prompt : str, response: str) -> Metric:
             explanation = reasoning.group(1).strip(), # pyright: ignore
             score = float(score.group(1)) # pyright: ignore
         )
-    except:
-        print("\n\n\n", file=sys.stderr)
-        print(response, file=sys.stderr)
-        print('size', len(response), file=sys.stderr)
-        print("\n\n\n", file=sys.stderr)
-        raise Exception("Error extracting response")
+    except Exception as e:
+        if len(response) > MAX_JUDGE_RESPONSE_TOKENS:
+            print('+1 > max_tokens\'s response')
+            return Metric(
+                judge_prompt= judge_prompt,
+                judge_plain_answer= response,
+                explanation = 'response too large',
+                score = 1,
+            )
+
+        print("\n\n", file=sys.stderr)
+        print('JUDGE_PROMPT:\n', judge_prompt, file=sys.stderr)
+        print("\n\n", file=sys.stderr)
+        print('JUDGE_RESPONSE:\n', response, file=sys.stderr)
+        print("\n\n", file=sys.stderr)
+        print('JUDGE_RESPONSE_SIZE: ', len(response), file=sys.stderr)
+        print("\n\n", file=sys.stderr)
+        print("EXCEPTION:", e, file=sys.stderr)
+        print("\n\n", file=sys.stderr)
+
+        raise ScoreExtractionException("Error extracting response")
 
 def score_samples(
         judge : Model,

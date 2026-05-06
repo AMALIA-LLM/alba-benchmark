@@ -112,17 +112,21 @@ class Gemini(Model):
         ) 
 
 class HuggingFaceModel(Model):
-    def __init__(self, model_name : str, system_prompt : str | None = None, **gen_args):
+    def __init__(
+        self, model_name : str, system_prompt : str | None = None, 
+        llm_cfg = {}, generation_cfg = {}
+    ):
         from vllm import LLM
         # self.max_connections = max_connections
         self.model_name = model_name
         self.model = LLM(
             model=model_name,
             trust_remote_code=True,
-            tensor_parallel_size=torch.cuda.device_count() if os.getenv('ALBA_USE_ALL_GPUS') else 1
+            tensor_parallel_size=torch.cuda.device_count() if os.getenv('ALBA_USE_ALL_GPUS') else 1,
+            **llm_cfg
         )
         self.extra_msgs = [{"role": "system", "content": system_prompt }] if system_prompt else []
-        self.get_args = gen_args
+        self.gen_cfg = generation_cfg
 
     def get_name(self) -> str:
         return self.model_name
@@ -135,7 +139,7 @@ class HuggingFaceModel(Model):
             ) for prompt in prompts
         ])
 
-        results = self.model.generate(prompts, **self.get_args)
+        results = self.model.generate(prompts, **self.gen_cfg)
         # for batch in batched(processed_prompts, max_connections):
         #     results.extend(self.model.generate(
         #         batch, **self.get_args 
