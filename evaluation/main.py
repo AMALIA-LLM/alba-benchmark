@@ -186,13 +186,21 @@ def load_model(config : GenerationConfig) -> Model:
     )
 
 def generate_responses(config : GenerationConfig):
-    model = load_model(config)
-    data  = load_dataset('carminho/alba', 'prompts')['train'].to_pandas()
+
+    try:
+        data  = load_dataset('carminho/alba', 'prompts')['train'].to_pandas()
+    except Exception as e:
+        print(e)
+        print("Problem loading the dataset from HuggingFace, falling back to local CSV file")
+        csv_path = os.path.join(os.path.dirname(__file__), 'alba_prompts.csv')
+        data = load_dataset("csv", data_files=csv_path)['train'].to_pandas()
 
     assert isinstance(data, pd.DataFrame)
     assert len(data) == 800
 
     prompts = list(data['prompt'])
+
+    model = load_model(config)
     result  = model.generate_with_debug(
         prompts, max_connections = 50,
     )
@@ -286,4 +294,6 @@ def main():
         assert isinstance(choice, AggregationConfig)
         aggregate_results(choice)
 
-if __name__ == '__main__': main()
+
+if __name__ == '__main__':
+    main()

@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from models import Model
 import pandas as pd
-import re, sys
+import re, sys, os
 
 MAX_JUDGE_RESPONSE_TOKENS = 10240
 
@@ -51,8 +51,7 @@ Raciocínio: <raciocínio>
 Pontuação Global: <pontuação de 1 a 5>
 """
 
-# TODO: should I just add this inline?
-FEWSHOT_CSV = pd.read_csv("fewshot_samples.csv", index_col='id')
+FEWSHOT_CSV = pd.read_csv(os.path.join(os.path.dirname(__file__), "fewshot_samples.csv"), index_col='id')
 
 class ScoreExtractionException(Exception): pass
 
