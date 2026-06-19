@@ -10,7 +10,7 @@ from concurrent.futures import ThreadPoolExecutor
 from typing import Callable, cast
 from tqdm import tqdm
 
-import os, time, sys, torch
+import os, time, sys
 
 MAX_RETRIES = 10
 
@@ -113,8 +113,10 @@ class Gemini(Model):
 
 class HuggingFaceModel(Model):
     def __init__(
-        self, model_name : str, system_prompt : str | None = None, 
-        llm_cfg = {}, generation_cfg = {}
+        self, model_name : str, 
+        system_prompt : str | None = None, 
+        vllm_cfg = {}, 
+        vllm_gen_cfg = {}
     ):
         from vllm import LLM
         # self.max_connections = max_connections
@@ -122,11 +124,10 @@ class HuggingFaceModel(Model):
         self.model = LLM(
             model=model_name,
             trust_remote_code=True,
-            tensor_parallel_size=torch.cuda.device_count() if os.getenv('ALBA_USE_ALL_GPUS') else 1,
-            **llm_cfg
+            **vllm_cfg
         )
         self.extra_msgs = [{"role": "system", "content": system_prompt }] if system_prompt else []
-        self.gen_cfg = generation_cfg
+        self.gen_cfg    = vllm_gen_cfg
 
     def get_name(self) -> str:
         return self.model_name

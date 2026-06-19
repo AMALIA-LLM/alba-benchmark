@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from dataclasses import asdict, dataclass
-import os, sys, time, tyro
+from dataclasses import asdict, dataclass, field
+import os, sys, time, tyro, torch
 import pandas as pd
 
 from typing import Union, Annotated
@@ -10,34 +10,56 @@ from glob import glob
 
 from models import Gemini, ChatGPT, HuggingFaceModel, Model
 from scorer import score_samples, SamplePair, ScoreExtractionException, MAX_JUDGE_RESPONSE_TOKENS
-from typing import cast, Literal
+from typing import cast
 
 from datasets import load_dataset
 
 RENAMES = {
-    "47-32k-9B-carminho-with_euroblocks_safety_hermes_customst/checkpoint-2875": "AMALIA-9B 32k v49",
-    "47-4k-9B-carminho-with_euroblocks_safety_hermes_customst/checkpoint-13590": "AMALIA-9B 4k v49 (checkpoint 13590)",
-    "47-32k-llama/checkpoint-700": "AMALIA-LLaMA-3.1-8B-32k",
-    "49-32k-llama_instruct/checkpoint-1767": "AMALIA-LLaMA-3.1-8B-Instruct-32k",
-    "47-32k-qwen3_8B/checkpoint-1482": "AMALIA-Qwen3-8B-32k",
-    "49-32k-eurollm-9B/checkpoint-1928": "EuroLLM-AMALIA-9B-32k v49 (checkpoint 1928)",
-    "49-32k-gemma3-12B/checkpoint-1368": "AMALIA-Gemma3-12B-32k",
-    "47-safety-dpo-mix_safety_sft_200k/checkpoint-6738_merged": "49 DPO",
-    "50-carminho-big/checkpoint-1776": "AMALIA-9B-32k-big v50 (checkpoint 1776)", # 32k SFT-BIG
-    "50-carminho-big/checkpoint-3441": "AMALIA-9B-32k-big v50 (checkpoint 3441)", # 32k SFT-BIG
-    "50-carminho-big/checkpoint-3480": "AMALIA-9B-32k-big v50 (checkpoint 3480)",
-    "50-dpo-mix_safety_sft_200k_if/checkpoint-6892_merged": "AMALIA-9B-32k-big-DPO-small v50",
-    "50-carminho-big-old/checkpoint-18501":  "AMALIA-9B-4k-big v50",
-    "50-big-4k-dpo-big/checkpoint-6155_merged": "AMALIA-9B-4k-big-DPO-big v50",
-    "49-4k-eurollm-9B/checkpoint-12231": "EuroLLM AMALIA-9B 4k v49 (checkpoint 12231)",
-    "Llama-3.1-8B-Instruct": "LLaMA 3.1-Instruct-8B",
-    "Ministral-8B-Instruct-2410": "Ministral-8B",
-    "Mistral-7B-Instruct-v0.3": "Mistral-7B",
-    "OLMo-2-1124-7B-Instruct": "OLMo 2-7B",
-    "Qwen2.5-7B-Instruct": "Qwen 2.5-7B",
-    "gervasio-8b-portuguese-ptpt-decoder": "LLaMA-3.1-Gervasio-8B",
-    "salamandra-7b-instruct": "Salamandra-7B",
+    # DEFINE ANY RENAME YOU WANT TO IN THE FORM (only for convenience in the final result):
+    # "Qwen2.5-7B-Instruct": "Qwen 2.5-7B",
 }
+
+@dataclass
+class ModelSpec:
+    model_name    : str
+    alloc_gpu_nr  : int
+    max_tokens    : int
+    system_prompt : str = ''
+    hf_extra_args : dict = field(default_factory=dict)
+
+API_MODELS = {
+    'google://': Gemini,
+    'openai://': ChatGPT
+}
+
+def load_model(spec : ModelSpec) -> Model:
+    name_or_path = spec.model_name
+
+    for prefix, builder in API_MODELS.items():
+        if name_or_path.startswith(prefix):
+            model_id = name_or_path.removeprefix(prefix)
+            print(f"loading API model '{model_id}'")
+            return builder(model_id)
+    
+    
+    from vllm import SamplingParams
+    alloc_gpu_nr = spec.alloc_gpu_nr if spec.alloc_gpu_nr else torch.cuda.device_count()
+    vllm_cfg     = spec.hf_extra_args.get('vllm_cfg', {})
+    vllm_cfg['tensor_parallel_size'] = alloc_gpu_nr
+    spec.hf_extra_args['vllm_cfg']   = vllm_cfg
+
+    return HuggingFaceModel(
+        spec.model_name,
+        system_prompt = spec.system_prompt,
+        vllm_gen_cfg  = {
+            'sampling_params': SamplingParams(
+                temperature=0.0,
+                max_tokens=spec.max_tokens,
+                seed=42,
+            ),
+        },
+        **spec.hf_extra_args
+    )
 
 def extract_model_name(model_name : str) -> str:
     parts = model_name.split('/')
@@ -145,45 +167,24 @@ def format_path(*path_to_file : str) -> str:
 
 @dataclass
 class ScoreConfig:
-    base_path : str | list[str] # a list of dirname or filename with the results from the `generate` command
-    judge : Literal['gpt-oss', 'gemini'] = 'gemini'
+    '''Scores generated responses with a judge model'''
+    base_path : str | list[str] # A list of dirname or filename with the results from the `generate` command.
+    judge_model : str = 'google://gemini-2.5-pro' # Use `openai://<model_id>` or `google://<model_id>` to used respective an OpenAI or a Google Gemini model.
+    alloc_gpu_nr : int = 1 # The number of GPUs be used on the judge model. Use 0 to refer to all available GPUs. It's an option reserved for hugging face models only.
 
 @dataclass
 class GenerationConfig:
-    model_name_or_path : str
+    '''Prompts provided model to generate responses to ALBA'''
+    model_name_or_path : str # Use `openai://<model_id>` or `google://<model_id>` to used respective an OpenAI or a Google Gemini model.
     output_base_path : str | None = None
     system_prompt : str | None    = None
+    alloc_gpu_nr : int = 1 # The number of GPUs be used on the judge model. Use 0 to refer to all available GPUs. It's an option reserved for hugging face models only.
 
 @dataclass
 class AggregationConfig:
+    '''Aggregates scored responses by model and ALBA category in a single CSV file'''
     base_path : str
     results_file : str = 'alba_results.csv'
-
-def load_model(config : GenerationConfig) -> Model:
-    name_or_path = config.model_name_or_path
-    api_models = [
-        ('gemini/', Gemini),
-        ('chatgpt/', ChatGPT)
-    ]
-
-    for prefix, builder in api_models:
-        if name_or_path.startswith(prefix):
-            model_id = '/'.join( name_or_path.split('/')[1:] )
-            print(f"loading API model '{model_id}'")
-            return builder(model_id)
-    
-    from vllm import SamplingParams
-    return HuggingFaceModel(
-        config.model_name_or_path,
-        system_prompt = config.system_prompt,
-        generation_cfg = {
-            'sampling_params': SamplingParams(
-                temperature=0.0,
-                max_tokens=1024,
-                seed=42,
-            )
-        }
-    )
 
 def generate_responses(config : GenerationConfig):
 
@@ -191,7 +192,7 @@ def generate_responses(config : GenerationConfig):
         data  = load_dataset('carminho/alba', 'prompts')['train'].to_pandas()
     except Exception as e:
         print(e)
-        print("Problem loading the dataset from HuggingFace, falling back to local CSV file")
+        print("problem loading the dataset from HuggingFace, falling back to local CSV file")
         csv_path = os.path.join(os.path.dirname(__file__), 'alba_prompts.csv')
         data = load_dataset("csv", data_files=csv_path)['train'].to_pandas()
 
@@ -200,16 +201,21 @@ def generate_responses(config : GenerationConfig):
 
     prompts = list(data['prompt'])
 
-    model = load_model(config)
-    result  = model.generate_with_debug(
+    model = load_model(ModelSpec(
+        model_name   = config.model_name_or_path,
+        alloc_gpu_nr = config.alloc_gpu_nr,
+        max_tokens   = 1024
+    ))
+
+    result = model.generate_with_debug(
         prompts, max_connections = 50,
     )
 
     frame = pd.DataFrame(
         data = list(zip(
-            data['id'],               # prompt_id
+            data['prompt_id'],        # prompt_id
             data['category'],         # category
-            [config.model_name_or_path] * len(prompts),   # model
+            [config.model_name_or_path] * len(prompts), # model
             prompts,                  # prompt
             result.outputs,           # model_response
             result.templated_inputs   # raw_model_input
@@ -229,27 +235,6 @@ def generate_responses(config : GenerationConfig):
 
     frame.to_csv(output_file)
     print(f"saved results in '{output_file}'")
-
-
-def get_judge_model(judge : str) -> Model:
-    if judge == 'gemini':
-        return Gemini('gemini-2.5-pro')
-
-    if judge == 'gpt-oss':
-        from vllm import SamplingParams
-        return HuggingFaceModel(
-            model_name = 'openai/gpt-oss-120b',
-            generation_cfg   = { 
-                'sampling_params': SamplingParams(temperature=0.0, max_tokens=MAX_JUDGE_RESPONSE_TOKENS, seed=42) 
-            },
-            llm_cfg = {
-                'gpu_memory_utilization'   : 0.80,
-                'disable_custom_all_reduce': True,
-                'dtype': 'bfloat16',
-            },
-    )
-
-    raise ValueError(f"invalid judge '{judge}' expected either 'gemini' or 'gpt-oss'")
 
 def aggregate_results(cfg : AggregationConfig):
 
@@ -272,6 +257,7 @@ def aggregate_results(cfg : AggregationConfig):
     frame.to_csv(cfg.results_file)
     print(f'saving results to \'{cfg.results_file}\'')
 
+
 def main(): 
     args   = sys.argv[1:] if len(sys.argv) > 1 else ['--help']
     choice = tyro.cli(
@@ -286,7 +272,20 @@ def main():
     if isinstance(choice, GenerationConfig):
         generate_responses(choice)
     elif isinstance(choice, ScoreConfig):
-        judge = get_judge_model(choice.judge)
+        judge = load_model(
+            ModelSpec(
+                model_name=choice.judge_model,
+                alloc_gpu_nr=choice.alloc_gpu_nr,
+                max_tokens=MAX_JUDGE_RESPONSE_TOKENS,
+                hf_extra_args={
+                    'vllm_cfg': {
+                        'gpu_memory_utilization'   : 0.80,
+                        'disable_custom_all_reduce': True,
+                        'dtype': 'bfloat16',
+                    }
+                }
+            )
+        )
         paths = [choice.base_path] if isinstance(choice.base_path, str) else choice.base_path
         for path in paths:
             score_models(path, judge)
