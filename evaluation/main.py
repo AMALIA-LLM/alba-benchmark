@@ -189,7 +189,7 @@ class AggregationConfig:
 def generate_responses(config : GenerationConfig):
 
     try:
-        data  = load_dataset('carminho/alba', 'prompts')['train'].to_pandas()
+        data  = load_dataset('amalia-llm/alba', 'prompts')['train'].to_pandas()
     except Exception as e:
         print(e)
         print("problem loading the dataset from HuggingFace, falling back to local CSV file")
