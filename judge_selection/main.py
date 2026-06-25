@@ -11,8 +11,8 @@ from datetime import datetime
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor
 from extracter import extract_response
-from itertools import product
 import time
+
 
 def generous_diference_calc(predicted, expected) -> float:
     if expected == 5:
@@ -29,7 +29,7 @@ def generous_diference_calc(predicted, expected) -> float:
             return 0
         elif predicted > 2:
             return predicted - 2
-    print("ERRRRRRRRROOOOOOOOORRRRRRRR expected value: ", expected)
+    print("Error expected value: ", expected)
     raise ValueError("Invalid expected value")
         
 
