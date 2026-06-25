@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from models import Model
 import pandas as pd
-import re, sys, os
+import re, sys, os, json, time
 
 MAX_JUDGE_RESPONSE_TOKENS = 10240
 
@@ -52,6 +52,7 @@ Pontuação Global: <pontuação de 1 a 5>
 """
 
 FEWSHOT_CSV = pd.read_csv(os.path.join(os.path.dirname(__file__), "fewshot_samples.csv"), index_col='id')
+LOG = os.open('report.jsonl', os.O_APPEND | os.O_CREAT | os.O_WRONLY, 0o666)
 
 class ScoreExtractionException(Exception): pass
 
@@ -94,7 +95,7 @@ def format_prompt_1_score_pt(prompt: str, answer: str, few_shots: list, category
         answer=answer
     )
 
-def extract_response_1_score_pt(judge_prompt : str, response: str) -> Metric:
+def extract_response_1_score_pt(judge_prompt : str, response: str, model_name : str, category : str) -> Metric:
     reasoning = re.search(r"Raciocínio:\s*(.+?)\s*Pontuação Global:", response, re.DOTALL)
     score = re.search(r"Pontuação Global:\s*(\d+)", response)
     try:
@@ -105,37 +106,52 @@ def extract_response_1_score_pt(judge_prompt : str, response: str) -> Metric:
             score = float(score.group(1)) # pyright: ignore
         )
     except Exception as e:
-        if len(response) > MAX_JUDGE_RESPONSE_TOKENS:
-            print('+1 > max_tokens\'s response')
-            return Metric(
-                judge_prompt= judge_prompt,
-                judge_plain_answer= response,
-                explanation = 'response too large',
-                score = 1,
-            )
+        # if len(response) > MAX_JUDGE_RESPONSE_TOKENS:
+            # os.write(LOG,)
+            # print('+1 > max_tokens\'s response')
 
-        print("\n\n", file=sys.stderr)
-        print('JUDGE_PROMPT:\n', judge_prompt, file=sys.stderr)
-        print("\n\n", file=sys.stderr)
-        print('JUDGE_RESPONSE:\n', response, file=sys.stderr)
-        print("\n\n", file=sys.stderr)
-        print('JUDGE_RESPONSE_SIZE: ', len(response), file=sys.stderr)
-        print("\n\n", file=sys.stderr)
-        print("EXCEPTION:", e, file=sys.stderr)
-        print("\n\n", file=sys.stderr)
+        report = {
+            'time': time.ctime(),
+            'judge_prompt' : judge_prompt,
+            'judge_plain_answer' : response,
+            'model_name': model_name,
+            'category': category,
+            'type': 'TOO_LARGE' if len(response) > MAX_JUDGE_RESPONSE_TOKENS else 'EXTRACT_PROBLEM',
+            'except': f'{repr(e)}: {str(e)}'
+        }
 
-        raise ScoreExtractionException("Error extracting response")
+        os.write(LOG, json.dumps(report).encode())
+
+        return Metric(
+            judge_prompt= judge_prompt,
+            judge_plain_answer= response,
+            explanation = 'ERROR',
+            score = 0,
+        )
+
+        # print("\n\n", file=sys.stderr)
+        # print('JUDGE_PROMPT:\n', judge_prompt, file=sys.stderr)
+        # print("\n\n", file=sys.stderr)
+        # print('JUDGE_RESPONSE:\n', response, file=sys.stderr)
+        # print("\n\n", file=sys.stderr)
+        # print('JUDGE_RESPONSE_SIZE: ', len(response), file=sys.stderr)
+        # print("\n\n", file=sys.stderr)
+        # print("EXCEPTION:", e, file=sys.stderr)
+        # print("\n\n", file=sys.stderr)
+        # raise ScoreExtractionException("Error extracting response")
+
 
 def score_samples(
         judge : Model,
         pairs : list[SamplePair],
+        model_name : str,
         category : str,
         max_connections = 20
     ) -> list[Metric]:
 
     category_shots = FEWSHOT_CSV[FEWSHOT_CSV['category'] == category]
     assert len(category_shots) > 0
-    assert all(map(lambda pair: len(pair.response) > 0, pairs))
+    # assert all(map(lambda pair: len(pair.response) > 0, pairs))
 
     few_shot_examples = [
         { 
@@ -152,9 +168,9 @@ def score_samples(
     ]
 
     judge_prompts = [
-         format_prompt_1_score_pt(pair.prompt, pair.response, few_shot_examples, category) for pair in pairs
+         format_prompt_1_score_pt( pair.prompt, pair.response, few_shot_examples, category) for pair in pairs
     ]
 
     return [
-        extract_response_1_score_pt(judge_prompt, response) for judge_prompt, response in zip(judge_prompts, judge.generate_in_batch(judge_prompts, max_connections))
+        extract_response_1_score_pt(judge_prompt, response, model_name, category) for judge_prompt, response in zip(judge_prompts, judge.generate_in_batch(judge_prompts, max_connections))
     ]

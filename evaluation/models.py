@@ -51,11 +51,11 @@ def parallel_generation(
                 print(f"RETRY {times:02}/{MAX_RETRIES} '{prompt_msg.strip()}'", file=sys.stderr)
                 time.sleep(5 * times)
 
-        try:
-            return wrapper(prompt)
-        except (ResponseIsNone, ServerError) as error:
-            if isinstance(error, ServerError) and error.code != 504: raise error
-            return "Raciocínio: crashou o Gemini :'(\nPontuação Global: 1"
+        # try:
+        return wrapper(prompt)
+        # except (ResponseIsNone, ServerError) as error:
+        #     if isinstance(error, ServerError) and error.code != 504: raise error
+        #     return "Raciocínio: crashou o Gemini :'(\nPontuação Global: 1"
 
     with ThreadPoolExecutor(max_workers=max_connections) as executor:
         return [result for result in tqdm(executor.map(retry, prompts), total=len(prompts))]
@@ -140,12 +140,7 @@ class HuggingFaceModel(Model):
             ) for prompt in prompts
         ])
 
-        results = self.model.generate(prompts, **self.gen_cfg)
-        # for batch in batched(processed_prompts, max_connections):
-        #     results.extend(self.model.generate(
-        #         batch, **self.get_args 
-        #     ))
-
+        results = self.model.generate(processed_prompts, **self.gen_cfg)
         return GenerationResult(
             outputs = [v.outputs[0].text for v in results],
             templated_inputs = processed_prompts
