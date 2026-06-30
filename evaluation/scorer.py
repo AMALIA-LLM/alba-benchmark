@@ -129,18 +129,6 @@ def extract_response_1_score_pt(judge_prompt : str, response: str, model_name : 
             score = 0,
         )
 
-        # print("\n\n", file=sys.stderr)
-        # print('JUDGE_PROMPT:\n', judge_prompt, file=sys.stderr)
-        # print("\n\n", file=sys.stderr)
-        # print('JUDGE_RESPONSE:\n', response, file=sys.stderr)
-        # print("\n\n", file=sys.stderr)
-        # print('JUDGE_RESPONSE_SIZE: ', len(response), file=sys.stderr)
-        # print("\n\n", file=sys.stderr)
-        # print("EXCEPTION:", e, file=sys.stderr)
-        # print("\n\n", file=sys.stderr)
-        # raise ScoreExtractionException("Error extracting response")
-
-
 def score_samples(
         judge : Model,
         pairs : list[SamplePair],

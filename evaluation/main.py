@@ -17,11 +17,6 @@ from datasets import load_dataset
 RENAMES = {
     # DEFINE ANY RENAME YOU WANT TO IN THE FORM (only for convenience in the final result):
     "Qwen2.5-7B-Instruct": "Qwen 2.5-7B",
-	"58_continue_57_carminho-9B-32k-lr_1e-4_to_1e-5_fixed-from_base/checkpoint-154" : "57-58-sft", 
-    "57_58-9b-mix-dpo-fixed_ge0_01/checkpoint-3280"    : "57-58-dpo",
-	"50-dpo_RLVR-IF-Math-Stem-cascade/checkpoint_400"  : "50-rlvr",
-	"57-carminho-22B-32k/checkpoint-5439"              : "57-22b-sft",
-	"57-22b-mix-dpo-fixed_ge0_01/checkpoint-3314"      : "57-22b-dpo",
 }
 
 @dataclass
