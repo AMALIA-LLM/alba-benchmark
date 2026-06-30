@@ -1,5 +1,8 @@
 # ALBA: A European Portuguese Benchmark for Evaluating Language and Linguistic Dimensions in Generative LLMs
 
+[![Code](https://img.shields.io/badge/GitHub-ALBA%20Benchmark-blue?logo=github)](https://github.com/Amalia-LLM/alba-benchmark)
+[![Paper: ACL Anthology](https://img.shields.io/badge/Paper-ACL%20Anthology-red)](https://aclanthology.org/2026.propor-1.69/)
+
 This repository provides the code and resources for running the **ALBA benchmark**, introduced in the paper  
 [ALBA: A European Portuguese Benchmark for Evaluating Language and Linguistic Dimensions in Generative LLMs](https://aclanthology.org/2026.propor-1.69/), accepted at **PROPOR 2026**.
 

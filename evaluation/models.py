@@ -141,10 +141,6 @@ class HuggingFaceModel(Model):
         ])
 
         results = self.model.generate(prompts, **self.gen_cfg)
-        # for batch in batched(processed_prompts, max_connections):
-        #     results.extend(self.model.generate(
-        #         batch, **self.get_args 
-        #     ))
 
         return GenerationResult(
             outputs = [v.outputs[0].text for v in results],
