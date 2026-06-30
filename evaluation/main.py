@@ -16,7 +16,12 @@ from datasets import load_dataset
 
 RENAMES = {
     # DEFINE ANY RENAME YOU WANT TO IN THE FORM (only for convenience in the final result):
-    # "Qwen2.5-7B-Instruct": "Qwen 2.5-7B",
+    "Qwen2.5-7B-Instruct": "Qwen 2.5-7B",
+	"58_continue_57_carminho-9B-32k-lr_1e-4_to_1e-5_fixed-from_base/checkpoint-154" : "57-58-sft", 
+    "57_58-9b-mix-dpo-fixed_ge0_01/checkpoint-3280"    : "57-58-dpo",
+	"50-dpo_RLVR-IF-Math-Stem-cascade/checkpoint_400"  : "50-rlvr",
+	"57-carminho-22B-32k/checkpoint-5439"              : "57-22b-sft",
+	"57-22b-mix-dpo-fixed_ge0_01/checkpoint-3314"      : "57-22b-dpo",
 }
 
 @dataclass
@@ -58,6 +63,7 @@ def load_model(spec : ModelSpec) -> Model:
                 seed=42,
             ),
         },
+
         **spec.hf_extra_args
     )
 
@@ -93,10 +99,12 @@ def score_model_file(model_file : str, judge : Model):
         checkpoint_categories.update(
             checkpoint['category'].unique()
         )
-        checkpoint_data.extend( checkpoint.to_dict('records') )
-        assert len(checkpoint_data) == len(checkpoint_categories) * 100
 
+        checkpoint_data.extend( checkpoint.to_dict('records') )
+        errorsome_records_nr = len(checkpoint_categories) * 100 - len(checkpoint_data)
         print(f'>> loaded {len(checkpoint_data)} entries from saved checkpoint')
+        if errorsome_records_nr > 0:
+            print(f'>> left out {errorsome_records_nr} errorsome records')
 
     data = pd.read_csv(model_file)
     model_name      =  data.iloc[0]['model_name']
@@ -112,27 +120,34 @@ def score_model_file(model_file : str, judge : Model):
         print(f">> processing category '{category}'")
         new_rows = rows.to_dict('records')
 
-        model_name     =  new_rows[0]['model_name']
+        model_name      = new_rows[0]['model_name']
         real_model_name = RENAMES.get(extract_model_name(model_name), model_name)
         
         assert len(new_rows) == 100
+
         scores = score_samples(
             judge,
             [ 
                 SamplePair(
                     prompt   = row['prompt'],
-                    response = row['model_response'].split('</think>')[-1].strip(), 
+                    response = str(row['model_response']).split('</think>')[-1].strip(), 
                 ) 
                 for row in new_rows 
             ],
+            model_name,
             cast(str, category),
             max_connections=50
         )
 
-        scored_rows.extend(
+        new_entries = [
             row | asdict(score) | { 'model_name': real_model_name } for row, score in zip(new_rows, scores)
-        )
+            if not (score.score == 0 and score.explanation == 'ERROR')
+        ]
 
+        if len(new_entries) < 100:
+            print(f'>> detected {100 - len(new_entries)} errorsome entries')
+
+        scored_rows.extend(new_entries)
         save_checkpoint(scored_rows, checkpoint_file)
 
     os.rename(checkpoint_file, out_file)
@@ -169,16 +184,16 @@ def format_path(*path_to_file : str) -> str:
 class ScoreConfig:
     '''Scores generated responses with a judge model'''
     base_path : str | list[str] # A list of dirname or filename with the results from the `generate` command.
-    judge_model : str = 'google://gemini-2.5-pro' # Use `openai://<model_id>` or `google://<model_id>` to used respective an OpenAI or a Google Gemini model.
-    alloc_gpu_nr : int = 1 # The number of GPUs be used on the judge model. Use 0 to refer to all available GPUs. It's an option reserved for hugging face models only.
+    judge_model : str = 'google://gemini-2.5-pro' # Use `openai://<model_id>`, `google://<model_id>` or `<path_to_model_or_hf_name>` to used respective an OpenAI model, a Google Gemini model or a local model.
+    alloc_gpu_nr : int = 0 # The number of GPUs be used on the judge model. Use 0 to refer to all available GPUs. It's an option reserved for hugging face models only.
 
 @dataclass
 class GenerationConfig:
     '''Prompts provided model to generate responses to ALBA'''
-    model_name_or_path : str # Use `openai://<model_id>` or `google://<model_id>` to used respective an OpenAI or a Google Gemini model.
+    model_name_or_path : str # Use `openai://<model_id>`, `google://<model_id>` or `<path_to_model_or_hf_name>` to used respective an OpenAI model, a Google Gemini model or a local model.
     output_base_path : str | None = None
     system_prompt : str | None    = None
-    alloc_gpu_nr : int = 1 # The number of GPUs be used on the judge model. Use 0 to refer to all available GPUs. It's an option reserved for hugging face models only.
+    alloc_gpu_nr : int = 0 # The number of GPUs be used on the judge model. Use 0 to refer to all available GPUs. It's an option reserved for hugging face models only.
 
 @dataclass
 class AggregationConfig:
@@ -200,11 +215,18 @@ def generate_responses(config : GenerationConfig):
     assert len(data) == 800
 
     prompts = list(data['prompt'])
-
-    model = load_model(ModelSpec(
+    model   = load_model(ModelSpec(
         model_name   = config.model_name_or_path,
         alloc_gpu_nr = config.alloc_gpu_nr,
-        max_tokens   = 1024
+        max_tokens   = 1024,
+        hf_extra_args={
+            # if you fall into MEMORY problems, please touch the configs below :)
+            'vllm_cfg': {
+                    'gpu_memory_utilization'   : 0.80,
+                    'disable_custom_all_reduce': True,
+                    # 'dtype': 'bfloat16',
+                }
+            }
     ))
 
     result = model.generate_with_debug(
@@ -257,7 +279,6 @@ def aggregate_results(cfg : AggregationConfig):
     frame.to_csv(cfg.results_file)
     print(f'saving results to \'{cfg.results_file}\'')
 
-
 def main(): 
     args   = sys.argv[1:] if len(sys.argv) > 1 else ['--help']
     choice = tyro.cli(
@@ -292,7 +313,6 @@ def main():
     else:
         assert isinstance(choice, AggregationConfig)
         aggregate_results(choice)
-
 
 if __name__ == '__main__':
     main()

@@ -105,7 +105,7 @@ AWS_REGION=us-east-1
 From repo root:
 
 ```bash
-python evaluation/main.py generate --model-name-or-path gemini/gemini-2.5-pro --output-base-path outputs
+python evaluation/main.py generate --model-name-or-path meta-llama/Llama-3.1-8B-Instruct --output-base-path outputs
 ```
 
 Then score:
